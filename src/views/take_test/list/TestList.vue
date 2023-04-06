@@ -1,11 +1,14 @@
 <script setup>
-    const emit=defineEmits(["test_selected"])
-    const props=defineProps({
-        tests:Array
-    })
+const emit = defineEmits(['test_selected']);
+const props = defineProps({
+  tests: Array,
+});
 </script>
 <template>
-    <button class="test_item" v-for="test in props.tests" :key="test.id" @click="emit("test_selected",test.id)">
+    <button class="test_item"
+    v-for="test in props.tests"
+    :key="test.id"
+    @click="emit('test_selected',test.id)">
        {{ test.name }}
     </button>
 </template>
