@@ -9,7 +9,14 @@ const tests = reactive([
     name: 'default',
     id: 0,
     questions: [{
-
+      question: "What is the color of Simon Bolivar's white horse?",
+      answers: [
+        'Red',
+        'The same color as Bolivar',
+        'Green',
+        'White',
+      ],
+      correct: 3,
     }],
   },
 ]);
