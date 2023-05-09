@@ -17,6 +17,13 @@ const tests = reactive([
         'White',
       ],
       correct: 3,
+    }, {
+      question: 'This statement is false',
+      answers: [
+        'True',
+        'False',
+      ],
+      correct: 1,
     }],
   },
 ]);
