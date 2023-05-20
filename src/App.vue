@@ -16,6 +16,7 @@ const tests = reactive([
         'Green',
         'White',
       ],
+      image: 'white_horse.jpg',
       correct: 3,
     }, {
       question: 'This statement is false',

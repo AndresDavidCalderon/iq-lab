@@ -8,7 +8,8 @@ const props = defineProps({
     <button class="test_item"
     v-for="test in props.tests"
     :key="test.id"
-    @click="emit('test_selected',test.id)">
+    @click="emit('test_selected',test.id)"
+    >
        {{ test.name }}
     </button>
 </template>
