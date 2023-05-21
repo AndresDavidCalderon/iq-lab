@@ -5,7 +5,7 @@ const props = defineProps({
 });
 </script>
 <template>
-    <h1>Test completed</h1>
+    <h1 class="title">Test completed</h1>
     <p id="result">
         {{
         props.answers.filter((answer,index)=>{
@@ -17,7 +17,12 @@ const props = defineProps({
     </p>
 </template>
 
+<style scoped src="./text.css"></style>
+
 <style scoped>
+.title{
+    text-align: center;
+}
 #result{
     text-align: center;
     width: 40%;

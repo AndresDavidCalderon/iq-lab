@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+  }
+
+  .row::after{
+    content:"";
+    clear:both;
+    display: block;
+  }
+
+  [class*=column]{
+    float: left;
+    width: 100%;
+}
+
+@media only screen and (min-width: 600px){
+    .column_1{width: 10%;}
+    .column_2{width: 20%;}
+    .column_3{width: 30%;}
+    .column_4{width: 40%;}
+    .column_5{width: 50%;}
+    .column_6{width: 60%;}
+    .column_7{width: 70%;}
+    .column_8{width: 80%;}
+    .column_9{width: 90%;}
+    .column_10{width: 100%;}
+}

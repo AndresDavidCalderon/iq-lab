@@ -27,23 +27,55 @@ function submitAnswer(event) {
   }
 }
 
+function testHasImage() {
+  return props.test.questions[currentQuestion.value].image !== undefined;
+}
+
 </script>
 
 <template>
-    <p>Question {{ currentQuestion + 1 }} of {{ props.test.questions.length }}</p>
-    <h1>{{ props.test.questions[currentQuestion].question }}</h1>
-    <img v-if="props.test.questions[currentQuestion].image !== undefined"
-      :src="'/src/assets/test_resources/'+props.test.questions[currentQuestion].image"
-      width="400"
-      height="400"
-    />
+  <p>Question {{ currentQuestion + 1 }} of {{ props.test.questions.length }}</p>
+  <h1 class="title">{{ props.test.questions[currentQuestion].question }}</h1>
 
-    <div v-for="answer in props.test.questions[currentQuestion].answers" :key="answer">
+  <div class="row">
+    <img class="column_2" id="test_image"
+      v-if="testHasImage()"
+      :src="'/src/assets/test_resources/' + props.test.questions[currentQuestion].image"
+    />
+    <div :class="testHasImage() ? 'column_8' : 'column_10'" id="answers">
+      <div v-for="answer in props.test.questions[currentQuestion].answers" :key="answer">
       <input type="radio" name="selected_answer" :id="answer"
         :value=props.test.questions[currentQuestion].answers.indexOf(answer)
         :checked="currentAnswer === answer"
         @change="submitAnswer">
       <label :for="answer">{{ answer }}</label>
     </div>
-    <button @click="submit" :disabled="currentAnswer === -1">submit</button>
+
+    </div>
+  </div>
+
+  <button id="submit" @click="submit" :disabled="currentAnswer === -1">submit</button>
 </template>
+
+<style scoped src="./responsive.css"></style>
+<style scoped src="./text.css"></style>
+<style scoped>
+#test_image{
+  height: auto;
+  padding:20px;
+}
+#answers{
+  text-align: center;
+}
+
+#submit{
+  position: relative;
+  left: 40%;
+  top: 50px;
+  width: 20%;
+}
+
+.title{
+  text-align: center;
+}
+</style>

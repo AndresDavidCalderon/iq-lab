@@ -44,7 +44,7 @@ function submitAnswers(answers) {
 </script>
 
 <template>
-  <TestList v-if="currentTest == 'none'" :tests="props.tests" @test_selected="takeTest">
+  <TestList v-if="currentTest == 'none'" :tests="tests" @test_selected="takeTest">
   </TestList>
   <FormUI v-else-if="inStatsPage === false"   @submit-answers=submitAnswers :test="currentTest">
   </FormUI>
