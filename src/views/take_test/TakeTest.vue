@@ -1,19 +1,40 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 import TestList from './TestList.vue';
 import FormUI from './FormUI.vue';
 import TestResults from './TestResults.vue';
+
+const tests = reactive([
+  {
+    name: 'default',
+    id: 0,
+    questions: [{
+      question: "What is the color of Simon Bolivar's white horse?",
+      answers: [
+        'Red',
+        'The same color as Bolivar',
+        'Green',
+        'White',
+      ],
+      image: 'white_horse.jpg',
+      correct: 3,
+    }, {
+      question: 'This statement is false',
+      answers: [
+        'True',
+        'False',
+      ],
+      correct: 1,
+    }],
+  },
+]);
 
 const currentTest = ref('none');
 const inStatsPage = ref(false);
 const lastAnswers = ref([]);
 
-const props = defineProps({
-  tests: Array,
-});
-
 function takeTest(id) {
-  currentTest.value = props.tests.find((test) => test.id === id);
+  currentTest.value = tests.find((test) => test.id === id);
 }
 
 function submitAnswers(answers) {

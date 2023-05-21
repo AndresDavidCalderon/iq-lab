@@ -30,21 +30,20 @@ function submitAnswer(event) {
 </script>
 
 <template>
-  <p>Question {{ currentQuestion + 1 }} of {{ props.test.questions.length }}</p>
-  <h1>{{ props.test.questions[currentQuestion].question }}</h1>
-  <image
-    v-if="props.test.questions[currentQuestion].image!==undefined"
-    :src="'/src/static/test_resources/' + props.test.questions[currentQuestion].image"
-  >
+    <p>Question {{ currentQuestion + 1 }} of {{ props.test.questions.length }}</p>
+    <h1>{{ props.test.questions[currentQuestion].question }}</h1>
+    <img v-if="props.test.questions[currentQuestion].image !== undefined"
+      :src="'/src/assets/test_resources/'+props.test.questions[currentQuestion].image"
+      width="400"
+      height="400"
+    />
 
-</image>
-  <div v-for="answer in props.test.questions[currentQuestion].answers" :key="answer">
-    <input type="radio" name="selected_answer" :id="answer"
-      :value=props.test.questions[currentQuestion].answers.indexOf(answer)
-      :checked="currentAnswer === answer"
-      @change="submitAnswer">
-
-    <label :for="answer">{{ answer }}</label>
-  </div>
-  <button @click="submit" :disabled="currentAnswer===-1">submit</button>
+    <div v-for="answer in props.test.questions[currentQuestion].answers" :key="answer">
+      <input type="radio" name="selected_answer" :id="answer"
+        :value=props.test.questions[currentQuestion].answers.indexOf(answer)
+        :checked="currentAnswer === answer"
+        @change="submitAnswer">
+      <label :for="answer">{{ answer }}</label>
+    </div>
+    <button @click="submit" :disabled="currentAnswer === -1">submit</button>
 </template>
