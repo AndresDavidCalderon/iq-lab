@@ -1,16 +1,16 @@
 @font-face{
     src: url(../../assets/fonts/Roboto/Roboto-Regular.ttf);
-    font-family: "roboto";
+    font-family: roboto;
     font-weight: 100;
 }
 @font-face{
     src: url(/src/assets/fonts/Roboto/Roboto-Black.ttf);
-    font-family: "roboto";
+    font-family: roboto;
     font-weight: 300;
 }
 
 *{
-    font-family: "roboto";
+    font-family: roboto;
     font-weight: 100;
 }
 
