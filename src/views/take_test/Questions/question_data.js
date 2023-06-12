@@ -1,4 +1,4 @@
-module.exports = [
+const questions = [
   {
     question: 'What replaces the question mark?',
     image: 'rotation/rotation_test.svg',
@@ -68,3 +68,4 @@ module.exports = [
     difficulty: 1,
   },
 ];
+export default questions;
