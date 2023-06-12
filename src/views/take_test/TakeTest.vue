@@ -1,40 +1,16 @@
 <script setup>
-import { ref, reactive } from 'vue';
-import TestList from './TestList.vue';
+import { ref } from 'vue';
+import TestListUI from './TestList.vue';
 import FormUI from './FormUI.vue';
 import TestResults from './TestResults.vue';
-
-const tests = reactive([
-  {
-    name: 'default',
-    id: 0,
-    questions: [{
-      question: "What is the color of Simon Bolivar's white horse?",
-      answers: [
-        'Red',
-        'The same color as Bolivar',
-        'Green',
-        'White',
-      ],
-      image: 'white_horse.jpg',
-      correct: 3,
-    }, {
-      question: 'This statement is false',
-      answers: [
-        'True',
-        'False',
-      ],
-      correct: 1,
-    }],
-  },
-]);
+import TestList from './test_list';
 
 const currentTest = ref('none');
 const inStatsPage = ref(false);
 const lastAnswers = ref([]);
 
-function takeTest(id) {
-  currentTest.value = tests.find((test) => test.id === id);
+function takeTest(name) {
+  currentTest.value = import(`./Questions/${name}.js`);
 }
 
 function submitAnswers(answers) {
@@ -44,10 +20,10 @@ function submitAnswers(answers) {
 </script>
 
 <template>
-  <TestList v-if="currentTest == 'none'" :tests="tests" @test_selected="takeTest">
-  </TestList>
+  <TestListUI v-if="currentTest == 'none'" :tests="TestList" @test_selected="takeTest">
+  </TestListUI>
   <FormUI v-else-if="inStatsPage === false"   @submit-answers=submitAnswers :test="currentTest">
   </FormUI>
-  <TestResults v-else :answers="lastAnswers" :test="currentTest">
-  </TestResults>
+  <TestResultsUI v-else :answers="lastAnswers" :test="currentTest">
+  </TestResultsUI>
 </template>

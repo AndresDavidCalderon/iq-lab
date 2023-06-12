@@ -7,10 +7,10 @@ const props = defineProps({
 <template>
     <button class="test_item"
     v-for="test in props.tests"
-    :key="test.id"
-    @click="emit('test_selected',test.id)"
+    :key="test"
+    @click="emit('test_selected',test)"
     >
-       {{ test.name }}
+       {{ test }}
     </button>
 </template>
 
