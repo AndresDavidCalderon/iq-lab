@@ -1,20 +1,13 @@
 <script setup>
 import { ref, defineEmits } from 'vue';
 
-const emit = defineEmits(['testSelected']);
+const emit = defineEmits(['testStarted']);
 const difficulty = ref(1);
-const setDifficulty = (event) => {
-  difficulty.value = event.selectedIndex + 1;
-};
 </script>
 <template>
-  <button @click="emit('testSelected',difficulty)" class="title" id="start_button">
+  <button @click="emit('testStarted',difficulty)" class="title" id="start_button">
     Start Test
   </button>
-  <select @changed="setDifficulty($event)" v-model="difficulty" required id="difficulty">
-    <option value=1>Easy</option>
-    <option value=2>Medium</option>
-  </select>
 
 </template>
 
@@ -36,15 +29,6 @@ const setDifficulty = (event) => {
   #start_button{
     font-size: 4vw;
   }
-}
-
-#difficulty{
-  position: absolute;
-  width: 30%;
-  height: 10%;
-  left: 35%;
-  top: 50%;
-  font-size: 4vw;
 }
 
 </style>
