@@ -1,19 +1,17 @@
 <script setup>
 const props = defineProps({
   answers: Array,
-  test: Object,
+  questions: Array,
 });
 </script>
 <template>
     <h1 class="title">Test completed</h1>
     <p id="result">
         {{
-        props.answers.filter((answer,index)=>{
-            return test.questions[index].correct===answer
-            }).length
+        props.answers.filter((answer)=>answer=="d").length
         }}
         /
-        {{ props.test.questions.length }}
+        {{ props.questions.length }}
     </p>
 </template>
 

@@ -1,6 +1,9 @@
 <script setup>
-import { defineProps, reactive, ref } from 'vue';
+import {
+  defineProps, reactive, ref, defineEmits,
+} from 'vue';
 
+const emit = defineEmits(['testFinished']);
 const currentQuestion = ref(0);
 const answerHistory = reactive([]);
 const verificationModal = ref(false);
@@ -27,7 +30,11 @@ const submitAnswer = (answer) => {
 
 const closeModal = () => {
   verificationModal.value = false;
-  currentQuestion.value += 1;
+  if (currentQuestion.value < props.questions.length - 1) {
+    currentQuestion.value += 1;
+  } else {
+    emit('testFinished', answerHistory);
+  }
 };
 
 </script>
