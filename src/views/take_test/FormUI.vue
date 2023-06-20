@@ -9,7 +9,14 @@ const props = defineProps({
   questions: Array,
 });
 
-const getAnswerSrc = (answer) => `/src/assets/test_resources/${props.questions[currentQuestion.value].name}/${answer}.png`;
+const getQuestionFormat = () => {
+  const declaredFormat = props.questions[currentQuestion.value].format;
+  return declaredFormat === undefined ? 'png' : declaredFormat;
+};
+
+const getAnswerSrc = (answer) => `/src/assets/test_resources/${props.questions[currentQuestion.value].name}/${answer}.${getQuestionFormat()}`;
+
+const getQuestionSrc = () => `/src/assets/test_resources/${props.questions[currentQuestion.value].name}/question.${getQuestionFormat()}`;
 
 const submitAnswer = (answer) => {
   if (!verificationModal.value) {
@@ -30,7 +37,7 @@ const closeModal = () => {
   <div class="row">
     <div class="column_4" id="test_image_wrapper">
       <img id=test_image
-      :src="`/src/assets/test_resources/${props.questions[currentQuestion].name}/question.png`">
+      :src="getQuestionSrc()">
     </div>
     <div id="answer_space" class="column_6">
       <div id="answers">
@@ -72,6 +79,11 @@ const closeModal = () => {
 
 .answer_button{
   margin: 10px;
+}
+
+.answer_image{
+  width: 100px;
+  height: auto;
 }
 
 #verification_modal{

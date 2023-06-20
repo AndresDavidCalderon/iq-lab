@@ -2,13 +2,14 @@ const questions = [
   {
     name: 'rotation',
     question: 'What replaces the question mark?',
-    explanation: 'The correct answer is C, from left to right the arrow rotates 90 degrees.',
+    explanation: 'From left to right the arrow rotates 90 degrees.',
     dificulty: 1,
+    format: 'svg',
   },
   {
     name: 'sidecount',
     question: 'What replaces the question mark?',
-    explanation: `from left to right, the line alternates between vertical and horisontal,
+    explanation: `From left to right, the line alternates between vertical and horisontal,
      and on each square the sides on the figures add up to 9.`,
     difficulty: 2,
   },
@@ -19,7 +20,7 @@ const questions = [
     difficulty: 2,
   },
   {
-    name: 'translation',
+    name: 'block_rotation',
     question: 'what follows in the sequence?',
     explanation: 'all square move one space clockwise on each frame',
     difficulty: 1,
@@ -27,7 +28,7 @@ const questions = [
   {
     name: 'addition',
     question: 'What follows the sequence?',
-    explanation: 'On each frame, 2 black squares are added and 1 of them is red outlined.',
+    explanation: 'On each frame, 2 black squares are added and the amount of red outlined increases by 1.',
     difficulty: 1,
   },
   {
