@@ -8,7 +8,7 @@ const props = defineProps({
     <h1 class="title">Test completed</h1>
     <p id="result">
         {{
-        props.answers.filter((answer)=>answer=="d").length*100/props.questions.length
+        Math.round(props.answers.filter((answer)=>answer=="d").length*100/props.questions.length)
         }}%
     </p>
 </template>
