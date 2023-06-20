@@ -60,7 +60,7 @@ const closeModal = () => {
   </div>
   <div v-if="verificationModal" id="verification_modal">
     <h1>{{ answerHistory[currentQuestion]==="d" ? "Right":"Wrong"}}</h1>
-    <h2>{{ questions[currentQuestion].explanation }}</h2>
+    <h2 id="modal_explanation">{{ questions[currentQuestion].explanation }}</h2>
     <button @click="closeModal" id="close_verification_modal">Next</button>
   </div>
 </template>
@@ -101,6 +101,11 @@ const closeModal = () => {
   background-color: v-bind("answerHistory[currentQuestion]==='d' ? 'green':'red'");
   color: white;
   padding: 10px;
+}
+
+#modal_explanation{
+  height: 35%;
+  overflow:auto;
 }
 
 #close_verification_modal{

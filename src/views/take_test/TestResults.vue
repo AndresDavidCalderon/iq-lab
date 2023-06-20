@@ -8,10 +8,8 @@ const props = defineProps({
     <h1 class="title">Test completed</h1>
     <p id="result">
         {{
-        props.answers.filter((answer)=>answer=="d").length
-        }}
-        /
-        {{ props.questions.length }}
+        props.answers.filter((answer)=>answer=="d").length*100/props.questions.length
+        }}%
     </p>
 </template>
 
@@ -24,9 +22,9 @@ const props = defineProps({
 #result{
     text-align: center;
     width: 40%;
-    height: 10%;
+    margin-top: 25vh;
     position: absolute;
-    top: 40%;
     left:30%;
+    font-size: 20vmin;
 }
 </style>
