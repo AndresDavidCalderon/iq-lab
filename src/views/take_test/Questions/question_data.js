@@ -100,5 +100,12 @@ const questions = [
     -The center figure alternates between being visible or not.`,
     difficulty: 4,
   },
+  {
+    name: 'stars',
+    question: 'What replaces the question mark?',
+    explanation: '1 side is always added.',
+    difficulty: 2,
+    format: 'svg',
+  },
 ];
 export default questions;
