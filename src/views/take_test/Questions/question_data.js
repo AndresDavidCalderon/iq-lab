@@ -28,7 +28,7 @@ const questions = [
     name: 'reflection',
     question: '1 is to 2 as 3 is to...',
     explanation: '1 is the reflection of 2.',
-    difficulty: 2,
+    difficulty: 1,
   },
   {
     name: 'alternate_dot_circle',

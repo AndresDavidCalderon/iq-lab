@@ -9,7 +9,7 @@ const test = ref([]);
 const lastAnswers = ref([]);
 const startTest = () => {
   // takes questions of the same difficulty as chosen and shuffles it.
-  test.value = questions.sort(() => ((Math.random() > 0.5) ? -1 : 1)).slice(0, 9);
+  test.value = questions.sort(() => ((Math.random() > 0.5) ? -1 : 1)).slice(0, 19);
 };
 </script>
 <template>

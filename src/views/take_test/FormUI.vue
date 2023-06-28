@@ -65,10 +65,12 @@ const toggleExplanation = () => {
     <h1 id="verification_title">
       {{ answerHistory[currentQuestion] === "d" ? "Right" : "Wrong" }}
       </h1>
-    <p id="explanation_in_modal">
+    <p v-if="questions[currentQuestion].explanation!==undefined" id="explanation_in_modal">
     {{questions[currentQuestion].explanation}}
     </p>
-    <button @click="toggleExplanation" id="toggle_explanation">
+    <button v-if="questions[currentQuestion].explanation!==undefined"
+    @click="toggleExplanation"
+    id="toggle_explanation">
     {{showExplanation ? 'Hide explanation':'Show explanation'}}
     </button>
     <button @click="closeModal" id="close_verification_modal">Next</button>
