@@ -43,6 +43,15 @@ const toggleExplanation = () => {
   showExplanation.value = !showExplanation.value;
 };
 
+const getExplanation = () => {
+  const { explanation } = props.questions[currentQuestion.value];
+  if (Array.isArray(explanation)) {
+    const answerIndex = ['a', 'b', 'c', 'd'].indexOf(answerHistory[currentQuestion.value]);
+    return explanation[answerIndex];
+  }
+  return explanation;
+};
+
 </script>
 
 <template>
@@ -66,7 +75,7 @@ const toggleExplanation = () => {
       {{ answerHistory[currentQuestion] === "d" ? "Right" : "Wrong" }}
       </h1>
     <p v-if="questions[currentQuestion].explanation!==undefined" id="explanation_in_modal">
-    {{questions[currentQuestion].explanation}}
+    {{getExplanation()}}
     </p>
     <button v-if="questions[currentQuestion].explanation!==undefined"
     @click="toggleExplanation"
@@ -75,7 +84,7 @@ const toggleExplanation = () => {
     </button>
     <button @click="closeModal" id="close_verification_modal">Next</button>
     <div v-if="showExplanation" id="explanation">
-      {{ questions[currentQuestion].explanation }}
+      {{ getExplanation() }}
       </div>
   </div>
 </template>
@@ -140,7 +149,6 @@ const toggleExplanation = () => {
   height: 50vh;
   width: 100vw;
   background-color: inherit;
-  color: black;
   white-space: pre-line;
   padding: 4px;
   font-size: 5vh;
