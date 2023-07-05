@@ -11,6 +11,7 @@ const props = defineProps({
         Math.round(props.answers.filter((answer)=>answer=="d").length*100/props.questions.length)
         }}%
     </p>
+    <button>Make another test</button>
 </template>
 
 <style scoped src="./text.css"></style>

@@ -34,6 +34,7 @@ const closeModal = () => {
   showExplanation.value = false;
   if (currentQuestion.value < props.questions.length - 1) {
     currentQuestion.value += 1;
+    answerOrder.value = ['a', 'b', 'c', 'd'].sort(() => ((Math.random() > 0.5) ? -1 : 1));
   } else {
     emit('testFinished', answerHistory);
   }
@@ -62,8 +63,7 @@ const getExplanation = () => {
     </div>
     <div id="answer_space" class="column_6">
       <div id="answers">
-        <button @click="submitAnswer(answer)"
-        class="answer_button" v-for="answer in answerOrder" :key="answer">
+        <button @click="submitAnswer(answer)" class="answer_button" v-for="answer in answerOrder" :key="answer">
           <img class="answer_image" :src=getAnswerSrc(answer)>
         </button>
       </div>
@@ -73,19 +73,17 @@ const getExplanation = () => {
   <div v-if="verificationModal" id="verification_modal">
     <h1 id="verification_title">
       {{ answerHistory[currentQuestion] === "d" ? "Right" : "Wrong" }}
-      </h1>
-    <p v-if="questions[currentQuestion].explanation!==undefined" id="explanation_in_modal">
-    {{getExplanation()}}
+    </h1>
+    <p v-if="questions[currentQuestion].explanation !== undefined" id="explanation_in_modal">
+      {{ getExplanation() }}
     </p>
-    <button v-if="questions[currentQuestion].explanation!==undefined"
-    @click="toggleExplanation"
-    id="toggle_explanation">
-    {{showExplanation ? 'Hide explanation':'Show explanation'}}
+    <button v-if="questions[currentQuestion].explanation !== undefined" @click="toggleExplanation" id="toggle_explanation">
+      {{ showExplanation ? 'Hide explanation' : 'Show explanation' }}
     </button>
     <button @click="closeModal" id="close_verification_modal">Next</button>
     <div v-if="showExplanation" id="explanation">
       {{ getExplanation() }}
-      </div>
+    </div>
   </div>
 </template>
 
@@ -105,7 +103,7 @@ const getExplanation = () => {
   object-fit: contain;
   width: 100%;
   padding: 10px;
-  height: v-bind("verificationModal ? '20vh':'40vh'");
+  height: v-bind("verificationModal ? '20vh' : '40vh'");
 }
 
 .answer_button {
@@ -113,12 +111,12 @@ const getExplanation = () => {
 }
 
 .answer_image {
-  width: v-bind("verificationModal ? '60px':'100px'");
+  width: v-bind("verificationModal ? '60px' : '100px'");
   height: auto;
 }
 
-#explanation_in_modal{
-  display:none;
+#explanation_in_modal {
+  display: none;
 }
 
 #verification_modal {
@@ -131,7 +129,7 @@ const getExplanation = () => {
   background-color: v-bind("answerHistory[currentQuestion] === 'd' ? 'green' : 'red'");
   color: white;
   padding: 10px;
-  font-size:3vmin;
+  font-size: 3vmin;
   text-align: center;
 }
 
@@ -156,17 +154,17 @@ const getExplanation = () => {
   text-align: left;
 }
 
-#verification_title{
-  height:30%
-  }
+#verification_title {
+  height: 30%
+}
 
-#close_verification_modal{
+#close_verification_modal {
   height: 20%;
 }
 
-#toggle_explanation{
-  height:20%
-  }
+#toggle_explanation {
+  height: 20%
+}
 
 #answers {
   display: flex;
@@ -183,6 +181,10 @@ const getExplanation = () => {
     height: 70vh;
   }
 
+  .answer_image {
+    width: 100px;
+  }
+
   #answers {
     height: 70vh;
     width: 60vw;
@@ -192,10 +194,10 @@ const getExplanation = () => {
     height: 4vh;
   }
 
-  #verification_modal{
+  #verification_modal {
     display: block;
-    height: 40vh;
-    top:60vh;
+    height: 35vh;
+    top: 65vh;
     text-align: justify;
   }
 
@@ -211,9 +213,9 @@ const getExplanation = () => {
     visibility: hidden;
   }
 
-  #explanation_in_modal{
+  #explanation_in_modal {
     display: block;
-  white-space: pre-line;
+    white-space: pre-line;
   }
 
 }
