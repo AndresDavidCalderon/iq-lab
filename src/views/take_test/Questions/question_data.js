@@ -119,6 +119,18 @@ const questions = [
       'The 5 corner shape and the square will never be next to each other.',
       'This is the correct way to look at the cube with the 5 figure shape on the front.',
     ],
+    difficulty: 2,
+    format: 'svg',
+  },
+  {
+    name: 'block_color',
+    question: 'Which option represents a posible result from folding the following figure into a cube? Take into account possible rotations',
+    explanation: [
+      'pink and dark blue will never be next to each other',
+      'yellow and bright blue will never be next to each other',
+      'green and red will never be next to each other',
+      'this is the correct result.',
+    ],
     difficulty: 1,
     format: 'svg',
   },
