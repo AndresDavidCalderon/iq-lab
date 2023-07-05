@@ -63,7 +63,9 @@ const getExplanation = () => {
     </div>
     <div id="answer_space" class="column_6">
       <div id="answers">
-        <button @click="submitAnswer(answer)" class="answer_button" v-for="answer in answerOrder" :key="answer">
+        <button @click="submitAnswer(answer)"
+        class="answer_button" v-for="answer in answerOrder" :key="answer"
+        >
           <img class="answer_image" :src=getAnswerSrc(answer)>
         </button>
       </div>
@@ -77,7 +79,8 @@ const getExplanation = () => {
     <p v-if="questions[currentQuestion].explanation !== undefined" id="explanation_in_modal">
       {{ getExplanation() }}
     </p>
-    <button v-if="questions[currentQuestion].explanation !== undefined" @click="toggleExplanation" id="toggle_explanation">
+    <button v-if="questions[currentQuestion].explanation !== undefined"
+    @click="toggleExplanation" id="toggle_explanation">
       {{ showExplanation ? 'Hide explanation' : 'Show explanation' }}
     </button>
     <button @click="closeModal" id="close_verification_modal">Next</button>

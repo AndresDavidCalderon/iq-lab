@@ -11,12 +11,18 @@ const startTest = () => {
   // takes questions of the same difficulty as chosen and shuffles it.
   test.value = questions.sort(() => ((Math.random() > 0.5) ? -1 : 1)).slice(0, 19);
 };
+
+const restartTest = () => {
+  lastAnswers.value = [];
+  startTest();
+};
 </script>
 <template>
     <TakeTest v-if="test.length===0" @testStarted="startTest()"/>
     <TestResults v-if="lastAnswers.length>0"
       :questions="questions"
-      :answers="lastAnswers"/>
+      :answers="lastAnswers"
+      @test-again="restartTest"/>
     <FormUI v-if="test.length>0 && lastAnswers.length==0"
       :questions="test"
     @testFinished="(answers)=>lastAnswers=answers"/>
