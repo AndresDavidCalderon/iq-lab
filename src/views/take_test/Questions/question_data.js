@@ -134,5 +134,20 @@ const questions = [
     difficulty: 1,
     format: 'svg',
   },
+  {
+    name: 'dice',
+    question: 'What logically follows this sequence?',
+    explanation: '1 dot moves counterclockwise from corner to corner, while the other moves diagonally.',
+    difficulty: 3,
+    format: 'svg',
+  },
+  {
+    name: 'counter_star',
+    question: 'What logically follows the sequence?',
+    explanation: 'The dot moves counter clockwise from corner to corner.',
+    difficulty: 1,
+    format: 'svg',
+    answerShape: 'single_file',
+  },
 ];
 export default test.length > 0 ? test : questions;

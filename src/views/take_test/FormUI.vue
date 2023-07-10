@@ -18,9 +18,11 @@ const getQuestionFormat = () => {
   return declaredFormat === undefined ? 'png' : declaredFormat;
 };
 
-const getAnswerSrc = (answer) => `/src/assets/test_resources/${props.questions[currentQuestion.value].name}/${answer}.${getQuestionFormat()}`;
+const getQuestionDirectory = () => `/src/assets/test_resources/${props.questions[currentQuestion.value].name}`;
 
-const getQuestionSrc = () => `/src/assets/test_resources/${props.questions[currentQuestion.value].name}/question.${getQuestionFormat()}`;
+const getAnswerSrc = (answer) => `${getQuestionDirectory()}/${answer}.${getQuestionFormat()}`;
+
+const getQuestionSrc = () => `${getQuestionDirectory()}/${props.questions[currentQuestion.value].name}/question.${getQuestionFormat()}`;
 
 const submitAnswer = (answer) => {
   if (!verificationModal.value) {
@@ -53,20 +55,45 @@ const getExplanation = () => {
   return explanation;
 };
 
+const getAnswerShape = () => {
+  const { answerShape } = props.questions[currentQuestion.value];
+  if (answerShape === undefined) {
+    return 'multiple_files';
+  }
+  return answerShape;
+};
+
+const getSVGGroup = async (answer) => {
+  const parser = new DOMParser();
+  const document = parser.parseFromString((await (await fetch(`${getQuestionDirectory()}/drawing.svg`))).text(), 'image/svg+xml');
+  const group = document.querySelector(`[inkscape\\:label=${answer}]`);
+  return group;
+};
+
 </script>
 
 <template>
   <h1 class="title">{{ props.questions[currentQuestion].question }}</h1>
   <div class="row">
     <div class="column_4" id="test_image_wrapper">
-      <img id=test_image :src="getQuestionSrc()">
+      <img v-if="getAnswerShape()==='multiple_files'" id=test_image :src="getQuestionSrc()">
+      <svg v-else>
+        {{ getSVGGroup("q") }}
+      </svg>
     </div>
     <div id="answer_space" class="column_6">
       <div id="answers">
         <button @click="submitAnswer(answer)"
         class="answer_button" v-for="answer in answerOrder" :key="answer"
         >
-          <img class="answer_image" :src=getAnswerSrc(answer)>
+          <img
+          v-if="getAnswerShape()==='multiple_files'"
+          class="answer_image"
+          :src=getAnswerSrc(answer)
+          >
+          <svg v-else>
+            {{ getSVGGroup(answer) }}
+          </svg>
         </button>
       </div>
     </div>
@@ -220,6 +247,5 @@ const getExplanation = () => {
     display: block;
     white-space: pre-line;
   }
-
 }
 </style>
