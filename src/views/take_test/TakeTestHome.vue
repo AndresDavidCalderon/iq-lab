@@ -21,13 +21,13 @@ const difficulty = ref(1);
   height: 20%;
   top: 20%;
   left: 15%;
-  font-size: 6vw;
+  font-size: 7vmin;
 }
 
 @media screen and (min-width:2000px) and (max-height:1080px){
   /* to avoid overflow on ultra wide screens */
   #start_button{
-    font-size: 4vw;
+    font-size: 4vmin;
   }
 }
 
