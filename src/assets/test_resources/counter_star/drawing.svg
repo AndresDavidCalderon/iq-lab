@@ -28,8 +28,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1.0570195"
-     inkscape:cx="185.90007"
-     inkscape:cy="384.09888"
+     inkscape:cx="385.99099"
+     inkscape:cy="340.10725"
      inkscape:current-layer="layer1" />
   <defs
      id="defs2">
@@ -45,7 +45,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g2537-1"
+       id="a"
        transform="translate(-1.3901272,70.142911)"
        inkscape:export-filename="a.svg"
        inkscape:export-xdpi="96"
@@ -84,7 +84,7 @@
          r="3.1097546" />
     </g>
     <g
-       id="g2537-1-9"
+       id="b"
        transform="translate(62.213867,71.273888)"
        inkscape:export-filename="b.svg"
        inkscape:export-xdpi="96"
@@ -123,7 +123,7 @@
          r="3.1097546" />
     </g>
     <g
-       id="g2537-1-9-6"
+       id="c"
        transform="translate(9.297198,124.19057)"
        inkscape:export-filename="c.svg"
        inkscape:export-xdpi="96"
@@ -162,7 +162,7 @@
          r="3.1097546" />
     </g>
     <g
-       id="g2537-1-9-6-8"
+       id="d"
        transform="translate(67.505535,124.19057)"
        inkscape:export-filename="d.svg"
        inkscape:export-xdpi="96"
@@ -202,7 +202,7 @@
          inkscape:label="path2493-0-0-1-2" />
     </g>
     <g
-       id="g10614"
+       id="question"
        inkscape:label="q">
       <g
          id="g2537"
@@ -319,7 +319,7 @@
          style="font-size:96px;white-space:pre;shape-inside:url(#rect9593);display:inline;fill:#000000;fill-opacity:1;stroke:#000000"><tspan
            x="582.42969"
            y="300.58594"
-           id="tspan10808">?</tspan></text>
+           id="tspan552">?</tspan></text>
     </g>
   </g>
 </svg>
