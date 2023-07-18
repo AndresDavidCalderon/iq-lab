@@ -87,6 +87,7 @@ const getExplanation = () => {
   }
   return explanation;
 };
+
 onMounted(() => {
   const questionFormat = getFileShape();
   if (questionFormat === 'single_file') {
@@ -102,7 +103,7 @@ onMounted(() => {
     <div class="column_4" id="test_image_wrapper">
       <img v-if="getFileShape()==='multiple_files'" id=test_image :src="getQuestionSrc()">
       <svg v-else v-html="SVGData.question" id=test_image
-          viewBox="40,0,120,120">
+          viewBox="0,0,200,120">
       </svg>
     </div>
     <div id="answer_space" class="column_6">
