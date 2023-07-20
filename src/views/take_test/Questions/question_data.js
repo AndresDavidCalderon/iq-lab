@@ -149,5 +149,13 @@ const questions = [
     format: 'svg',
     answerShape: 'single_file',
   },
+  {
+    name: 'clock_twelve',
+    question: 'Which of the following options does NOT fit in the pattern?',
+    explanation:"On the example, the hour is always 12."
+    difficulty: 1,
+    format: 'svg',
+    answerShape: 'single_file',
+  },
 ];
 export default test.length > 0 ? test : questions;

@@ -37,10 +37,13 @@ const getSVGGroup = async (groupID) => {
   const xmlString = await (await (await fetch(`${getQuestionDirectory()}/drawing.svg`))).text();
   const document = parser.parseFromString(xmlString, 'image/svg+xml');
   if (document.querySelector('parsererror')) {
-    console.error(`Couldnt read XML correctly, this is the document: ${xmlString}`);
+    throw Error(`Couldnt read XML correctly, this is the document: ${xmlString}`);
   }
   const group = document.querySelector(`#${groupID}`);
-  return `<g>${group.innerHTML}</g>`;
+  if (group === null) {
+    throw Error(`Couldn't find group ID ${groupID}`);
+  }
+  return `<g>${group.outerHTML}</g>`;
 };
 
 const updateSVGData = async () => {
@@ -103,13 +106,13 @@ onMounted(() => {
     <div class="column_4" id="test_image_wrapper">
       <img v-if="getFileShape()==='multiple_files'" id=test_image :src="getQuestionSrc()">
       <svg v-else v-html="SVGData.question" id=test_image
-          viewBox="0,0,200,120">
+          viewBox="0,0,800,240">
       </svg>
     </div>
     <div id="answer_space" class="column_6">
       <div id="answers">
         <button @click="submitAnswer(answer)"
-        class="answer_button" v-for="answer in answerOrder" :key="answer"
+        class="answer_button" v-for="answer in answerOrder" :key="answer" :aria-label="answer"
         >
           <img
           v-if="getFileShape()==='multiple_files'"
@@ -118,7 +121,7 @@ onMounted(() => {
           >
           <svg v-else v-html="SVGData[answer]"
           class="answer_image"
-          viewBox="25,15,40,40"
+          :viewBox="`${200*['a','b','c','d'].indexOf(answer)},280,200,200`"
           width= 100
           >
           </svg>
