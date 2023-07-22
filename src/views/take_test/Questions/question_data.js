@@ -152,10 +152,18 @@ const questions = [
   {
     name: 'clock_twelve',
     question: 'Which of the following options does NOT fit in the pattern?',
-    explanation:"On the example, the hour is always 12."
+    explanation: 'On the example, the hour is always 12.',
     difficulty: 1,
     format: 'svg',
     answerShape: 'single_file',
+  },
+  {
+    name: 'multidirection',
+    question: 'Which option logically follows the sequence?',
+    difficulty: 2,
+    explanation: 'One square moves 1 to the right, the other 1 to the bottom, and the last one 1 space both to the left and to the right',
+    answerShape: 'single_file',
+    format: 'svg',
   },
 ];
 export default test.length > 0 ? test : questions;
