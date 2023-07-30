@@ -91,6 +91,14 @@ const getExplanation = () => {
   return explanation;
 };
 
+const getQuestion = () => {
+  const { question } = props.questions[currentQuestion];
+  if (question !== undefined) {
+    return question;
+  }
+  return 'Which option logically follows this sequence?';
+};
+
 onMounted(() => {
   const questionFormat = getFileShape();
   if (questionFormat === 'single_file') {

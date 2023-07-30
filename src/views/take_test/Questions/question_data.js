@@ -165,5 +165,35 @@ const questions = [
     answerShape: 'single_file',
     format: 'svg',
   },
+  {
+    name: 'basic_double_translation',
+    difficulty: 2,
+    explanation: 'The column moves 1 space to the right, the row moves 1 space to the bottom.',
+    answerShape: 'single_file',
+    format: 'svg',
+  },
+  {
+    name: 'rotation_addition_arrows',
+    difficulty: 3,
+    question: 'Fill the empty space in the sequence',
+    explanation: 'Each time a new arrow is added and they rotate 90º counter clockwise.',
+    answerShape: 'single_file',
+    format: 'svg',
+  },
+  {
+    name: 'diagonal_basic',
+    difficulty: 1,
+    question: "Which of these steps don't fit the sequence?",
+    explanation: 'On each frame, both squares move always diagonally.',
+    answerShape: 'single_file',
+    format: 'svg',
+  },
+  {
+    name: 'star_inside_star',
+    difficulty: 2,
+    explanation: 'On each frame, the outer star gets 1 more spike and the inner 1 loses a spike.',
+    answerShape: 'single_file',
+    format: 'svg',
+  },
 ];
 export default test.length > 0 ? test : questions;
