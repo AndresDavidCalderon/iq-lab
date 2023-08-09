@@ -218,7 +218,7 @@ onMounted(() => {
   background-color: inherit;
   white-space: pre-line;
   padding: 4px;
-  font-size: 5vh;
+  font-size: v-bind("getExplanation().length>20 ? '7min':'4vmin'");
   overflow: auto;
   text-align: left;
 }
