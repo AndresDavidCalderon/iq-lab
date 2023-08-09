@@ -7,30 +7,35 @@ const questions = [
     explanation: 'From left to right the arrow rotates 90 degrees.',
     dificulty: 1,
     format: 'svg',
+    answerShape:"multiple_files",
   },
   {
     name: 'translation',
     question: 'What follows in the sequence?',
     explanation: 'From left to right, the first square moves 2 spaces up, the second 1, the third 3, and the fourth 1.',
     difficulty: 3,
+    answerShape:"multiple_files",
   },
   {
     name: 'block_rotation',
     question: 'what follows in the sequence?',
     explanation: 'All squares move one space clockwise on each frame',
     difficulty: 2,
+    answerShape:"multiple_files",
   },
   {
     name: 'addition',
     question: 'What follows the sequence?',
     explanation: 'On each frame, 2 black squares are added and the amount of red outlined increases by 1.',
     difficulty: 3,
+    answerShape:"multiple_files",
   },
   {
     name: 'reflection',
     question: '1 is to 2 as 3 is to...',
     explanation: '1 is the reflection of 2.',
     difficulty: 1,
+    answerShape:"multiple_files",
   },
   {
     name: 'alternate_dot_circle',
@@ -39,18 +44,21 @@ const questions = [
     - On each frame, the amount of circles increases by 1
     - The horisontal line alternates between being visible or not.`,
     difficulty: 4,
+    answerShape:"multiple_files",
   },
   {
     name: 'alternating_basic',
     question: 'what follows the sequence?',
     explanation: 'On each frame, the blue circle dissapears or reapears, this is called alternating.',
     difficulty: 2,
+    answerShape:"multiple_files",
   },
   {
     name: 'basic_block_orbit',
     question: 'what follows the sequence?',
     explanation: 'On each frame the square moves 1 space clockwise.',
     difficulty: 2,
+    answerShape:"multiple_files",
   },
   {
     name: 'clock',
@@ -58,6 +66,7 @@ const questions = [
     explanation: `-The red line dissapears and reappears on each frame, moving 180°, or half an hour.
     -The line that starts at the right goes 90 degrees or a quarter of an hour  anti-clockwise
     -The remaining line moves 45° clockwise`,
+    answerShape:"multiple_files",
     difficulty: 3,
   },
   {
@@ -65,11 +74,13 @@ const questions = [
     question: 'What follows the sequence?',
     explanation: 'the column moves 1 space right on each frame',
     difficulty: 1,
+    answerShape:"multiple_files",
   },
   {
     name: 'orbit',
     question: 'what follows the sequence?',
     explanation: 'the ball moves 45° clockwise and 1 ring out on each frame.',
+    answerShape:"multiple_files",
   },
   {
     name: 'orbit_color',
@@ -79,6 +90,7 @@ const questions = [
     -The colors move 1 ring in on each frame`,
     difficulty: 4,
     format: 'svg',
+    answerShape:"multiple_files",
   },
   {
     name: 'rotation_compare',
@@ -86,6 +98,7 @@ const questions = [
     explanation: `-The figure from the right ends in the left, and the one on the left ends on the right.
     -Blue figures become red and red figures become blue.`,
     difficulty: 3,
+    answerShape:"multiple_files",
   },
   {
     name: 'shape_change',
@@ -93,6 +106,7 @@ const questions = [
     explanation: `-The figure filled with black alternates between being the inner one and the outer one.
     -The inner figure becomes the outer figure in the next frame`,
     difficulty: 3,
+    answerShape:"multiple_files",
   },
   {
     name: 'shape_roller',
@@ -102,6 +116,7 @@ const questions = [
     -Row 2 moves 1 space right
     -The center figure alternates between being visible or not.`,
     difficulty: 4,
+    answerShape:"multiple_files",
   },
   {
     name: 'stars',
@@ -109,6 +124,7 @@ const questions = [
     explanation: '1 side is always added.',
     difficulty: 2,
     format: 'svg',
+    answerShape:"multiple_files",
   },
   {
     name: '3d_basic',
@@ -121,6 +137,7 @@ const questions = [
     ],
     difficulty: 2,
     format: 'svg',
+    answerShape:"multiple_files",
   },
   {
     name: 'block_color',
@@ -133,6 +150,7 @@ const questions = [
     ],
     difficulty: 1,
     format: 'svg',
+    answerShape:"multiple_files",
   },
   {
     name: 'dice',
@@ -140,6 +158,7 @@ const questions = [
     explanation: '1 dot moves counterclockwise from corner to corner, while the other moves diagonally.',
     difficulty: 3,
     format: 'svg',
+    answerShape:"multiple_files",
   },
   {
     name: 'counter_star',
@@ -183,7 +202,7 @@ const questions = [
   {
     name: 'diagonal_basic',
     difficulty: 1,
-    question: "Which of these steps don't fit the sequence?",
+    question: "Which of these steps do NOT fit the sequence?",
     explanation: 'On each frame, both squares move always diagonally.',
     answerShape: 'single_file',
     format: 'svg',
@@ -195,5 +214,26 @@ const questions = [
     answerShape: 'single_file',
     format: 'svg',
   },
+  {
+    name:"gray_scale",
+    difficulty:3,
+    explanation:"on each frame, the outer shape gets lighter while the inner one gets darker.",
+    answerShape:"single_file",
+    format:"svg"
+  },
+  {
+    name:"acceleration",
+    difficulty:2,
+    explanation:"on each frame, the square is filled from the bottom left corner to the upper right, each time the amount of squares that gets added inscreases by 1",
+    answerShape:"single_file",
+    format:"svg"
+  },
+  {
+    name:"time_acceleration",
+    difficulty:4,
+    explanation:"Each frame, the time that passes gets duplicated",
+    answerShape:"single_file",
+    format:"svg",
+  }
 ];
 export default test.length > 0 ? test : questions;

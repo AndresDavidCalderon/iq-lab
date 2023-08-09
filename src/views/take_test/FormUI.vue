@@ -59,7 +59,7 @@ const updateSVGData = async () => {
 const getFileShape = () => {
   const { answerShape } = props.questions[currentQuestion.value];
   if (answerShape === undefined) {
-    return 'multiple_files';
+    return 'single_file';
   }
   return answerShape;
 };
