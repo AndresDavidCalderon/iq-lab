@@ -170,7 +170,7 @@ const questions = [
   },
   {
     name: 'clock_twelve',
-    question: 'Which of the following options does NOT fit in the pattern?',
+    question: 'Which of the following options does fits in the pattern?',
     explanation: 'On the example, the hour is always 12.',
     difficulty: 1,
     format: 'svg',
@@ -202,7 +202,7 @@ const questions = [
   {
     name: 'diagonal_basic',
     difficulty: 1,
-    question: "Which of these steps do NOT fit the sequence?",
+    question: "Which of the following steps do NOT fit the sequence?",
     explanation: 'On each frame, both squares move always diagonally.',
     answerShape: 'single_file',
     format: 'svg',
@@ -234,6 +234,12 @@ const questions = [
     explanation:"Each frame, the time that passes gets duplicated",
     answerShape:"single_file",
     format:"svg",
+  },
+  {
+    name:"cube_rotation",
+    difficulty:3,
+    question:"Which of the options is a possible replacement for the question mark?",
+    explanation:"On each frame, the cube rotates 90º",
   }
 ];
 export default test.length > 0 ? test : questions;

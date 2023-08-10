@@ -16,7 +16,11 @@ const props = defineProps({
 
 const getQuestionFormat = () => {
   const declaredFormat = props.questions[currentQuestion.value].format;
-  return declaredFormat === undefined ? 'png' : declaredFormat;
+  let implicitFormat="png"
+  if (getFileShape()=="single_file"){
+    implicitFormat="svg"
+  }
+  return declaredFormat === undefined ? implicitFormat : declaredFormat;
 };
 
 const getQuestionDirectory = () => `/src/assets/test_resources/${props.questions[currentQuestion.value].name}`;
@@ -212,13 +216,13 @@ onMounted(() => {
 #explanation {
   position: fixed;
   left: 0px;
-  top: 25vh;
-  height: 50vh;
+  bottom: 25vh;
+  height: fit-content;
   width: 100vw;
   background-color: inherit;
   white-space: pre-line;
   padding: 4px;
-  font-size: 5vh;
+  font-size: 9vmin;
   overflow: auto;
   text-align: left;
 }
