@@ -240,6 +240,11 @@ const questions = [
     difficulty:3,
     question:"Which of the options is a possible replacement for the question mark?",
     explanation:"On each frame, the cube rotates 90º",
+  },
+  {
+    rotation_delay,
+    difficulty:3,
+    explanation:"The line rotates 45º each frame, and the ball moves 1 space each 2 frames"
   }
 ];
 export default test.length > 0 ? test : questions;
