@@ -242,9 +242,14 @@ const questions = [
     explanation:"On each frame, the cube rotates 90º",
   },
   {
-    rotation_delay,
+    name: "rotation_delay",
     difficulty:3,
     explanation:"The line rotates 45º each frame, and the ball moves 1 space each 2 frames"
+  },
+  {
+    name:"negative_acceleration",
+    difficulty:3,
+    explanation:"The line moves 1 forward, then 2 back, then 3 forward, and so on."
   }
 ];
 export default test.length > 0 ? test : questions;
