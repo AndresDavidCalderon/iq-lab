@@ -250,6 +250,12 @@ const questions = [
     name:"negative_acceleration",
     difficulty:3,
     explanation:"The line moves 1 forward, then 2 back, then 3 forward, and so on."
+  },
+  {
+    name:"rotation_middlestep",
+    difficulty:2,
+    question:"Which option best replaces the question mark?",
+    explanation:"Each figure moves corner to corner clockwise, and they interchange between black and white colors."
   }
 ];
 export default test.length > 0 ? test : questions;
