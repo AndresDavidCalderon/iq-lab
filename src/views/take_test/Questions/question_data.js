@@ -256,6 +256,12 @@ const questions = [
     difficulty:2,
     question:"Which option best replaces the question mark?",
     explanation:"Each figure moves corner to corner clockwise, and they interchange between black and white colors."
+  },
+  {
+    name:"star_pattern",
+    difficulty:4,
+    question:"Which of the options follows the same pattern as the next figures?",
+    explanation:"In each square, the figure rotates 90º and turns of the same color of the arrow."
   }
 ];
 export default test.length > 0 ? test : questions;
