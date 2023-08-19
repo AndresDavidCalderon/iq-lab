@@ -170,7 +170,7 @@ const questions = [
   },
   {
     name: 'clock_twelve',
-    question: 'Which of the following options does fits in the pattern?',
+    question: 'Which of the following options fits in the pattern?',
     explanation: 'On the example, the hour is always 12.',
     difficulty: 1,
     format: 'svg',

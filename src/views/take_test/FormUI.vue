@@ -41,7 +41,7 @@ const getSVGGroup = async (groupID) => {
   }
   const group = document.querySelector(`#${groupID}`);
   if (group === null) {
-    throw Error(`Couldn't find group ID ${groupID}`);
+    throw Error(`Couldn't find group ID ${groupID} in question on folder ${props.questions[currentQuestion.value].name}`);
   }
   return `<g>${group.outerHTML}</g>`;
 };
@@ -218,7 +218,7 @@ onMounted(() => {
   background-color: inherit;
   white-space: pre-line;
   padding: 4px;
-  font-size: v-bind("getExplanation().length>20 ? '7min':'4vmin'");
+  font-size: v-bind("verificationModal ? '7min':(getExplanation().length>20 ? '7min':'4vmin')");
   overflow: auto;
   text-align: left;
 }
@@ -247,11 +247,11 @@ onMounted(() => {
 
 @media only screen and (min-width:600px) {
   #test_image_wrapper {
-    height: 70vh;
+    height: 90vh;
   }
 
   .answer_image {
-    width: 100px;
+    width: 200px;
   }
 
   #answers {
