@@ -1,29 +1,46 @@
 <script setup>
 import {
-  defineProps, reactive, ref, defineEmits, onMounted,
+  defineProps, reactive, ref, defineEmits, onMounted, computed,
 } from 'vue';
 
+const props = defineProps({
+  questions: Array,
+});
+
 const emit = defineEmits(['testFinished']);
-const currentQuestion = ref(0);
+const currentQuestionIndex = ref(0);
 const answerHistory = reactive([]);
 const verificationModal = ref(false);
 const showExplanation = ref(false);
 const answerOrder = ref(['a', 'b', 'c', 'd'].sort(() => ((Math.random() > 0.5) ? -1 : 1)));
 const SVGData = ref({});
-const props = defineProps({
-  questions: Array,
-});
+const currentQuestion = computed(() => props.questions[currentQuestionIndex.value]);
 
 const getQuestionFormat = () => {
-  const declaredFormat = props.questions[currentQuestion.value].format;
+  const declaredFormat = props.questions[currentQuestionIndex.value].format;
   return declaredFormat === undefined ? 'png' : declaredFormat;
 };
+const getQuestionDirectory = (questionName) => `/src/assets/test_resources/${questionName}`;
+const getSVGGroupInDOM = (document, groupID, questionName) => {
+  const group = document.querySelector(`#${groupID}`);
+  if (group === null) {
+    throw Error(`Couldn't find group ID ${groupID} in question on folder ${questionName}`);
+  }
+  return `<g>${group.outerHTML}</g>`;
+};
+const getSVGGroup = async (questionName, groupID) => {
+  const parser = new DOMParser();
+  const xmlString = await (await (await fetch(`${getQuestionDirectory(questionName)}/drawing.svg`))).text();
+  const document = parser.parseFromString(xmlString, 'image/svg+xml');
+  if (document.querySelector('parsererror')) {
+    throw Error(`Couldnt read XML correctly, this is the document: ${xmlString}`);
+  }
+  return getSVGGroupInDOM(document, groupID, questionName);
+};
 
-const getQuestionDirectory = () => `/src/assets/test_resources/${props.questions[currentQuestion.value].name}`;
+const getAnswerSrc = (answer) => `${getQuestionDirectory(currentQuestion.value.name)}/${answer}.${getQuestionFormat()}`;
 
-const getAnswerSrc = (answer) => `${getQuestionDirectory()}/${answer}.${getQuestionFormat()}`;
-
-const getQuestionSrc = () => `${getQuestionDirectory()}/question.${getQuestionFormat()}`;
+const getQuestionSrc = () => `${getQuestionDirectory(currentQuestion.value.name)}/question.${getQuestionFormat()}`;
 
 const submitAnswer = (answer) => {
   if (!verificationModal.value) {
@@ -32,32 +49,19 @@ const submitAnswer = (answer) => {
   }
 };
 
-const getSVGGroup = async (groupID) => {
-  const parser = new DOMParser();
-  const xmlString = await (await (await fetch(`${getQuestionDirectory()}/drawing.svg`))).text();
-  const document = parser.parseFromString(xmlString, 'image/svg+xml');
-  if (document.querySelector('parsererror')) {
-    throw Error(`Couldnt read XML correctly, this is the document: ${xmlString}`);
-  }
-  const group = document.querySelector(`#${groupID}`);
-  if (group === null) {
-    throw Error(`Couldn't find group ID ${groupID} in question on folder ${props.questions[currentQuestion.value].name}`);
-  }
-  return `<g>${group.outerHTML}</g>`;
-};
-
 const updateSVGData = async () => {
+  const questionName = props.questions[currentQuestionIndex.value].name;
   SVGData.value = {
-    question: await getSVGGroup('question'),
-    a: await getSVGGroup('a'),
-    b: await getSVGGroup('b'),
-    c: await getSVGGroup('c'),
-    d: await getSVGGroup('d'),
+    question: await getSVGGroup(questionName, 'question'),
+    a: await getSVGGroup(questionName, 'a'),
+    b: await getSVGGroup(questionName, 'b'),
+    c: await getSVGGroup(questionName, 'c'),
+    d: await getSVGGroup(questionName, 'd'),
   };
 };
 
 const getFileShape = () => {
-  const { answerShape } = props.questions[currentQuestion.value];
+  const { answerShape } = props.questions[currentQuestionIndex.value];
   if (answerShape === undefined) {
     return 'single_file';
   }
@@ -67,8 +71,8 @@ const getFileShape = () => {
 const closeModal = () => {
   verificationModal.value = false;
   showExplanation.value = false;
-  if (currentQuestion.value < props.questions.length - 1) {
-    currentQuestion.value += 1;
+  if (currentQuestionIndex.value < props.questions.length - 1) {
+    currentQuestionIndex.value += 1;
     answerOrder.value = ['a', 'b', 'c', 'd'].sort(() => ((Math.random() > 0.5) ? -1 : 1));
     if (getFileShape() === 'single_file') {
       updateSVGData();
@@ -83,16 +87,16 @@ const toggleExplanation = () => {
 };
 
 const getExplanation = () => {
-  const { explanation } = props.questions[currentQuestion.value];
+  const { explanation } = currentQuestion.value;
   if (Array.isArray(explanation)) {
-    const answerIndex = ['a', 'b', 'c', 'd'].indexOf(answerHistory[currentQuestion.value]);
+    const answerIndex = ['a', 'b', 'c', 'd'].indexOf(answerHistory[currentQuestionIndex.value]);
     return explanation[answerIndex];
   }
   return explanation;
 };
 
 const getQuestion = () => {
-  const { question } = props.questions[currentQuestion];
+  const { question } = currentQuestion.value;
   if (question !== undefined) {
     return question;
   }
@@ -109,7 +113,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1 class="title">{{ props.questions[currentQuestion].question }}</h1>
+  <h1 class="title">{{ getQuestion() }}</h1>
   <div class="row">
     <div class="column_4" id="test_image_wrapper">
       <img v-if="getFileShape()==='multiple_files'" id=test_image :src="getQuestionSrc()">
@@ -140,12 +144,12 @@ onMounted(() => {
 
   <div v-if="verificationModal" id="verification_modal">
     <h1 id="verification_title">
-      {{ answerHistory[currentQuestion] === "d" ? "Right" : "Wrong" }}
+      {{ answerHistory[currentQuestionIndex] === "d" ? "Right" : "Wrong" }}
     </h1>
-    <p v-if="questions[currentQuestion].explanation !== undefined" id="explanation_in_modal">
+    <p v-if="questions[currentQuestionIndex].explanation !== undefined" id="explanation_in_modal">
       {{ getExplanation() }}
     </p>
-    <button v-if="questions[currentQuestion].explanation !== undefined"
+    <button v-if="questions[currentQuestionIndex].explanation !== undefined"
     @click="toggleExplanation" id="toggle_explanation">
       {{ showExplanation ? 'Hide explanation' : 'Show explanation' }}
     </button>
@@ -195,7 +199,7 @@ onMounted(() => {
   width: 100vw;
   height: 20vh;
   bottom: 0;
-  background-color: v-bind("answerHistory[currentQuestion] === 'd' ? 'green' : 'red'");
+  background-color: v-bind("answerHistory[currentQuestionIndex] === 'd' ? 'green' : 'red'");
   color: white;
   padding: 10px;
   font-size: 3vmin;
