@@ -14,5 +14,7 @@ jobs:
         with:
           node-version: '18'
           cache: npm
-      - run: npm ci
-      - run: npm run test
+      - name: add dependancies    
+        run: npm ci
+      - name: run tests
+        run: npm run test

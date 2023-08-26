@@ -1,8 +1,10 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { pathToFileURL } from 'url';
 import { SVG, registerWindow } from '@svgdotjs/svg.js';
 import { createSVGWindow } from 'svgdom';
-import questions from '../src/views/take_test/questions/question_data';
+
+const questions = (await import(pathToFileURL('./src/views/take_test/questions/question_data'))).default;
 
 const window = createSVGWindow();
 const { document } = window;
