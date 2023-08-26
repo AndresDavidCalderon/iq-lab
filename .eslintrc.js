@@ -20,5 +20,6 @@ module.exports = {
   rules: {
     'no-console': 0,
     'import/no-extraneous-dependencies': ['error', { devDependencies: true, optionalDependencies: false, peerDependencies: false }],
+    'linebreak-style': 0,
   },
 };
