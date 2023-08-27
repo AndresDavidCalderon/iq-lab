@@ -4,7 +4,7 @@ import { pathToFileURL } from 'url';
 import { SVG, registerWindow } from '@svgdotjs/svg.js';
 import { createSVGWindow } from 'svgdom';
 
-const questions = (await import(pathToFileURL('./src/views/take_test/questions/question_data.js'))).default;
+const questions = (await import(pathToFileURL('./tests/question_data.js'))).default;
 
 const window = createSVGWindow();
 const { document } = window;

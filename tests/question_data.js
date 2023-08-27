@@ -1,5 +1,3 @@
-import testQuestions from './question_test';
-
 const questions = [
   {
     name: 'rotation',
@@ -288,5 +286,12 @@ const questions = [
     question: 'Which of the following options best replaces the question mark?',
     explanation: 'From top to bottom, one blue dot is added, and from left to right, one red dot is added.',
   },
+  {
+    name: 'star_grid',
+    difficulty: 3,
+    question: 'which of the following options best replaces the question mark?',
+    explanation: 'From top to bottom the outer shape gets a new side, and from left to right the inner star gets another side.',
+  },
 ];
-export default testQuestions.length > 0 ? testQuestions : questions;
+
+export default questions;
