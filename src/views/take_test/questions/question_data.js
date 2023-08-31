@@ -4,7 +4,7 @@ if (typeof window === 'undefined') {
 } else {
   testQuestions = (await import('./question_test')).default;
 }
-const quest = [
+const questions = [
 
   {
     name: 'rotation',
@@ -304,12 +304,10 @@ const quest = [
     difficulty: 2,
     explanation: 'The star and polygon make a movement with the shape of a triangle, in the case of the star, the tip is at the top.',
   },
-];
-const questions = [
   {
-    name: 'triangular_translation',
-    difficulty: 2,
-    explanation: 'The star and polygon make a movement with the shape of a triangle, in the case of the star, the tip is at the top.',
+    name: 'follow',
+    difficulty: 3,
+    explanation: 'The star always takes the place the diagonal line leaves.',
   },
 ];
 export default testQuestions.length > 0 ? testQuestions : questions;
