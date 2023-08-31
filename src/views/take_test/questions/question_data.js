@@ -1,7 +1,10 @@
-import path from 'path';
-import URL from 'url';
+let testQuestions;
+if (typeof window === 'undefined') {
+  testQuestions = [];
+} else {
+  testQuestions = (await import('./question_test')).default;
+}
 
-const testQuestions = import(URL.pathToFileURL(path.resolve(__dirname, 'question_test.js')));
 const questions = [
   {
     name: 'rotation',
