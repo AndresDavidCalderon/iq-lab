@@ -1,3 +1,7 @@
+import path from 'path';
+import URL from 'url';
+
+const testQuestions = import(URL.pathToFileURL(path.resolve(__dirname, 'question_test.js')));
 const questions = [
   {
     name: 'rotation',
@@ -292,6 +296,10 @@ const questions = [
     question: 'which of the following options best replaces the question mark?',
     explanation: 'From top to bottom the outer shape gets a new side, and from left to right the inner star gets another side.',
   },
+  {
+    name: 'triangular_translation',
+    difficulty: 2,
+    explanation: 'The star and polygon make a movement with the shape of a triangle, in the case of the star, the tip is at the top.',
+  },
 ];
-
-export default questions;
+export default testQuestions.length > 0 ? testQuestions : questions;
