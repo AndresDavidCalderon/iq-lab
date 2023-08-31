@@ -4,8 +4,8 @@ if (typeof window === 'undefined') {
 } else {
   testQuestions = (await import('./question_test')).default;
 }
+const quest = [
 
-const questions = [
   {
     name: 'rotation',
     question: 'What replaces the question mark?',
@@ -299,6 +299,13 @@ const questions = [
     question: 'which of the following options best replaces the question mark?',
     explanation: 'From top to bottom the outer shape gets a new side, and from left to right the inner star gets another side.',
   },
+  {
+    name: 'triangular_translation',
+    difficulty: 2,
+    explanation: 'The star and polygon make a movement with the shape of a triangle, in the case of the star, the tip is at the top.',
+  },
+];
+const questions = [
   {
     name: 'triangular_translation',
     difficulty: 2,
