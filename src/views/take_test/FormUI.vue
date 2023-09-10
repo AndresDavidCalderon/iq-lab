@@ -100,6 +100,14 @@ const getQuestion = () => {
   if (question !== undefined) {
     return question;
   }
+  if (question.questionType !== undefined) {
+    switch (question.questionType) {
+      case 'replace':
+        return 'Which option is best suited to replace the question mark?';
+      default:
+        throw Error('Unknown question type');
+    }
+  }
   return 'Which option logically follows this sequence?';
 };
 
