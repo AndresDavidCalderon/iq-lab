@@ -309,5 +309,11 @@ const questions = [
     difficulty: 3,
     explanation: 'The star always takes the place the diagonal line leaves.',
   },
+  {
+    name: 'color_rotation',
+    difficulty: 2,
+    explanation: 'The colors change corners counter clockwise',
+    attributes: ['color', 'rotation'],
+  },
 ];
 export default testQuestions.length > 0 ? testQuestions : questions;
