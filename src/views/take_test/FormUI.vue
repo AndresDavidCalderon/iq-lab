@@ -96,12 +96,12 @@ const getExplanation = () => {
 };
 
 const getQuestion = () => {
-  const { question } = currentQuestion.value;
-  if (question !== undefined) {
-    return question;
+  const { questionText } = currentQuestion.value;
+  if (questionText !== undefined) {
+    return questionText;
   }
-  if (question.questionType !== undefined) {
-    switch (question.questionType) {
+  if (currentQuestion.value.questionType !== undefined) {
+    switch (currentQuestion.value.questionType) {
       case 'replace':
         return 'Which option is best suited to replace the question mark?';
       default:
@@ -123,13 +123,13 @@ onMounted(() => {
 <template>
   <h1 class="title">{{ getQuestion() }}</h1>
   <div class="row">
-    <div class="column_4" id="test_image_wrapper">
+    <div id="test_image_wrapper">
       <img v-if="getFileShape()==='multiple_files'" id=test_image :src="getQuestionSrc()">
       <svg v-else v-html="SVGData.question" id=test_image
           viewBox="0,0,800,240">
       </svg>
     </div>
-    <div id="answer_space" class="column_6">
+    <div id="answer_space">
       <div id="answers">
         <button @click="submitAnswer(answer)"
         class="answer_button" v-for="answer in answerOrder" :key="answer" :aria-label="answer"
@@ -230,7 +230,7 @@ onMounted(() => {
   background-color: inherit;
   white-space: pre-line;
   padding: 4px;
-  font-size: v-bind("verificationModal ? '7min':(getExplanation().length>20 ? '7min':'4vmin')");
+  font-size: v-bind("verificationModal ? '7vmin':(getExplanation().length>20 ? '7vmin':'4vmin')");
   overflow: auto;
   text-align: left;
 }
@@ -257,22 +257,13 @@ onMounted(() => {
   width: 100vw;
 }
 
-@media only screen and (min-width:600px) {
-  #test_image_wrapper {
-    height: 90vh;
-  }
-
-  .answer_image {
-    width: 200px;
-  }
-
-  #answers {
-    height: 70vh;
-    width: 60vw;
-  }
-
+@media (min-aspect-ratio:16/9) {
   .title {
     height: 4vh;
+  }
+
+  .answer_image{
+    width: 150px;
   }
 
   #verification_modal {
