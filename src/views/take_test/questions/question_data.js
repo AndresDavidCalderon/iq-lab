@@ -320,6 +320,11 @@ const questions = [
     difficulty: 2,
     explanation: 'the shapes follow each other, so the orange one takes the space the pink one left, and the blue takes the space of the green, and so on.',
   },
-
+  {
+    name: 'triangular_rotation',
+    difficulty: 1,
+    explanation: 'the colors change places counter clockwise.',
+    attributes: ['color', 'rotation'],
+  },
 ];
 export default testQuestions.length > 0 ? testQuestions : questions;
