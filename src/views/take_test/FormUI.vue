@@ -96,7 +96,7 @@ const getExplanation = () => {
 };
 
 const getQuestion = () => {
-  const { questionText } = currentQuestion.value;
+  const questionText = currentQuestion.value.question;
   if (questionText !== undefined) {
     return questionText;
   }
@@ -170,6 +170,9 @@ onMounted(() => {
 
 <style src="./responsive.css"></style>
 <style scoped>
+*{
+  font-size: 3vmin;
+}
 .title {
   text-align: center;
 }
@@ -236,7 +239,8 @@ onMounted(() => {
 }
 
 #verification_title {
-  height: 30%
+  height: 30%;
+  font-size: 5vmin;
 }
 
 #close_verification_modal {
