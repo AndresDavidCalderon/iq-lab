@@ -315,5 +315,11 @@ const questions = [
     explanation: 'The colors change corners counter clockwise',
     attributes: ['color', 'rotation'],
   },
+  {
+    name: 'follow_trail',
+    difficulty: 2,
+    explanation: 'the shapes follow each other, so the orange one takes the space the pink one left, and the blue takes the space of the green, and so on.',
+  },
+
 ];
 export default testQuestions.length > 0 ? testQuestions : questions;
