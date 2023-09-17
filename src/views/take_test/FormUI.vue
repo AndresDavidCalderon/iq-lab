@@ -89,8 +89,11 @@ const toggleExplanation = () => {
 const getExplanation = () => {
   const { explanation } = currentQuestion.value;
   if (Array.isArray(explanation)) {
-    const answerIndex = ['a', 'b', 'c', 'd'].indexOf(answerHistory[currentQuestionIndex.value]);
-    return explanation[answerIndex];
+    if (answerHistory.length > currentQuestionIndex.value) {
+      const answerIndex = ['a', 'b', 'c', 'd'].indexOf(answerHistory[currentQuestionIndex.value]);
+      return explanation[answerIndex];
+    }
+    return 'Cant explain yet, the question hasnt been answered';
   }
   return explanation;
 };
@@ -232,7 +235,7 @@ onMounted(() => {
   width: 100vw;
   background-color: inherit;
   white-space: pre-line;
-  padding: 4px;
+  padding: 40px;
   font-size: v-bind("verificationModal ? '7vmin':(getExplanation().length>20 ? '7vmin':'4vmin')");
   overflow: auto;
   text-align: left;

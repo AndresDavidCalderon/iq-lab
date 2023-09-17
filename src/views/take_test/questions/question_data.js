@@ -326,5 +326,10 @@ const questions = [
     explanation: 'the colors change places counter clockwise.',
     attributes: ['color', 'rotation'],
   },
+  {
+    name: 'transformation',
+    difficulty: 3,
+    explanation: 'The shape is scaled down horizontally and then rotated 45º',
+  },
 ];
 export default testQuestions.length > 0 ? testQuestions : questions;
