@@ -331,5 +331,10 @@ const questions = [
     difficulty: 3,
     explanation: 'The shape is scaled down horizontally and then rotated 45º',
   },
+  {
+    name: 'boolean_operations',
+    difficulty: 3,
+    explanation: 'The intersection between the 2 figures is removed',
+  },
 ];
 export default testQuestions.length > 0 ? testQuestions : questions;
