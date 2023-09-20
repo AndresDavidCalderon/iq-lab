@@ -336,5 +336,11 @@ const questions = [
     difficulty: 3,
     explanation: 'The intersection between the 2 figures is removed',
   },
+  {
+    name: 'intersection',
+    difficulty: 4,
+    explanation: 'Only the intersection between the 2 figures is preserved.',
+  },
 ];
+
 export default testQuestions.length > 0 ? testQuestions : questions;

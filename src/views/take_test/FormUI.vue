@@ -160,11 +160,11 @@ onMounted(() => {
     <p v-if="questions[currentQuestionIndex].explanation !== undefined" id="explanation_in_modal">
       {{ getExplanation() }}
     </p>
+    <button @click="closeModal" id="close_verification_modal">Next</button>
     <button v-if="questions[currentQuestionIndex].explanation !== undefined"
     @click="toggleExplanation" id="toggle_explanation">
       {{ showExplanation ? 'Hide explanation' : 'Show explanation' }}
     </button>
-    <button @click="closeModal" id="close_verification_modal">Next</button>
     <div v-if="showExplanation" id="explanation">
       {{ getExplanation() }}
     </div>
@@ -174,10 +174,11 @@ onMounted(() => {
 <style src="./responsive.css"></style>
 <style scoped>
 *{
-  font-size: 3vmin;
+  font-size: 20px;
 }
 .title {
   text-align: center;
+  font-size: 4vmax;
 }
 
 #test_image_wrapper {
@@ -210,9 +211,9 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   position: fixed;
+  bottom: 0px;
   width: 100vw;
   height: 20vh;
-  bottom: 0;
   background-color: v-bind("answerHistory[currentQuestionIndex] === 'd' ? 'green' : 'red'");
   color: white;
   padding: 10px;
@@ -238,7 +239,7 @@ onMounted(() => {
   padding: 40px;
   font-size: v-bind("verificationModal ? '7vmin':(getExplanation().length>20 ? '7vmin':'4vmin')");
   overflow: auto;
-  text-align: left;
+  text-align: center;
 }
 
 #verification_title {
@@ -247,11 +248,17 @@ onMounted(() => {
 }
 
 #close_verification_modal {
+  position: relative;
   height: 20%;
+  width: 90%;
+  left: 5%;
 }
 
 #toggle_explanation {
-  height: 20%
+  position: relative;
+  left:10%;
+  height: 20%;
+  width:80%;
 }
 
 #answers {
@@ -264,14 +271,7 @@ onMounted(() => {
   width: 100vw;
 }
 
-@media (min-aspect-ratio:16/9) {
-  .title {
-    height: 4vh;
-  }
-
-  .answer_image{
-    width: 150px;
-  }
+@media (min-aspect-ratio:10/9){
 
   #verification_modal {
     display: block;
@@ -282,19 +282,30 @@ onMounted(() => {
 
   #close_verification_modal {
     position: absolute;
-    width: 80px;
+    width: 100px;
     height: 50px;
     bottom: 30px;
-    right: 30px;
+    right: 10px;
   }
 
   #toggle_explanation {
-    visibility: hidden;
+    display: none;
   }
 
   #explanation_in_modal {
     display: block;
     white-space: pre-line;
   }
+}
+
+@media (min-aspect-ratio:16/9) {
+  .title {
+    font-size: 5vh;
+  }
+
+  .answer_image{
+    width: 150px;
+  }
+
 }
 </style>
