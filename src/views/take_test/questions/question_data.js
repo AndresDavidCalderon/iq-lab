@@ -341,6 +341,12 @@ const questions = [
     difficulty: 4,
     explanation: 'Only the intersection between the 2 figures is preserved.',
   },
+  {
+    name: 'color_filter',
+    question: 'Which of the answers follows the same logic?',
+    difficulty: 2,
+    explanation: 'Only the squares that are the same color as the arrow are kept.',
+  },
 ];
 
 export default testQuestions.length > 0 ? testQuestions : questions;
