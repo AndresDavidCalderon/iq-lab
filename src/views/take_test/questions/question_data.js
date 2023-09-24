@@ -347,6 +347,11 @@ const questions = [
     difficulty: 2,
     explanation: 'Only the squares that are the same color as the arrow are kept.',
   },
+  {
+    name: 'double_flip',
+    difficulty: 1,
+    explanation: 'The figure is flipped both horizontally and vertically',
+  },
 ];
 
 export default testQuestions.length > 0 ? testQuestions : questions;
