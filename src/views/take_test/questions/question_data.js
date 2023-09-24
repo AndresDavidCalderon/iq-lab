@@ -352,6 +352,12 @@ const questions = [
     difficulty: 1,
     explanation: 'The figure is flipped both horizontally and vertically',
   },
+  {
+    name: 'direction',
+    difficulty: 1,
+    explanation: 'The blue side indicates where the block is going to move.',
+    explanation_colorblind: 'The side with the waves indicates where the block is going to move',
+  },
 ];
 
 export default testQuestions.length > 0 ? testQuestions : questions;
