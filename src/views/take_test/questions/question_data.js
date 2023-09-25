@@ -355,8 +355,12 @@ const questions = [
   {
     name: 'direction',
     difficulty: 1,
-    explanation: 'The blue side indicates where the block is going to move.',
-    explanation_colorblind: 'The side with the waves indicates where the block is going to move',
+    explanation: 'The white side indicates where the block is going to move.',
+  },
+  {
+    name: 'follow_idrection',
+    difficulty: 2,
+    explanation: 'The cube moves on the direction marked by the white corner, and the star uses the place it leaves behind.',
   },
 ];
 
