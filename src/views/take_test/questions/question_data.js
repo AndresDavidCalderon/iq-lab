@@ -358,7 +358,7 @@ const questions = [
     explanation: 'The white side indicates where the block is going to move.',
   },
   {
-    name: 'follow_idrection',
+    name: 'follow_direction',
     difficulty: 2,
     explanation: 'The cube moves on the direction marked by the white corner, and the star uses the place it leaves behind.',
   },
