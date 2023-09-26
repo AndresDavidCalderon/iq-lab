@@ -362,6 +362,12 @@ const questions = [
     difficulty: 2,
     explanation: 'The cube moves on the direction marked by the white corner, and the star uses the place it leaves behind.',
   },
+  {
+    name: 'star_direction',
+    difficulty: 2,
+    explanation: 'The polygon moves on the direction marked by the green side of the star',
+    explanation_colorblind: 'The polygon moves on the direction marked by the side of the star with the waves',
+  },
 ];
 
 export default testQuestions.length > 0 ? testQuestions : questions;
