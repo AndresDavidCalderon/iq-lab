@@ -368,6 +368,12 @@ const questions = [
     explanation: 'The polygon moves on the direction marked by the green side of the star',
     explanation_colorblind: 'The polygon moves on the direction marked by the side of the star with the waves',
   },
+  {
+    name: 'corner_indicator',
+    difficulty: 2,
+    questionType: 'follow_logic',
+    explanation: 'The black side of the square indicates the corner in which the star is',
+  },
 ];
 
 export default testQuestions.length > 0 ? testQuestions : questions;

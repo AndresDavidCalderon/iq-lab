@@ -107,6 +107,9 @@ const getQuestion = () => {
     switch (currentQuestion.value.questionType) {
       case 'replace':
         return 'Which option is best suited to replace the question mark?';
+      case 'follow_logic':
+        return 'Which of the options follows the same logic?';
+
       default:
         throw Error('Unknown question type');
     }
