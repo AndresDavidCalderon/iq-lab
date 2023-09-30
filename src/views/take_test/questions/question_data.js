@@ -374,6 +374,11 @@ const questions = [
     questionType: 'follow_logic',
     explanation: 'The black side of the square indicates the corner in which the star is',
   },
+  {
+    name: 'addition_alternation',
+    difficulty: 3,
+    explanation: 'The stars alternate between black and white, and each frame a new star gets added',
+  },
 ];
 
 export default testQuestions.length > 0 ? testQuestions : questions;
