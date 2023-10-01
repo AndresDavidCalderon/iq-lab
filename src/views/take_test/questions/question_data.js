@@ -379,6 +379,11 @@ const questions = [
     difficulty: 3,
     explanation: 'The stars alternate between black and white, and each frame a new star gets added',
   },
+  {
+    name: 'addition_alternation_total',
+    difficulty: 4,
+    explanation: 'The polygons alternate between being black and white, and each frame a new one is added.',
+  },
 ];
 
 export default testQuestions.length > 0 ? testQuestions : questions;
