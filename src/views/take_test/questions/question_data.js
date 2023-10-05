@@ -384,6 +384,11 @@ const questions = [
     difficulty: 4,
     explanation: 'The polygons alternate between being black and white, and each frame a new one is added.',
   },
+  {
+    name: 'side_indicator',
+    difficulty: 2,
+    explanation: 'The amount of sides of the outer shape is indicated by the amount of shapes on the left, and the shape inside is the shape on the left.',
+  },
 ];
 
 export default testQuestions.length > 0 ? testQuestions : questions;

@@ -24,10 +24,10 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="558.5"
-     inkscape:cy="272.5"
-     inkscape:current-layer="layer1"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="482.60038"
+     inkscape:cy="212.48559"
+     inkscape:current-layer="question"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="1912"
@@ -800,7 +800,7 @@
       <path
          sodipodi:type="star"
          style="fill:#ff5d5d;stroke:#000000;stroke-width:0.6;stroke-opacity:0.843787"
-         id="path1-8"
+         id="path1-1"
          inkscape:flatsided="false"
          sodipodi:sides="5"
          sodipodi:cx="129.40054"
@@ -812,9 +812,9 @@
          inkscape:rounded="0"
          inkscape:randomized="0"
          d="m 219.65454,167.79601 -46.63814,40.92604 7.27402,61.62099 -53.33496,-31.70867 -56.357238,25.95994 13.675323,-60.52307 -42.104715,-45.57687 61.78677,-5.69665 30.3351,-54.127987 24.511,57.002347 z"
-         inkscape:transform-center-x="-5.13987"
-         inkscape:transform-center-y="6.4499156"
-         transform="matrix(0.46504385,-0.46953535,0.60564267,0.59984919,141.67462,70.651151)" />
+         inkscape:transform-center-x="-1.2468276"
+         inkscape:transform-center-y="-1.9127044"
+         transform="matrix(0.19663429,-0.17441913,0.56700718,0.63922493,172.43,30.918976)" />
       <rect
          style="fill:#800000;stroke:#000000;stroke-width:0.828573;stroke-opacity:0.843787"
          id="rect1"
@@ -829,7 +829,7 @@
          transform="matrix(8.2777565,0,0,8.2777565,-4080.1262,-2670.2087)"><tspan
            x="572.75586"
            y="342.34508"
-           id="tspan1">?</tspan></text>
+           id="tspan6">?</tspan></text>
     </g>
     <g
        id="c"
@@ -883,7 +883,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,194.93522,128.81533)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan2">A</tspan></text>
+         id="tspan7">A</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9"
@@ -891,7 +891,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,376.60114,119.28881)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan3">B</tspan></text>
+         id="tspan8">B</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9-0"
@@ -899,7 +899,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,563.8414,120.85032)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan4">C</tspan></text>
+         id="tspan9">C</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9-0-8"
@@ -907,6 +907,6 @@
        transform="matrix(0.42714826,0,0,0.42714826,748.91481,121.55502)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan5">D</tspan></text>
+         id="tspan10">D</tspan></text>
   </g>
 </svg>
