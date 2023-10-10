@@ -389,6 +389,11 @@ const questions = [
     difficulty: 2,
     explanation: 'The amount of sides of the outer shape is indicated by the amount of shapes on the left, and the shape inside is the shape on the left.',
   },
+  {
+    name: 'total_sum',
+    difficulty: 2,
+    explanation: 'The total amount of points increases by 1 every frame',
+  },
 ];
 
 export default testQuestions.length > 0 ? testQuestions : questions;

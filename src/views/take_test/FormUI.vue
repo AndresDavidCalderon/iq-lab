@@ -202,7 +202,7 @@ onMounted(() => {
 }
 
 .answer_image {
-  width: v-bind("verificationModal ? '60px' : '100px'");
+  width: v-bind("verificationModal ? '100px' : '150px'");
   height: auto;
 }
 
@@ -274,6 +274,14 @@ onMounted(() => {
   width: 100vw;
 }
 
+/*Screen size overrides*/
+
+@media(min-aspect-ratio:12/16){
+.answer_image {
+  width: v-bind("verificationModal ? '8vw' : '15vw'");
+}
+}
+
 @media (min-aspect-ratio:10/9){
 
   #verification_modal {
@@ -298,17 +306,8 @@ onMounted(() => {
   #explanation_in_modal {
     display: block;
     white-space: pre-line;
+    font-size: 2vmax;
   }
 }
 
-@media (min-aspect-ratio:16/9) {
-  .title {
-    font-size: 5vh;
-  }
-
-  .answer_image{
-    width: 150px;
-  }
-
-}
 </style>
