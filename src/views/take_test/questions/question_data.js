@@ -394,6 +394,13 @@ const questions = [
     difficulty: 2,
     explanation: 'The total amount of points increases by 1 every frame',
   },
+  {
+    question: 'Which of the options is NOT suitable to continue the sequence?',
+    name: 'dice_replace',
+    difficulty: 2,
+    explanation: 'On each frame, a face is replaces by a star, of which the amount of sides is the amount of dots it replaces.',
+
+  },
 ];
 
 export default testQuestions.length > 0 ? testQuestions : questions;
