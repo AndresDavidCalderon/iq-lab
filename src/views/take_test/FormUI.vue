@@ -284,6 +284,10 @@ onMounted(() => {
 
 @media (min-aspect-ratio:10/9){
 
+  #verification_title{
+    margin: 4px;
+  }
+
   #verification_modal {
     display: block;
     height: 35vh;
@@ -306,7 +310,7 @@ onMounted(() => {
   #explanation_in_modal {
     display: block;
     white-space: pre-line;
-    font-size: 2vmax;
+    font-size: v-bind("getExplanation().includes('\n') ? '1vmax':'2vmax'");
   }
 }
 

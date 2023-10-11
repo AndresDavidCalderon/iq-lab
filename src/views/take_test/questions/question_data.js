@@ -401,6 +401,11 @@ const questions = [
     explanation: 'On each frame, a face is replaces by a star, of which the amount of sides is the amount of dots it replaces.',
 
   },
+  {
+    name: 'pattern_variety',
+    difficulty: 3,
+    explanation: 'On each frame, the following happens: \n The circle moves diagonally \n The star moves clockwise \n The hexagon moves counter clockwise \n the spiral goes to the left',
+  },
 ];
 
 export default testQuestions.length > 0 ? testQuestions : questions;

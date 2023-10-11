@@ -11,7 +11,7 @@ const emit = defineEmits(['testAgain']);
     <h1 class="title">Test completed</h1>
     <p id="result">
         {{
-        Math.round(props.answers.filter((answer)=>answer=="d").length*100/props.questions.length)
+        Math.round((props.answers.filter((answer)=>answer==="d").length/props.answers.length)*100)
         }}%
     </p>
     <button @click="emit('testAgain')" id="test_again">Do another test</button>
