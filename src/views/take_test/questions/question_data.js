@@ -406,6 +406,16 @@ const questions = [
     difficulty: 3,
     explanation: 'On each frame, the following happens: \n The circle moves diagonally \n The star moves clockwise \n The hexagon moves counter clockwise \n the spiral goes to the left',
   },
+  {
+    name: 'general_direction',
+    difficulty: 2,
+    explanation: "On each frame, the past figure's direction is inverted",
+  },
+  {
+    name: 'chaos_orbit',
+    difficulty: 4,
+    explanation: 'On each frame, a dot moves to the right, a dot moves down, a dot moves 45º counter-clockwise, and another one 90º clockwise',
+  },
 ];
 
 export default testQuestions.length > 0 ? testQuestions : questions;
