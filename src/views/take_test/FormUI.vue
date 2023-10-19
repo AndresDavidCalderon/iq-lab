@@ -88,6 +88,9 @@ const toggleExplanation = () => {
 
 const getExplanation = () => {
   const { explanation } = currentQuestion.value;
+  if (explanation === undefined) {
+    return '';
+  }
   if (Array.isArray(explanation)) {
     if (answerHistory.length > currentQuestionIndex.value) {
       const answerIndex = ['a', 'b', 'c', 'd'].indexOf(answerHistory[currentQuestionIndex.value]);
@@ -109,7 +112,8 @@ const getQuestion = () => {
         return 'Which option is best suited to replace the question mark?';
       case 'follow_logic':
         return 'Which of the options follows the same logic?';
-
+      case 'image_piece':
+        return 'The next image had a piece taken out, which option would replace it?';
       default:
         throw Error('Unknown question type');
     }
@@ -160,11 +164,11 @@ onMounted(() => {
     <h1 id="verification_title">
       {{ answerHistory[currentQuestionIndex] === "d" ? "Right" : "Wrong" }}
     </h1>
-    <p v-if="questions[currentQuestionIndex].explanation !== undefined" id="explanation_in_modal">
+    <p v-if="getExplanation()!==''" id="explanation_in_modal">
       {{ getExplanation() }}
     </p>
     <button @click="closeModal" id="close_verification_modal">Next</button>
-    <button v-if="questions[currentQuestionIndex].explanation !== undefined"
+    <button v-if="getExplanation()!==''"
     @click="toggleExplanation" id="toggle_explanation">
       {{ showExplanation ? 'Hide explanation' : 'Show explanation' }}
     </button>

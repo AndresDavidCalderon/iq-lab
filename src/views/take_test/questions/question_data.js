@@ -416,6 +416,22 @@ const questions = [
     difficulty: 4,
     explanation: 'On each frame, a dot moves to the right, a dot moves down, a dot moves 45º counter-clockwise, and another one 90º clockwise',
   },
+  {
+    name: 'image_replace',
+    questionType: 'image_piece',
+    difficulty: 3,
+  },
+  {
+    name: 'image_round_replace',
+    questionType: 'image_piece',
+    difficulty: 2,
+  },
+  {
+    name: 'movement_rotation',
+    difficulty: 2,
+    explanation: 'The 6 pointed star moves one space down and one space left and rotates 90º counter-clockwise, while the 5 pointed star moves one space up and one space right and then getting mirrored',
+
+  },
 ];
 
 export default testQuestions.length > 0 ? testQuestions : questions;
