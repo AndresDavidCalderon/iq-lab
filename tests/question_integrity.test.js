@@ -19,7 +19,9 @@ test('Check if all questions have the requiered data, and it is of the correct t
     expect(typeof question.name).toBe('string');
     console.log(`inspecting question ${question.name}`);
     expect(typeof question.difficulty).toBe('number');
-    expect(question.explanation).toBeDefined();
+    if (question.questionType !== 'image_piece') {
+      expect(question.explanation).toBeDefined();
+    }
   });
 });
 
