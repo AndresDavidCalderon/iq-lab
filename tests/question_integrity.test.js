@@ -35,6 +35,9 @@ test('Check if all SVG questions have the necesary SVG groups', () => {
       const groups = ['a', 'b', 'c', 'd', 'question'];
       groups.forEach((groupName) => {
         const group = elements.findOne(`#${groupName}`);
+        if (group === null) {
+          console.log(`Group not found on question ${question.name}`);
+        }
         expect(group).not.toBe(null);
       });
     }
