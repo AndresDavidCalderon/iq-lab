@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="548.5"
-     inkscape:cy="193.5"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="490.37855"
+     inkscape:cy="182.08"
      inkscape:current-layer="layer1"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
@@ -820,7 +820,7 @@
       </g>
     </g>
     <g
-       id="g3-0"
+       id="d"
        transform="matrix(2.4306242,0,0,2.4306242,351.12572,67.451248)"
        clip-path="url(#clipPath3)">
       <rect
@@ -982,7 +982,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,194.93522,128.81533)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan1">A</tspan></text>
+         id="tspan5">A</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9"
@@ -990,7 +990,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,376.60114,119.28881)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan2">B</tspan></text>
+         id="tspan6">B</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9-0"
@@ -998,7 +998,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,563.8414,120.85032)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan3">C</tspan></text>
+         id="tspan7">C</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9-0-8"
@@ -1006,6 +1006,6 @@
        transform="matrix(0.42714826,0,0,0.42714826,748.91481,121.55502)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan4">D</tspan></text>
+         id="tspan8">D</tspan></text>
   </g>
 </svg>
