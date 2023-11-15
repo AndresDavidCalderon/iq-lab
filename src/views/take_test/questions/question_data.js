@@ -432,6 +432,11 @@ const questions = [
     explanation: 'The 6 pointed star moves one space down and one space left and rotates 90º counter-clockwise, while the 5 pointed star moves one space up and one space right and then getting mirrored',
 
   },
-];
+  {
+    name: 'asimetrical_substraction',
+    difficulty: 2,
+    explanation: 'In each frame, 2 green squares and 1 black square is erased.',
 
+  },
+];
 export default testQuestions.length > 0 ? testQuestions : questions;

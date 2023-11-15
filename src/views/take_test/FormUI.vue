@@ -1,6 +1,6 @@
 <script setup>
 import {
-  defineProps, reactive, ref, defineEmits, onMounted, computed,
+  reactive, ref, defineEmits, onMounted, computed,
 } from 'vue';
 
 const props = defineProps({
