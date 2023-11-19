@@ -25,8 +25,8 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="1.4142136"
-     inkscape:cx="424.26407"
-     inkscape:cy="377.94857"
+     inkscape:cx="424.26406"
+     inkscape:cy="321.38002"
      inkscape:current-layer="layer1"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
@@ -1157,7 +1157,7 @@
          id="path94" />
     </g>
     <g
-       id="g163">
+       id="d">
       <rect
          style="fill:none;stroke:#000000;stroke-width:1.61552"
          id="rect5436-2-6-6"
@@ -1230,7 +1230,7 @@
          id="path111" />
     </g>
     <g
-       id="d">
+       id="c">
       <rect
          style="fill:none;stroke:#000000;stroke-width:1.61552"
          id="rect5436-2-6"
@@ -1452,7 +1452,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,194.93522,128.81533)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan1">A</tspan></text>
+         id="tspan5">A</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9"
@@ -1460,7 +1460,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,376.60114,119.28881)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan2">B</tspan></text>
+         id="tspan6">B</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9-0"
@@ -1468,7 +1468,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,563.8414,120.85032)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan3">C</tspan></text>
+         id="tspan7">C</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9-0-8"
@@ -1476,6 +1476,6 @@
        transform="matrix(0.42714826,0,0,0.42714826,748.91481,121.55502)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan4">D</tspan></text>
+         id="tspan8">D</tspan></text>
   </g>
 </svg>

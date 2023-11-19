@@ -438,5 +438,10 @@ const questions = [
     explanation: 'In each frame, 2 green squares and 1 black square is erased.',
 
   },
+  {
+    name: 'substraction_rotation',
+    difficulty: 3,
+    explanation: 'In each frame, green and black squares take turns to be deleted, and the X changes corners clockwise.',
+  },
 ];
 export default testQuestions.length > 0 ? testQuestions : questions;
