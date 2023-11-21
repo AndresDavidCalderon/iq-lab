@@ -443,5 +443,10 @@ const questions = [
     difficulty: 3,
     explanation: 'In each frame, green and black squares take turns to be deleted, and the X changes corners clockwise.',
   },
+  {
+    name: 'uneven_sides',
+    difficulty: 3,
+    explanation: 'On each frame, the length of the figure increases.',
+  },
 ];
 export default testQuestions.length > 0 ? testQuestions : questions;
