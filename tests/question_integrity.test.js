@@ -16,15 +16,15 @@ test('Check if all questions have the requiered data, and it is of the correct t
   expect(Array.isArray(questions)).toBe(true);
   questions.forEach((question) => {
     expect(typeof question).toBe('object');
+
+    expect(typeof question.difficulty).toBe('number');
+
+    if (question.questionType !== 'image_piece') {
+      expect(question.explanation).toBeDefined();
+    }
     if (question.questionType === undefined || question.questionType !== 'text') {
       expect(typeof question.name).toBe('string');
-
       console.log(`inspecting question ${question.name}`);
-
-      expect(typeof question.difficulty).toBe('number');
-      if (question.questionType !== 'image_piece') {
-        expect(question.explanation).toBeDefined();
-      }
     } else {
       expect(typeof question.statement).toBe('string');
       expect(Array.isArray(question.answers)).toBe(true);
