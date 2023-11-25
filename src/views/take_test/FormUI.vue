@@ -74,7 +74,7 @@ const closeModal = () => {
   if (currentQuestionIndex.value < props.questions.length - 1) {
     currentQuestionIndex.value += 1;
     answerOrder.value = ['a', 'b', 'c', 'd'].sort(() => ((Math.random() > 0.5) ? -1 : 1));
-    if (getFileShape() === 'single_file') {
+    if (getFileShape() === 'single_file' && currentQuestion.value.questionType !== 'text') {
       updateSVGData();
     }
   } else {
@@ -123,7 +123,7 @@ const getQuestion = () => {
 
 onMounted(() => {
   const questionFormat = getFileShape();
-  if (questionFormat === 'single_file') {
+  if (questionFormat === 'single_file' && currentQuestion.value.questionType !== 'text') {
     updateSVGData();
   }
 });
@@ -133,7 +133,10 @@ onMounted(() => {
 <template>
   <h1 class="title">{{ getQuestion() }}</h1>
   <div class="row">
-    <div id="test_image_wrapper">
+    <p id='statement' v-if="currentQuestion.questionType==='text'">
+      {{currentQuestion.statement}}
+    </p>
+    <div id="test_image_wrapper" v-if="currentQuestion.questionType!='text'">
       <img v-if="getFileShape()==='multiple_files'" id=test_image :src="getQuestionSrc()">
       <svg v-else v-html="SVGData.question" id=test_image
           viewBox="0,0,800,240">
@@ -149,12 +152,13 @@ onMounted(() => {
           class="answer_image"
           :src=getAnswerSrc(answer)
           >
-          <svg v-else v-html="SVGData[answer]"
+          <svg v-else-if="currentQuestion.questionType!='text'" v-html="SVGData[answer]"
           class="answer_image"
           :viewBox="`${200*['a','b','c','d'].indexOf(answer)},280,200,200`"
           width= 100
           >
           </svg>
+          {{ currentQuestion.answers[['a','b','c','d'].indexOf(answer)] }}
         </button>
       </div>
     </div>
@@ -186,6 +190,18 @@ onMounted(() => {
 .title {
   text-align: center;
   font-size: 4vmax;
+}
+
+#statement{
+  font-size: v-bind('`${1300/ Math.min(currentQuestion.statement.length,300)}vmin`');
+
+  position: relative;
+  width: 90vw;
+  max-height: 80vh;
+  left: 5vw;
+
+  overflow: auto;
+  text-align: justify;
 }
 
 #test_image_wrapper {
