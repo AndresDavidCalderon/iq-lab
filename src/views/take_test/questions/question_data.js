@@ -474,5 +474,10 @@ const questions = [
     ],
     explanation: 'Ω=5 ψ=5 Z=3, and the fish is worth 2.',
   },
+  {
+    name: 'number_pyramid',
+    difficulty: 3,
+    explanation: 'On each frame, the sum of the numbers inside the triangle increases',
+  },
 ];
 export default testQuestions.length > 0 ? testQuestions : questions;

@@ -136,7 +136,7 @@ onMounted(() => {
     <p id='statement' v-if="currentQuestion.questionType==='text'">
       {{currentQuestion.statement}}
     </p>
-    <div id="test_image_wrapper" v-if="currentQuestion.questionType!='text'">
+    <div id="test_image_wrapper" v-if="currentQuestion.name!==undefined">
       <img v-if="getFileShape()==='multiple_files'" id=test_image :src="getQuestionSrc()">
       <svg v-else v-html="SVGData.question" id=test_image
           viewBox="0,0,800,240">
