@@ -1,5 +1,6 @@
 export default [
   {
+    name: 'square_numbers',
     questionType: 'text',
     question: '',
     statement: `Enunciado de prueba, esta parte debe proveer la información necesaria para resolver la pregunta
@@ -28,5 +29,19 @@ Vivamus pretium sodales orci, pellentesque tincidunt est rhoncus auctor. Curabit
       'respuesta C',
       'respuesta C, la correcta.',
     ],
+  },
+  {
+    name: 'number_grid',
+    questionType: 'replace',
+    difficulty: 3,
+    answers: [
+      '1',
+      '0',
+      '3',
+      '2',
+    ],
+    explanation: 'In all columns, B+C+D=A',
+    answerShape: 'multiple_files',
+    format: 'svg',
   },
 ];

@@ -17,7 +17,7 @@ const SVGData = ref({});
 const currentQuestion = computed(() => props.questions[currentQuestionIndex.value]);
 
 const getQuestionFormat = () => {
-  const declaredFormat = props.questions[currentQuestionIndex.value].format;
+  const declaredFormat = currentQuestion.value.format;
   return declaredFormat === undefined ? 'png' : declaredFormat;
 };
 const getQuestionDirectory = (questionName) => `/src/assets/test_resources/${questionName}`;
@@ -148,11 +148,11 @@ onMounted(() => {
         class="answer_button" v-for="answer in answerOrder" :key="answer" :aria-label="answer"
         >
           <img
-          v-if="getFileShape()==='multiple_files'"
+          v-if="getFileShape()==='multiple_files' && !Array.isArray(currentQuestion.answers)"
           class="answer_image"
           :src=getAnswerSrc(answer)
           >
-          <svg v-else-if="currentQuestion.questionType!='text'" v-html="SVGData[answer]"
+          <svg v-else-if="!Array.isArray(currentQuestion.answers)" v-html="SVGData[answer]"
           class="answer_image"
           :viewBox="`${200*['a','b','c','d'].indexOf(answer)},280,200,200`"
           width= 100
@@ -193,7 +193,7 @@ onMounted(() => {
 }
 
 #statement{
-  font-size: v-bind('`${1300/ Math.min(currentQuestion.statement.length,300)}vmin`');
+  font-size: v-bind('currentQuestion.statement!==undefined ? `${1300/Math.min(currentQuestion.statement.length,300)}vmin`:0');
 
   position: relative;
   width: 90vw;
