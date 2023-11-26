@@ -448,5 +448,31 @@ const questions = [
     difficulty: 3,
     explanation: 'On each frame, the length of the figure increases.',
   },
+  {
+    name: 'number_grid',
+    questionType: 'replace',
+    difficulty: 3,
+    answers: [
+      '1',
+      '0',
+      '3',
+      '2',
+    ],
+    explanation: 'In all columns, B+C+D=A',
+    answerShape: 'multiple_files',
+    format: 'svg',
+  },
+  {
+    name: 'symbol_grid',
+    questionType: 'replace',
+    difficulty: 3,
+    answers: [
+      6,
+      12,
+      7,
+      15,
+    ],
+    explanation: 'Ω=5 ψ=5 Z=3, and the fish is worth 2.',
+  },
 ];
 export default testQuestions.length > 0 ? testQuestions : questions;

@@ -30,18 +30,4 @@ Vivamus pretium sodales orci, pellentesque tincidunt est rhoncus auctor. Curabit
       'respuesta C, la correcta.',
     ],
   },
-  {
-    name: 'number_grid',
-    questionType: 'replace',
-    difficulty: 3,
-    answers: [
-      '1',
-      '0',
-      '3',
-      '2',
-    ],
-    explanation: 'In all columns, B+C+D=A',
-    answerShape: 'multiple_files',
-    format: 'svg',
-  },
 ];
