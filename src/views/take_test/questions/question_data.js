@@ -479,5 +479,19 @@ const questions = [
     difficulty: 3,
     explanation: 'On each frame, the sum of the numbers inside the triangle increases',
   },
+  {
+    difficulty: 4,
+    statement: `There is a company which gives all of their computers a unique code. This code is built according to these parameters:
+    -Starts with a single number, the number of the office it's in, there are 5 offices, numbered 1-5 respectively.
+    -Followed by 2 letters, which cannot be the same. Remember the alphabet has 26 letters.
+    -Followed by a 2 digit number, in which the digits can repeat.
+    How many possible and valid codes are there?`,
+    answers: [
+      '250.000',
+      '50.000',
+      '100.000',
+      '325.000',
+    ],
+  },
 ];
 export default testQuestions.length > 0 ? testQuestions : questions;
