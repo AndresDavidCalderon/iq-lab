@@ -473,6 +473,7 @@ const questions = [
       15,
     ],
     explanation: 'Ω=5 ψ=5 Z=3, and the fish is worth 2.',
+    answersShape: 'multiple_files',
   },
   {
     name: 'number_pyramid',
@@ -492,6 +493,31 @@ const questions = [
       '100.000',
       '325.000',
     ],
+  },
+  {
+    difficulty: 2,
+    statement: `Replace the @ with the right operations to solve the equation
+    11 @  3  @  7=21'`,
+    answers: [
+      '-/+',
+      '+/-',
+      'x/+',
+      '+/+',
+    ],
+    explanation: '11+3+7=21',
+  },
+  {
+    name: 'alphabet_number',
+    difficulty: 2,
+    questionType: 'replace',
+    answers: [
+      '14',
+      '9',
+      '26',
+      '23',
+    ],
+    explanation: 'The number represents the position of the letter on the alphabet',
+    answersShape: 'multiple_files',
   },
 ];
 export default testQuestions.length > 0 ? testQuestions : questions;
