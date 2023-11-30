@@ -34,7 +34,7 @@ test('Check if all questions have the requiered data, and it is of the correct t
 
 test('Check if all SVG questions have the necesary SVG groups', () => {
   questions.forEach((question) => {
-    if (question.answerShape === undefined) {
+    if (question.answerShape === undefined && question.statement === undefined) {
       const filePath = path.resolve(__dirname, `../src/assets/test_resources/${question.name}/drawing.svg`);
       const svgString = fs.readFileSync(filePath).toString();
       const elements = SVG();

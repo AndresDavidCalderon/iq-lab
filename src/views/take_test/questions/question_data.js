@@ -493,6 +493,8 @@ const questions = [
       '100.000',
       '325.000',
     ],
+    explanation: `The operation to do on this case is 5*26*25*10*10, since we have 26 possibilities on the first letter, but on the second one
+                  we cant choose the same`,
   },
   {
     difficulty: 2,
