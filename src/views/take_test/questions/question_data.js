@@ -481,6 +481,7 @@ const questions = [
     explanation: 'On each frame, the sum of the numbers inside the triangle increases',
   },
   {
+    questionType: 'text',
     difficulty: 4,
     statement: `There is a company which gives all of their computers a unique code. This code is built according to these parameters:
     -Starts with a single number, the number of the office it's in, there are 5 offices, numbered 1-5 respectively.
@@ -497,6 +498,7 @@ const questions = [
                   we cant choose the same`,
   },
   {
+    questionType: 'text',
     difficulty: 2,
     statement: `Replace the @ with the right operations to solve the equation
     11 @  3  @  7=21'`,
