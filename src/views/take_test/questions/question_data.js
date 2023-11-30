@@ -473,7 +473,7 @@ const questions = [
       15,
     ],
     explanation: 'Ω=5 ψ=5 Z=3, and the fish is worth 2.',
-    answersShape: 'multiple_files',
+    answerShape: 'multiple_files',
   },
   {
     name: 'number_pyramid',
@@ -517,7 +517,7 @@ const questions = [
       '23',
     ],
     explanation: 'The number represents the position of the letter on the alphabet',
-    answersShape: 'multiple_files',
+    answerShape: 'multiple_files',
   },
 ];
 export default testQuestions.length > 0 ? testQuestions : questions;
