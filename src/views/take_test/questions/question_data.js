@@ -523,5 +523,17 @@ const questions = [
     explanation: 'The number represents the position of the letter on the alphabet',
     answerShape: 'multiple_files',
   },
+  {
+    name: 'horizontal_sum',
+    difficulty: 3,
+    answers: [
+      '2',
+      '4',
+      '5',
+      '1',
+    ],
+    answerShape: 'multiple_files',
+    format: 'svg',
+  },
 ];
 export default testQuestions.length > 0 ? testQuestions : questions;
