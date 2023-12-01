@@ -532,8 +532,10 @@ const questions = [
       '5',
       '1',
     ],
+    explanation: 'Each row adds up to 10',
     answerShape: 'multiple_files',
     format: 'svg',
   },
 ];
+console.log(questions.length);
 export default testQuestions.length > 0 ? testQuestions : questions;
