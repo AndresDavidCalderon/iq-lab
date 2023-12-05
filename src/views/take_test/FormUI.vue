@@ -17,6 +17,7 @@ const showExplanation = ref(false);
 const answerOrder = ref(['a', 'b', 'c', 'd'].sort(() => ((Math.random() > 0.5) ? -1 : 1)));
 const SVGData = ref({});
 const currentQuestion = computed(() => props.questions[currentQuestionIndex.value]);
+const fontSize = currentQuestion.value.statement !== undefined ? `${1300 / Math.min(currentQuestion.value.statement.length, 300)}vmin` : 0;
 
 const getQuestionFormat = () => {
   const declaredFormat = currentQuestion.value.format;
@@ -60,7 +61,6 @@ const updateSVGData = async () => {
     c: await getSVGGroup(questionName, 'c'),
     d: await getSVGGroup(questionName, 'd'),
   };
-  console.log('SVG data is done!');
 };
 
 const getFileShape = () => {
@@ -184,7 +184,7 @@ onMounted(() => {
 }
 
 #statement{
-  font-size: v-bind('currentQuestion.statement!==undefined ? `${1300/Math.min(currentQuestion.statement.length,300)}vmin`:0');
+  font-size: v-bind('fontSize');
 
   position: relative;
   width: 90vw;
