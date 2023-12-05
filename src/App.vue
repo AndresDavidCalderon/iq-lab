@@ -61,5 +61,9 @@ const restartTest = () => {
       :answers="lastAnswers"
       @test-again="restartTest"/>
 
-    <LevelIndicator :level="level" :exp="exp"></LevelIndicator>
+    <LevelIndicator
+    v-if="screen==='home' || screen==='results'"
+    :level="level"
+    :exp="exp">
+    </LevelIndicator>
 </template>
