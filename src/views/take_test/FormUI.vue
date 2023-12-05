@@ -60,6 +60,7 @@ const updateSVGData = async () => {
     c: await getSVGGroup(questionName, 'c'),
     d: await getSVGGroup(questionName, 'd'),
   };
+  console.log('SVG data is done!');
 };
 
 const getFileShape = () => {
@@ -156,7 +157,9 @@ onMounted(() => {
           width= 100
           >
           </svg>
-          {{ currentQuestion.answers[['a','b','c','d'].indexOf(answer)] }}
+          {{ Array.isArray(currentQuestion.answers) ?
+           currentQuestion.answers[['a','b','c','d'].indexOf(answer)]
+           : '' }}
         </button>
       </div>
     </div>

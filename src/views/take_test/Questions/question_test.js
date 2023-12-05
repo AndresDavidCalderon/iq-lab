@@ -13,4 +13,9 @@ export default [
     answerShape: 'multiple_files',
     format: 'svg',
   },
+  {
+    name: 'number_pyramid',
+    difficulty: 3,
+    explanation: 'On each frame, the sum of the numbers inside the triangle increases',
+  },
 ];
