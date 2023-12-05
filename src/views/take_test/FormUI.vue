@@ -1,7 +1,9 @@
 <script setup>
 import {
-  reactive, ref, defineEmits, onMounted, computed,
+  reactive, ref, onMounted, computed,
 } from 'vue';
+
+import FeedBack from './FeedBack.vue';
 
 const props = defineProps({
   questions: Array,
@@ -82,10 +84,6 @@ const closeModal = () => {
   }
 };
 
-const toggleExplanation = () => {
-  showExplanation.value = !showExplanation.value;
-};
-
 const getExplanation = () => {
   const { explanation } = currentQuestion.value;
   if (explanation === undefined) {
@@ -162,24 +160,14 @@ onMounted(() => {
         </button>
       </div>
     </div>
+    <FeedBack
+     v-if="verificationModal"
+     @closed="closeModal"
+     :last-answer="answerHistory[currentQuestionIndex]"
+     :explanation="getExplanation()"
+     ></FeedBack>
   </div>
 
-  <div v-if="verificationModal" id="verification_modal">
-    <h1 id="verification_title">
-      {{ answerHistory[currentQuestionIndex] === "d" ? "Right" : "Wrong" }}
-    </h1>
-    <p v-if="getExplanation()!==''" id="explanation_in_modal">
-      {{ getExplanation() }}
-    </p>
-    <button @click="closeModal" id="close_verification_modal">Next</button>
-    <button v-if="getExplanation()!==''"
-    @click="toggleExplanation" id="toggle_explanation">
-      {{ showExplanation ? 'Hide explanation' : 'Show explanation' }}
-    </button>
-    <div v-if="showExplanation" id="explanation">
-      {{ getExplanation() }}
-    </div>
-  </div>
 </template>
 
 <style src="./responsive.css"></style>
@@ -226,64 +214,6 @@ onMounted(() => {
   height: auto;
 }
 
-#explanation_in_modal {
-  display: none;
-}
-
-#verification_modal {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  bottom: 0px;
-  width: 100vw;
-  height: 20vh;
-  background-color: v-bind("answerHistory[currentQuestionIndex] === 'd' ? 'green' : 'red'");
-  color: white;
-  padding: 10px;
-  font-size: 3vmin;
-  text-align: center;
-}
-
-#modal_explanation {
-  height: 35%;
-  overflow: auto;
-  white-space: pre-line;
-  visibility: hidden;
-}
-
-#explanation {
-  position: fixed;
-  left: 0px;
-  top: 25vh;
-  height: 50vh;
-  width: 100vw;
-  background-color: inherit;
-  white-space: pre-line;
-  padding: 40px;
-  font-size: v-bind("verificationModal ? '7vmin':(getExplanation().length>20 ? '7vmin':'4vmin')");
-  overflow: auto;
-  text-align: center;
-}
-
-#verification_title {
-  height: 30%;
-  font-size: 5vmin;
-}
-
-#close_verification_modal {
-  position: relative;
-  height: 20%;
-  width: 90%;
-  left: 5%;
-}
-
-#toggle_explanation {
-  position: relative;
-  left:10%;
-  height: 20%;
-  width:80%;
-}
-
 #answers {
   display: flex;
   flex-wrap: wrap;
@@ -301,37 +231,4 @@ onMounted(() => {
   width: v-bind("verificationModal ? '8vw' : '15vw'");
 }
 }
-
-@media (min-aspect-ratio:10/9){
-
-  #verification_title{
-    margin: 4px;
-  }
-
-  #verification_modal {
-    display: block;
-    height: 35vh;
-    top: 65vh;
-    text-align: justify;
-  }
-
-  #close_verification_modal {
-    position: absolute;
-    width: 100px;
-    height: 50px;
-    bottom: 30px;
-    right: 10px;
-  }
-
-  #toggle_explanation {
-    display: none;
-  }
-
-  #explanation_in_modal {
-    display: block;
-    white-space: pre-line;
-    font-size: v-bind("getExplanation().includes('\n') ? '1vmax':'2vmax'");
-  }
-}
-
 </style>

@@ -1,6 +1,10 @@
 <script setup>
 import { ref, defineEmits } from 'vue';
 
+const props = defineProps({
+  level: Number,
+  exp: Number,
+});
 const emit = defineEmits(['testStarted']);
 const difficulty = ref(1);
 </script>
@@ -8,6 +12,10 @@ const difficulty = ref(1);
   <button @click="emit('testStarted',difficulty)" class="title" id="start_button">
     Start Test
   </button>
+  <p>
+    Level:{{ props.level }}
+    EXP:{{ props.exp }}/100
+  </p>
 
 </template>
 

@@ -551,5 +551,4 @@ const questions = [
     format: 'svg',
   },
 ];
-console.log(questions.length);
 export default testQuestions.length > 0 ? testQuestions : questions;

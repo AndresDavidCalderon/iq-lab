@@ -5,6 +5,8 @@ import questions from './views/take_test/questions/question_data';
 import FormUI from './views/take_test/FormUI.vue';
 import TestResults from './views/take_test/TestResults.vue';
 
+const level = ref(1);
+const exp = ref(0);
 const test = ref([]);
 const lastAnswers = ref([]);
 const startTest = () => {
@@ -18,7 +20,7 @@ const restartTest = () => {
 };
 </script>
 <template>
-    <TakeTest v-if="test.length===0" @testStarted="startTest()"/>
+    <TakeTest v-if="test.length===0" @testStarted="startTest()" :level="level" :exp="exp"/>
     <TestResults v-if="lastAnswers.length>0"
       :questions="questions"
       :answers="lastAnswers"
