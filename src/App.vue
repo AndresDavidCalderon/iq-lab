@@ -48,14 +48,16 @@ const saveProgress = () => {
 const finishTest = (answers) => {
   lastAnswers.value = answers;
   setScreen('results');
-  adwardedExp.value = lastAnswers.value.filter((a) => a === 'd').length * 4;
-  exp.value += adwardedExp.value;
-  if (exp.value >= 100) {
-    exp.value = 0;
-    level.value += 1;
-    leveledUp.value = true;
+  if (level.value === 4) {
+    adwardedExp.value = lastAnswers.value.filter((a) => a === 'd').length * 4;
+    exp.value += adwardedExp.value;
+    if (exp.value >= 100) {
+      exp.value = 0;
+      level.value += 1;
+      leveledUp.value = true;
+    }
+    saveProgress();
   }
-  saveProgress();
 };
 
 const restartTest = () => {
