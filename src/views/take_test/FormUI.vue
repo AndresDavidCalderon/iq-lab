@@ -17,7 +17,7 @@ const showExplanation = ref(false);
 const answerOrder = ref(['a', 'b', 'c', 'd'].sort(() => ((Math.random() > 0.5) ? -1 : 1)));
 const SVGData = ref({});
 const currentQuestion = computed(() => props.questions[currentQuestionIndex.value]);
-const fontSize = currentQuestion.value.statement !== undefined ? `${1300 / Math.min(currentQuestion.value.statement.length, 300)}vmin` : 0;
+const fontSize = computed(() => (currentQuestion.value.statement !== undefined ? `${Math.max(Math.min(1300 / currentQuestion.value.statement.length, 10), 2)}vmin` : 0));
 
 const getQuestionFormat = () => {
   const declaredFormat = currentQuestion.value.format;
@@ -113,6 +113,8 @@ const getQuestion = () => {
         return 'Which of the options follows the same logic?';
       case 'image_piece':
         return 'The next image had a piece taken out, which option would replace it?';
+      case 'text':
+        return 'According to the following statement, select one of the options.';
       default:
         throw Error('Unknown question type');
     }

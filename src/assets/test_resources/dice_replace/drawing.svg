@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="0.99999999"
-     inkscape:cx="508.5"
-     inkscape:cy="352.5"
+     inkscape:zoom="0.70710677"
+     inkscape:cx="753.77584"
+     inkscape:cy="120.91526"
      inkscape:current-layer="layer1"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
@@ -1325,6 +1325,42 @@
          cx="444.5"
          cy="154.28349"
          r="7.5" />
+      <circle
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
+         id="circle1"
+         cx="379.52478"
+         cy="151.96832"
+         r="7.5" />
+      <circle
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
+         id="circle2"
+         cx="378.85022"
+         cy="127.69772"
+         r="7.5" />
+      <circle
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
+         id="circle3"
+         cx="377.73935"
+         cy="98.576393"
+         r="7.5" />
+      <circle
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
+         id="circle4"
+         cx="338.55557"
+         cy="152.66144"
+         r="7.5" />
+      <circle
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
+         id="circle5"
+         cx="338.1033"
+         cy="176.65965"
+         r="7.5" />
+      <circle
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
+         id="circle6"
+         cx="339.62158"
+         cy="123.25066"
+         r="7.5" />
     </g>
     <g
        id="d">
@@ -1808,7 +1844,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,194.93522,128.81533)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan5">A</tspan></text>
+         id="tspan1">A</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9"
@@ -1816,7 +1852,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,376.60114,119.28881)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan6">B</tspan></text>
+         id="tspan2">B</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9-0"
@@ -1824,7 +1860,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,563.8414,120.85032)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan7">C</tspan></text>
+         id="tspan3">C</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9-0-8"
@@ -1832,6 +1868,6 @@
        transform="matrix(0.42714826,0,0,0.42714826,748.91481,121.55502)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan8">D</tspan></text>
+         id="tspan4">D</tspan></text>
   </g>
 </svg>

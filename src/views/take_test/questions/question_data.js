@@ -522,6 +522,7 @@ const questions = [
     ],
     explanation: 'The number represents the position of the letter on the alphabet',
     answerShape: 'multiple_files',
+    format: 'svg',
   },
   {
     name: 'horizontal_sum',

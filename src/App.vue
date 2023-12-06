@@ -8,6 +8,9 @@ import LevelIndicator from './views/take_test/LevelIndicator.vue';
 
 const level = ref(1);
 const exp = ref(0);
+const leveledUp = ref(false);
+const adwardedExp = ref(0);
+
 const test = ref([]);
 const lastAnswers = ref([]);
 const screen = ref('home');
@@ -19,6 +22,14 @@ onMounted(() => {
   }
 });
 
+const setScreen = (newScreen) => {
+  screen.value = newScreen;
+  if (screen.value !== 'results') {
+    adwardedExp.value = 0;
+    leveledUp.value = false;
+  }
+};
+
 const startTest = () => {
   const elegibleQuestions = questions.filter((question) => {
     const levelDifference = question.difficulty - level.value;
@@ -26,7 +37,7 @@ const startTest = () => {
   });
   // takes questions of the same difficulty as chosen and shuffles it.
   test.value = elegibleQuestions.sort(() => ((Math.random() > 0.5) ? -1 : 1)).slice(0, 20);
-  screen.value = 'test';
+  setScreen('test');
 };
 
 const saveProgress = () => {
@@ -36,18 +47,20 @@ const saveProgress = () => {
 
 const finishTest = (answers) => {
   lastAnswers.value = answers;
-  screen.value = 'results';
-  exp.value += lastAnswers.value.filter((a) => a === 'd').length * 4;
+  setScreen('results');
+  adwardedExp.value = lastAnswers.value.filter((a) => a === 'd').length * 4;
+  exp.value += adwardedExp.value;
   if (exp.value >= 100) {
     exp.value = 0;
     level.value += 1;
+    leveledUp.value = true;
   }
   saveProgress();
 };
 
 const restartTest = () => {
   lastAnswers.value = [];
-  screen.value = 'test';
+  setScreen('test');
   startTest();
 };
 
@@ -63,6 +76,8 @@ const restartTest = () => {
 
     <LevelIndicator
     v-if="screen==='home' || screen==='results'"
+    :level-up="leveledUp"
+    :adwarded-exp="adwardedExp"
     :level="level"
     :exp="exp">
     </LevelIndicator>
