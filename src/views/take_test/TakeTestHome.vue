@@ -3,10 +3,11 @@ import { ref } from 'vue';
 
 const emit = defineEmits(['testStarted']);
 const difficulty = ref(1);
+const language = window.navigator.language.startsWith('en');
 </script>
 <template>
   <button @click="emit('testStarted',difficulty)" class="title" id="start_button">
-    Start Test
+    {{  language ? 'Start Test':'Empezar prueba' }}
   </button>
 
 </template>
