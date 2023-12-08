@@ -115,6 +115,10 @@ const getQuestion = () => {
         return 'The next image had a piece taken out, which option would replace it?';
       case 'text':
         return 'According to the following statement, select one of the options.';
+      case 'cube':
+        return 'Which option represents a posible result from folding the following figure into a cube? Take into account possible rotations';
+      case 'fit_logic':
+        return 'Which of the options follows the same logic?';
       default:
         throw Error('Unknown question type');
     }

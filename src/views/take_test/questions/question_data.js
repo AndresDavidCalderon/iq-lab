@@ -8,7 +8,7 @@ const questions = [
 
   {
     name: 'rotation',
-    question: 'What replaces the question mark?',
+    questionType: 'replace',
     explanation: 'From left to right the arrow rotates 90 degrees.',
     difficulty: 1,
     format: 'svg',
@@ -23,14 +23,12 @@ const questions = [
   },
   {
     name: 'block_rotation',
-    question: 'what follows in the sequence?',
     explanation: 'All squares move one space clockwise on each frame',
     difficulty: 2,
     answerShape: 'multiple_files',
   },
   {
     name: 'addition',
-    question: 'What follows the sequence?',
     explanation: 'On each frame, 2 black squares are added and the amount of red outlined increases by 1.',
     difficulty: 3,
     answerShape: 'multiple_files',
@@ -44,7 +42,6 @@ const questions = [
   },
   {
     name: 'alternate_dot_circle',
-    question: 'What follows the sequence?',
     explanation: `- On each frame, the black side alternates from left to right and from right to left
     - On each frame, the amount of circles increases by 1
     - The horisontal line alternates between being visible or not.`,
@@ -53,21 +50,18 @@ const questions = [
   },
   {
     name: 'alternating_basic',
-    question: 'what follows the sequence?',
     explanation: 'On each frame, the blue circle dissapears or reapears, this is called alternating.',
     difficulty: 2,
     answerShape: 'multiple_files',
   },
   {
     name: 'basic_block_orbit',
-    question: 'what follows the sequence?',
     explanation: 'On each frame the square moves 1 space clockwise.',
     difficulty: 2,
     answerShape: 'multiple_files',
   },
   {
     name: 'clock',
-    question: 'What follows the sequence',
     explanation: `-The red line dissapears and reappears on each frame, moving 180°, or half an hour.
     -The line that starts at the right goes 90 degrees or a quarter of an hour  anti-clockwise
     -The remaining line moves 45° clockwise`,
@@ -76,7 +70,6 @@ const questions = [
   },
   {
     name: 'movement_basic',
-    question: 'What follows the sequence?',
     explanation: 'the column moves 1 space right on each frame',
     difficulty: 1,
     answerShape: 'multiple_files',
@@ -84,13 +77,11 @@ const questions = [
   {
     name: 'orbit',
     difficulty: 3,
-    question: 'what follows the sequence?',
     explanation: 'the ball moves 45° clockwise and 1 ring out on each frame.',
     answerShape: 'multiple_files',
   },
   {
     name: 'orbit_color',
-    question: 'what follows the sequence?',
     explanation: `-The inner circle rotates 180° on each frame
     -The circle on the second ring rotates 45° anti-clockwise each frame.
     -The colors move 1 ring in on each frame`,
@@ -100,7 +91,7 @@ const questions = [
   },
   {
     name: 'rotation_compare',
-    question: 'what completes the question mark?',
+    questionType: 'replace',
     explanation: `-The figure from the right ends in the left, and the one on the left ends on the right.
     -Blue figures become red and red figures become blue.`,
     difficulty: 3,
@@ -108,7 +99,6 @@ const questions = [
   },
   {
     name: 'shape_change',
-    question: 'What follows the sequence?',
     explanation: `-The figure filled with black alternates between being the inner one and the outer one.
     -The inner figure becomes the outer figure in the next frame`,
     difficulty: 3,
@@ -116,7 +106,6 @@ const questions = [
   },
   {
     name: 'shape_roller',
-    question: 'What follows the sequence?',
     explanation: `From top to bottom:
     -Row 1 and 3 move 1 space left
     -Row 2 moves 1 space right
@@ -126,7 +115,7 @@ const questions = [
   },
   {
     name: 'stars',
-    question: 'What replaces the question mark?',
+    questionType: 'replace',
     explanation: '1 side is always added.',
     difficulty: 2,
     format: 'svg',
@@ -134,7 +123,7 @@ const questions = [
   },
   {
     name: '3d_basic',
-    question: 'what figure represents the cube formed from folding the next figure? The cube can be rotated.',
+    questionType: 'cube',
     explanation: [
       'The die and the rounded figure will never be next to each other.',
       'The triangle and the 6 spike star will never be next to each other.',
@@ -147,7 +136,7 @@ const questions = [
   },
   {
     name: 'block_color',
-    question: 'Which option represents a posible result from folding the following figure into a cube? Take into account possible rotations',
+    questionType: 'cube',
     explanation: [
       'pink and dark blue will never be next to each other',
       'yellow and bright blue will never be next to each other',
@@ -160,7 +149,6 @@ const questions = [
   },
   {
     name: 'dice',
-    question: 'What logically follows this sequence?',
     explanation: '1 dot moves counterclockwise from corner to corner, while the other moves diagonally.',
     difficulty: 3,
     format: 'svg',
@@ -168,7 +156,6 @@ const questions = [
   },
   {
     name: 'counter_star',
-    question: 'What logically follows the sequence?',
     explanation: 'The dot moves counter clockwise from corner to corner.',
     difficulty: 1,
     format: 'svg',
@@ -176,7 +163,7 @@ const questions = [
   },
   {
     name: 'clock_twelve',
-    question: 'Which of the following options fits in the pattern?',
+    questionType: 'fit_logic',
     explanation: 'On the example, the hour is always 12.',
     difficulty: 1,
     format: 'svg',

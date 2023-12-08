@@ -48,7 +48,7 @@ const saveProgress = () => {
 const finishTest = (answers) => {
   lastAnswers.value = answers;
   setScreen('results');
-  if (level.value === 4) {
+  if (level.value < 4) {
     adwardedExp.value = lastAnswers.value.filter((a) => a === 'd').length * 4;
     exp.value += adwardedExp.value;
     if (exp.value >= 100) {
