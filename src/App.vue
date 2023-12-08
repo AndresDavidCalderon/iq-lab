@@ -14,7 +14,7 @@ const adwardedExp = ref(0);
 
 const test = ref([]);
 const testType = ref('');
-const lastAnswers = ref([]);
+const lastAnswers = ref(undefined);
 const screen = ref('home');
 
 onMounted(() => {
@@ -64,7 +64,7 @@ const saveProgress = () => {
 
 const finishTest = (answers) => {
   lastAnswers.value = answers;
-  setScreen('results');
+  setScreen('home');
   if (level.value < 4) {
     adwardedExp.value = lastAnswers.value.filter((a) => a === 'd').length * 4;
     exp.value += adwardedExp.value;
@@ -82,7 +82,8 @@ const finishTest = (answers) => {
     <TakeTest
     v-if="screen==='home'"
     @testStarted="startTest()"
-    @standardTestStarted="startTest('standard')"/>
+    @standardTestStarted="startTest('standard')"
+    :lastAnswers="lastAnswers"/>
     <FormUI
       v-if="screen==='test'"
       :questions="test"
