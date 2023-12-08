@@ -1,8 +1,5 @@
 <script setup>
-import { ref } from 'vue';
-
 const emit = defineEmits(['testStarted', 'standardTestStarted']);
-const difficulty = ref(1);
 const isSpanish = window.navigator.language.startsWith('es');
 </script>
 <template>

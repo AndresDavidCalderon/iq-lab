@@ -1,3 +1,4 @@
+<!-- eslint-disable arrow-body-style -->
 <script setup>
 import { ref, onMounted } from 'vue';
 import TakeTest from './views/take_test/TakeTestHome.vue';
@@ -12,6 +13,7 @@ const leveledUp = ref(false);
 const adwardedExp = ref(0);
 
 const test = ref([]);
+const testType = ref('');
 const lastAnswers = ref([]);
 const screen = ref('home');
 
@@ -30,13 +32,28 @@ const setScreen = (newScreen) => {
   }
 };
 
-const startTest = () => {
-  const elegibleQuestions = questions.filter((question) => {
-    const levelDifference = question.difficulty - level.value;
-    return levelDifference >= -1 && levelDifference <= 1;
-  });
-  // takes questions of the same difficulty as chosen and shuffles it.
-  test.value = elegibleQuestions.sort(() => ((Math.random() > 0.5) ? -1 : 1)).slice(0, 20);
+const selectRandom = (array, amount) => {
+  return array.sort(() => ((Math.random() > 0.5) ? -1 : 1)).slice(0, amount);
+};
+
+const startTest = (type) => {
+  switch (type) {
+    case 'custom': {
+      const elegibleQuestions = questions.filter((question) => {
+        const levelDifference = question.difficulty - level.value;
+        return levelDifference >= -1 && levelDifference <= 1;
+      });
+      // takes questions of the same difficulty as chosen and shuffles it.
+      test.value = selectRandom(elegibleQuestions, 20);
+      break;
+    }
+    case 'standard':
+      test.value = selectRandom(questions, 50);
+      break;
+    default:
+      throw Error('Unknown test type');
+  }
+  testType.value = type;
   setScreen('test');
 };
 
@@ -60,21 +77,19 @@ const finishTest = (answers) => {
   }
 };
 
-const restartTest = () => {
-  lastAnswers.value = [];
-  setScreen('test');
-  startTest();
-};
-
 </script>
 <template>
-    <TakeTest v-if="screen==='home'" @testStarted="startTest()"/>
-    <FormUI v-if="screen==='test'"
+    <TakeTest
+    v-if="screen==='home'"
+    @testStarted="startTest()"
+    @standardTestStarted="startTest('standard')"/>
+    <FormUI
+      v-if="screen==='test'"
       :questions="test"
-    @testFinished="finishTest"/>
+      @testFinished="finishTest"/>
     <TestResults v-if="screen==='results'"
       :answers="lastAnswers"
-      @test-again="restartTest"/>
+      @test-again="startTest(testType)"/>
 
     <LevelIndicator
     v-if="screen==='home' || screen==='results'"
