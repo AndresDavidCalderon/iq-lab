@@ -16,7 +16,6 @@ const questions = [
   },
   {
     name: 'translation',
-    question: 'What follows in the sequence?',
     explanation: 'From left to right, the first square moves 2 spaces up, the second 1, the third 3, and the fourth 1.',
     difficulty: 3,
     answerShape: 'multiple_files',
@@ -171,7 +170,6 @@ const questions = [
   },
   {
     name: 'multidirection',
-    question: 'Which option logically follows the sequence?',
     difficulty: 2,
     explanation: 'One square moves 1 to the right, the other 1 to the bottom, and the last one 1 space both to the left and to the right',
     answerShape: 'single_file',
@@ -186,8 +184,8 @@ const questions = [
   },
   {
     name: 'rotation_addition_arrows',
+    questionType: 'replace',
     difficulty: 3,
-    question: 'Fill the empty space in the sequence',
     explanation: 'Each time a new arrow is added and they rotate 90º counter clockwise.',
     answerShape: 'single_file',
     format: 'svg',
@@ -231,7 +229,7 @@ const questions = [
   {
     name: 'cube_rotation',
     difficulty: 3,
-    question: 'Which of the options is a possible replacement for the question mark?',
+    questionType: 'replace',
     explanation: 'On each frame, the cube rotates 90º',
   },
   {
@@ -246,8 +244,8 @@ const questions = [
   },
   {
     name: 'rotation_middlestep',
+    questionType: 'replace',
     difficulty: 2,
-    question: 'Which option best replaces the question mark?',
     explanation: 'Each figure moves corner to corner clockwise, and they interchange between black and white colors.',
   },
   {
@@ -259,31 +257,31 @@ const questions = [
   {
     name: 'pattern_in_pattern',
     difficulty: 2,
-    question: 'Which of the following options best replaces the question mark?',
+    questionType: 'replace',
     explanation: 'In each square, its own position in the picture is highlighted.',
   },
   {
     name: 'invisible_rotation',
     difficulty: 1,
-    question: 'Which of the following options best replaces the question mark?',
+    questionType: 'replace',
     explanation: 'On each frame, one square dissapears, in clockwise order.',
   },
   {
     name: 'brightness',
     difficulty: 3,
-    question: 'Which of the following options best replaces the question mark?',
+    questionType: 'replace',
     explanation: 'From top to bottom, the border gets lighter, and from left to right the fill color gets darker.',
   },
   {
     name: 'coordinates',
     difficulty: 4,
-    question: 'Which of the following options best replaces the question mark?',
+    questionType: 'replace',
     explanation: 'From top to bottom, one blue dot is added, and from left to right, one red dot is added.',
   },
   {
     name: 'star_grid',
     difficulty: 3,
-    question: 'which of the following options best replaces the question mark?',
+    questionType: 'replace',
     explanation: 'From top to bottom the outer shape gets a new side, and from left to right the inner star gets another side.',
   },
   {
