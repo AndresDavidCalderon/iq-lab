@@ -10,6 +10,7 @@ const questions = [
     name: 'rotation',
     questionType: 'replace',
     explanation: 'From left to right the arrow rotates 90 degrees.',
+    explanation_ES: 'De izquierda a derecha, la flecha rota 90 grados.',
     difficulty: 1,
     format: 'svg',
     answerShape: 'multiple_files',
@@ -17,25 +18,30 @@ const questions = [
   {
     name: 'translation',
     explanation: 'From left to right, the first square moves 2 spaces up, the second 1, the third 3, and the fourth 1.',
+    explanation_ES: 'De izquierda a derecha, el primer cuadrado se mueve 2 espacios para arriba, el segundo 1, el tercero 3 y el cuarto 1.',
     difficulty: 3,
     answerShape: 'multiple_files',
   },
   {
     name: 'block_rotation',
     explanation: 'All squares move one space clockwise on each frame',
+    explanation_ES: 'Todos los cuadrados se mueven 1 espacio en el sentido de las agujas del reloj en cada cuadro.',
     difficulty: 2,
     answerShape: 'multiple_files',
   },
   {
     name: 'addition',
     explanation: 'On each frame, 2 black squares are added and the amount of red outlined increases by 1.',
+    explanation_ES: 'En cada cuadro, 2 cuadrados negros se añaden y la cantidad de ellos con el borde rojo aumenta en 1',
     difficulty: 3,
     answerShape: 'multiple_files',
   },
   {
     name: 'reflection',
     question: '1 is to 2 as 3 is to...',
+    question_ES: '1 es a 2 como 3 es a...',
     explanation: '1 is the reflection of 2.',
+    explanation_ES: '1 es el reflejo de 2',
     difficulty: 1,
     answerShape: 'multiple_files',
   },
@@ -44,18 +50,23 @@ const questions = [
     explanation: `- On each frame, the black side alternates from left to right and from right to left
     - On each frame, the amount of circles increases by 1
     - The horisontal line alternates between being visible or not.`,
+    explanation_ES: `-El lado negro alterna entre estar a la izquierda o a la derecha.
+    - En cada cuadro, se agrega un circulo.
+    - La linea horizontal aparece y desaparece.`,
     difficulty: 4,
     answerShape: 'multiple_files',
   },
   {
     name: 'alternating_basic',
     explanation: 'On each frame, the blue circle dissapears or reapears, this is called alternating.',
+    explanation_ES: 'En cada cuadro, el circulo azul desaparece y aparece, a esto se le llama alternar.',
     difficulty: 2,
     answerShape: 'multiple_files',
   },
   {
     name: 'basic_block_orbit',
     explanation: 'On each frame the square moves 1 space clockwise.',
+    explanation_ES: 'En cuada cuadro el cuadrado se mueve 1 espacio en el sentido de las agujas del reloj.',
     difficulty: 2,
     answerShape: 'multiple_files',
   },
@@ -64,12 +75,16 @@ const questions = [
     explanation: `-The red line dissapears and reappears on each frame, moving 180°, or half an hour.
     -The line that starts at the right goes 90 degrees or a quarter of an hour  anti-clockwise
     -The remaining line moves 45° clockwise`,
+    explanation_ES: `-La linea roja desaparece y reaparece en cada cuadro, moviendose 180.
+    -La linea que inicia a la derecha se mueve 90º contra las agujas del reloj.
+    -La linea restante se mueve 45º se mueve con las agujas del reloj.`,
     answerShape: 'multiple_files',
     difficulty: 3,
   },
   {
     name: 'movement_basic',
     explanation: 'the column moves 1 space right on each frame',
+    explanation_ES: 'La columna se mueve 1 espacio a la derecha cada cuadro.',
     difficulty: 1,
     answerShape: 'multiple_files',
   },
@@ -77,6 +92,7 @@ const questions = [
     name: 'orbit',
     difficulty: 3,
     explanation: 'the ball moves 45° clockwise and 1 ring out on each frame.',
+    explanation_ES: 'La bola se mueve 45º con las agujas del reloj y 1 anillo hacia afuera cada cuadro.',
     answerShape: 'multiple_files',
   },
   {
@@ -84,6 +100,9 @@ const questions = [
     explanation: `-The inner circle rotates 180° on each frame
     -The circle on the second ring rotates 45° anti-clockwise each frame.
     -The colors move 1 ring in on each frame`,
+    explanation_ES: `-El circulo de adentro rota 180º cada cuadro.
+    -El circulo en el segundo aaillo rota 45º contra las agujas del reloj cada cuadro.
+    -Los colores se mueven 1 anillo hacia adentro cada cuadro.`,
     difficulty: 4,
     format: 'svg',
     answerShape: 'multiple_files',
@@ -93,6 +112,8 @@ const questions = [
     questionType: 'replace',
     explanation: `-The figure from the right ends in the left, and the one on the left ends on the right.
     -Blue figures become red and red figures become blue.`,
+    explanation_ES: `-La figura de la derecha termina en la izquierda, y la de la izquierda termina en la derecha.
+    -Las figuras azules se vuelven rojas y las rojas azules.`,
     difficulty: 3,
     answerShape: 'multiple_files',
   },
@@ -251,7 +272,7 @@ const questions = [
   {
     name: 'star_pattern',
     difficulty: 4,
-    question: 'Which of the options follows the same pattern as the next figures?',
+    questionType: 'logic',
     explanation: 'In each square, the figure rotates 90º and turns of the same color of the arrow.',
   },
   {
@@ -328,7 +349,7 @@ const questions = [
   },
   {
     name: 'color_filter',
-    question: 'Which of the answers follows the same logic?',
+    questionType: 'logic',
     difficulty: 2,
     explanation: 'Only the squares that are the same color as the arrow are kept.',
   },
@@ -523,7 +544,8 @@ const questions = [
     format: 'svg',
   },
   {
-    question: 'Move from one circle to one next to it, starting on the bottom left, and ending on the top right',
+    question: `Move from one circle to one next to it, starting on the bottom left, and ending on the top right,collect 9 circles and add the values
+    What is the largest sum you can get?`,
     name: 'number_path',
     difficulty: 3,
     answers: [

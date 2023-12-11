@@ -16,7 +16,20 @@ const verificationModal = ref(false);
 const showExplanation = ref(false);
 const answerOrder = ref(['a', 'b', 'c', 'd'].sort(() => ((Math.random() > 0.5) ? -1 : 1)));
 const SVGData = ref({});
-const currentQuestion = computed(() => props.questions[currentQuestionIndex.value]);
+const currentQuestion = computed(() => {
+  const originalTest = props.questions[currentQuestionIndex.value];
+  const newTest = {};
+  // We loop through all of the properties of the question,
+  // and if there is a spanish alternative, and we are in spanish, then replace it with it.
+  Object.keys(originalTest).forEach((element) => {
+    if (originalTest[`${element}_ES`] !== undefined && window.navigator.language.startsWith('es')) {
+      newTest[element] = originalTest[`${element}_ES`];
+    } else {
+      newTest[element] = originalTest[element];
+    }
+  });
+  return newTest;
+});
 const fontSize = computed(() => (currentQuestion.value.statement !== undefined ? `${Math.max(Math.min(1300 / currentQuestion.value.statement.length, 10), 2)}vmin` : 0));
 
 const getQuestionFormat = () => {
