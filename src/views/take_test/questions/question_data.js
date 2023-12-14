@@ -344,123 +344,150 @@ const questions = [
     difficulty: 3,
     questionType: 'replace',
     explanation: 'From top to bottom the outer shape gets a new side, and from left to right the inner star gets another side.',
+    explanation_ES: 'De arriba a abajo la figura de afuera recibe un nuevo lado, y de izquierda a derecha la estrella de adentro obtiene otro lado.',
   },
   {
     name: 'triangular_translation',
     difficulty: 2,
     explanation: 'The star and polygon make a movement with the shape of a triangle, in the case of the star, the tip is at the top.',
+    explanation_ES: 'La estrella y el poligona hacen un movimiento en forma de triangulo, en el caso de la estrella, la punta esta en la parte de arriba.',
   },
   {
     name: 'follow',
     difficulty: 3,
     explanation: 'The star always takes the place the diagonal line leaves.',
+    explanation_ES: 'La estrella siempre toma el espacio dejado por la linea diagonal.',
   },
   {
     name: 'color_rotation',
     difficulty: 2,
     explanation: 'The colors change corners counter clockwise',
+    explanation_ES: 'Los colores cambian esquinas contra las agujas del reloj.',
     attributes: ['color', 'rotation'],
   },
   {
     name: 'follow_trail',
     difficulty: 2,
     explanation: 'the shapes follow each other, so the orange one takes the space the pink one left, and the blue takes the space of the green, and so on.',
+    explanation_ES: 'Las formas siguien la una a la otra, la naranja toma el espacio de la rosa, la azul toma el espacio de la verde y así sucesivamente.',
   },
   {
     name: 'triangular_rotation',
     difficulty: 1,
     explanation: 'the colors change places counter clockwise.',
+    explanation_ES: 'Los colores cambian de lugar contra el sentido de las agujas del reloj.',
     attributes: ['color', 'rotation'],
   },
   {
     name: 'transformation',
     difficulty: 3,
     explanation: 'The shape is scaled down horizontally and then rotated 45º',
+    explanation_ES: 'La forma se achica horizontalmente y se rota 45º',
   },
   {
     name: 'boolean_operations',
     difficulty: 3,
     explanation: 'The intersection between the 2 figures is removed',
+    explanation_ES: 'Se quita la intersección de las 2 figuras.',
   },
   {
     name: 'intersection',
     difficulty: 4,
     explanation: 'Only the intersection between the 2 figures is preserved.',
+    explanation_ES: 'Solo se queda la intersección entre las 2 figuras.',
   },
   {
     name: 'color_filter',
     questionType: 'logic',
     difficulty: 2,
     explanation: 'Only the squares that are the same color as the arrow are kept.',
+    explanation_ES: 'Solo los cuadrados que son de el mismo color de la flecha se quedan.',
   },
   {
     name: 'double_flip',
     difficulty: 1,
     explanation: 'The figure is flipped both horizontally and vertically',
+    explanation_ES: 'La figura se refleja horizontal y verticalmente.',
   },
   {
     name: 'direction',
     difficulty: 1,
     explanation: 'The white side indicates where the block is going to move.',
+    explanation_ES: 'El lado blanco indica hacia donde va el cuadrado.',
   },
   {
     name: 'follow_direction',
     difficulty: 2,
     explanation: 'The cube moves on the direction marked by the white corner, and the star uses the place it leaves behind.',
+    explanation_ES: 'El cubo se mueve en la dirección marcada por la esquina blanca, y la estrella usa el lugar que deja atrás.',
   },
   {
     name: 'star_direction',
     difficulty: 2,
     explanation: 'The polygon moves on the direction marked by the green side of the star',
+    explanation_ES: 'El poligono se mueve en la dirección marcada por el lado verde de la estrella',
     explanation_colorblind: 'The polygon moves on the direction marked by the side of the star with the waves',
+    explanation_colorblind_ES: 'El poligono se mueve en la direccion marcada por el lado de la estrella con las olas.',
   },
   {
     name: 'corner_indicator',
     difficulty: 2,
     questionType: 'follow_logic',
     explanation: 'The black side of the square indicates the corner in which the star is',
+    explanation_ES: 'El lado negro del cuadrado indica la esquina en la que esta la estrella.',
   },
   {
     name: 'addition_alternation',
     difficulty: 3,
     explanation: 'The stars alternate between black and white, and each frame a new star gets added',
+    explanation_ES: 'Las estrellas alternan entre negro y blanco, y cada cuadro se agrega una estrella.',
   },
   {
     name: 'addition_alternation_total',
     difficulty: 4,
     explanation: 'The polygons alternate between being black and white, and each frame a new one is added.',
+    explanation_ES: 'Los poligonos alternan entre ser blancos y negros, y cada cuadro se añade uno.',
   },
   {
     name: 'side_indicator',
     difficulty: 2,
     explanation: 'The amount of sides of the outer shape is indicated by the amount of shapes on the left, and the shape inside is the shape on the left.',
+    explanation_ES: 'La cantidad de lados de la figura de afuera se indica por la cantidad de formas a la izquierda, y la forma dentro es la forma de la izquierda.',
   },
   {
     name: 'total_sum',
     difficulty: 2,
     explanation: 'The total amount of points increases by 1 every frame',
+    explanation_ES: 'La cantidad total de puntos aumenta 1 cada cuadro.',
   },
   {
     question: 'Which of the options is NOT suitable to continue the sequence?',
     name: 'dice_replace',
     difficulty: 2,
     explanation: 'On each frame, a face is replaces by a star, of which the amount of sides is the amount of dots it replaces.',
-
+    explanation_ES: 'En cada cuadro, una cara es reemplazada por una estrella, en la que la cantidad de puntas es la cantidad de puntos que reemplaza.',
   },
   {
     name: 'pattern_variety',
     difficulty: 3,
     explanation: 'On each frame, the following happens: \n The circle moves diagonally \n The star moves clockwise \n The hexagon moves counter clockwise \n the spiral goes to the left',
+    explanation_ES: `En cada cuadro, lo siguiente pasa:
+    -El circulo se mueve diagonalmente
+    -La estrella se mueve en el sentido de las agujas del reloj.
+    -El hexagono se mueve contra las agujas del reloj.
+    -La espiral se mueve a la izquierda`,
   },
   {
     name: 'general_direction',
     difficulty: 2,
     explanation: "On each frame, the past figure's direction is inverted",
+    explanation_ES: 'En cada cuadro, la dirección de la figura pasada se invierte.',
   },
   {
     name: 'chaos_orbit',
     difficulty: 4,
     explanation: 'On each frame, a dot moves to the right, a dot moves down, a dot moves 45º counter-clockwise, and another one 90º clockwise',
+    explanation_ES: 'En cada cuadro, un punto se mueve al a derecha, otro abajo, otro punto se mueve 45º contra las agujas del reloj, y otro 90º con las agujas del reloj.',
   },
   {
     name: 'image_replace',
@@ -476,23 +503,27 @@ const questions = [
     name: 'movement_rotation',
     difficulty: 2,
     explanation: 'The 6 pointed star moves one space down and one space left and rotates 90º counter-clockwise, while the 5 pointed star moves one space up and one space right and then getting mirrored',
-
+    explanation_ES: `La estrella de 6 puntas se mueve un espacio abajo y una a la izquierda, y rota 90º contra las agujas del reloj.
+    Mientras que la estrella de 5 puntas se mueve un espacio arriba y otro a la derecha, y se refleja.`,
   },
   {
     name: 'asimetrical_substraction',
     difficulty: 2,
     explanation: 'In each frame, 2 green squares and 1 black square is erased.',
+    explanation_ES: 'En cada cuadro, 2 cuadrados verdes y 1 negro se borran.',
 
   },
   {
     name: 'substraction_rotation',
     difficulty: 3,
     explanation: 'In each frame, green and black squares take turns to be deleted, and the X changes corners clockwise.',
+    explanation_ES: 'En cada cuadro, los cuadros verdes y negros toman turnos para ser eliminados, y la x cambia de esquina contra las agujas del reloj.',
   },
   {
     name: 'uneven_sides',
     difficulty: 3,
     explanation: 'On each frame, the length of the figure increases.',
+    explanation_ES: 'En cada cuadro, el largo de la figura aumenta.',
   },
   {
     name: 'number_grid',
@@ -505,6 +536,7 @@ const questions = [
       '2',
     ],
     explanation: 'In all columns, B+C+D=A',
+    explanation_ES: 'En todas las columnas, B+C+D=A',
     answerShape: 'multiple_files',
     format: 'svg',
   },
@@ -519,12 +551,14 @@ const questions = [
       15,
     ],
     explanation: 'Ω=5 ψ=5 Z=3, and the fish is worth 2.',
+    explanation_ES: 'Ω=5 ψ=5 Z=3, y el pez vale 2.',
     answerShape: 'multiple_files',
   },
   {
     name: 'number_pyramid',
     difficulty: 3,
     explanation: 'On each frame, the sum of the numbers inside the triangle increases',
+    explanation_ES: 'En cada cuadro, la suma de los numeros dentro del triangulo aumenta.',
   },
   {
     questionType: 'text',
@@ -534,6 +568,11 @@ const questions = [
     -Followed by 2 letters, which cannot be the same. Remember the alphabet has 26 letters.
     -Followed by a 2 digit number, in which the digits can repeat.
     How many possible and valid codes are there?`,
+    statement_ES: `Hay una compañia que quiere asignar a todos sus computadores un codigo unico. Este codigo lo componen estos parametros:
+    -Inicia con un solo numero, que es el numero de la oficina en la que esta, numeradas de 1 a 5 respectivamente.
+    -Le siguen 2 letras, que no pueden ser las mismas, recuerda que el alfabeto tiene 26 letras.
+    -Le sigue un codigo de 2 cifras, los digitos se pueden repetir.
+    cuantos codigos validos hay?`,
     answers: [
       '250.000',
       '50.000',
@@ -541,13 +580,17 @@ const questions = [
       '325.000',
     ],
     explanation: `The operation to do on this case is 5*26*25*10*10, since we have 26 possibilities on the first letter, but on the second one
-                  we cant choose the same`,
+    we cant choose the same`,
+    explanation_ES: `La operacion para hacer en este caso es 5*26*25*10*10, pues tenemos 5 posibilidades para el numero,
+    26 para la primera letra, 25 para la segunda pues no podemos repetir, y 10 para cada digito.`,
   },
   {
     questionType: 'text',
     difficulty: 2,
     statement: `Replace the @ with the right operations to solve the equation
     11 @  3  @  7=21'`,
+    statement_ES: `Reeplaza el @ con las operaciones correctas para que la ecuación sea correcta:
+    11 @ 3 @ 7 = 21`,
     answers: [
       '-/+',
       '+/-',
@@ -567,6 +610,7 @@ const questions = [
       '23',
     ],
     explanation: 'The number represents the position of the letter on the alphabet',
+    explanation_ES: 'El numero representa la posición de la letra en el alfabeto.',
     answerShape: 'multiple_files',
     format: 'svg',
   },
@@ -580,12 +624,15 @@ const questions = [
       '1',
     ],
     explanation: 'Each row adds up to 10',
+    explanation_ES: 'Cada fila suma 10',
     answerShape: 'multiple_files',
     format: 'svg',
   },
   {
     question: `Move from one circle to one next to it, starting on the bottom left, and ending on the top right,collect 9 circles and add the values
     What is the largest sum you can get?`,
+    question_ES: `Muevete de un circulo a otro, empezando por abajo a la izquierda y terminando arriba a la derecha, pasa por 9 circulos y suma los valores.
+    Cual es la mayor suma que puedes obtener?`,
     name: 'number_path',
     difficulty: 3,
     answers: [
@@ -595,6 +642,9 @@ const questions = [
       '32',
     ],
     explanation: 'On the path right,up 3 times, right 3 times and up, we get 2+4+4+4+4+4+4+2+4, which is equals to 32.',
+    explanation_ES: `En el camino:
+    derecha, arriba 3 veces, derecha 3 veces y arriba
+    obtenemos 2+4+4+4+4+4+4+2+4 que es igual a 32.`,
     answerShape: 'multiple_files',
     format: 'svg',
   },
