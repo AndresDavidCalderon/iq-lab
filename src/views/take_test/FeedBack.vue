@@ -8,6 +8,7 @@ const props = defineProps({
 });
 
 const showExplanation = ref(false);
+const isSpanish = window.navigator.language.startsWith('es');
 
 const toggleExplanation = () => {
   showExplanation.value = !showExplanation.value;
@@ -17,15 +18,25 @@ const toggleExplanation = () => {
 <template>
   <div id="verification_modal">
     <h1 id="verification_title">
-      {{ lastAnswer === "d" ? "Right" : "Wrong" }}
+      {{
+      lastAnswer === "d" ?
+      (isSpanish ? "Correcto" : "Right"):
+      (isSpanish ? "Incorrecto" : "Wrong")
+      }}
     </h1>
     <p v-if="props.explanation!==''" id="explanation_in_modal">
       {{ props.explanation }}
     </p>
-    <button @click="emit('closed')" id="close_verification_modal">Next</button>
+    <button @click="emit('closed')" id="close_verification_modal">
+      {{isSpanish ? 'Siguiente':'Next'}}
+    </button>
     <button v-if="props.explanation!==''"
         @click="toggleExplanation" id="toggle_explanation">
-        {{ showExplanation ? 'Hide explanation' : 'Show explanation' }}
+        {{
+        showExplanation ?
+        (isSpanish ? 'Ocultar explicación':'Hide explanation') :
+        (isSpanish ? 'Mostrar explicación':'Show explanation')
+        }}
     </button>
     <div v-if="showExplanation" id="explanation">
       {{ props.explanation }}
