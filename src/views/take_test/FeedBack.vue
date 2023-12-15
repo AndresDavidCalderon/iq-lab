@@ -69,7 +69,7 @@ const toggleExplanation = () => {
   background-color: inherit;
   white-space: pre-line;
   padding: 40px;
-  font-size: v-bind("verificationModal ? '7vmin':(props.explanation.length>20 ? '7vmin':'4vmin')");
+  font-size: v-bind("`${Math.min(800/explanation.length,10)}vmin`");
   overflow: auto;
   text-align: center;
 }

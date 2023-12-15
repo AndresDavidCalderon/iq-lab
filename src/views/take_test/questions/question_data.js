@@ -204,7 +204,7 @@ const questions = [
   },
   {
     name: 'clock_twelve',
-    questionType: 'fit_logic',
+    questionType: 'follow_logic',
     explanation: 'On the example, the hour is always 12.',
     explanation_ES: 'En el ejemplo, la hora siempre es 12.',
     difficulty: 1,

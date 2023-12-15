@@ -113,30 +113,35 @@ const getExplanation = () => {
   return explanation;
 };
 
+const questionTypes = {
+  replace: 'Which option is best suited to replace the question mark?',
+  follow_logic: 'Which of the options follows the same logic?',
+  image_piece: 'The next image had a piece taken out, which option would replace it?',
+  text: 'According to the following statement, select one of the options.',
+  cube: 'Which option represents a posible result from folding the following figure into a cube? Take into account possible rotations',
+};
+const questionTypesES = {
+  replace: '¿Que opción reemplaza mejor el signo de interrogación?',
+  follow_logic: '¿Cual de las opciones siguie la misma logica?',
+  image_piece: 'A la siguiente imagen se le sacó un pedazo, ¿Que opción lo reemplaza?',
+  text: 'Lea el siguiente enunciado y seleccione una opción.',
+  cube: 'Que opción representa un posible resultado de doblar la siguiente figura para formar un cubo? Toma en cuenta que puede ser rotado.',
+};
+
 const getQuestion = () => {
   const questionText = currentQuestion.value.question;
   if (questionText !== undefined) {
     return questionText;
   }
+  const isSpanish = window.navigator.language.startsWith('es');
   if (currentQuestion.value.questionType !== undefined) {
-    switch (currentQuestion.value.questionType) {
-      case 'replace':
-        return 'Which option is best suited to replace the question mark?';
-      case 'follow_logic':
-        return 'Which of the options follows the same logic?';
-      case 'image_piece':
-        return 'The next image had a piece taken out, which option would replace it?';
-      case 'text':
-        return 'According to the following statement, select one of the options.';
-      case 'cube':
-        return 'Which option represents a posible result from folding the following figure into a cube? Take into account possible rotations';
-      case 'fit_logic':
-        return 'Which of the options follows the same logic?';
-      default:
-        throw Error('Unknown question type');
+    const diccionary = isSpanish ? questionTypesES : questionTypes;
+    if (diccionary[currentQuestion.value.questionType] !== undefined) {
+      return diccionary[currentQuestion.value.questionType];
     }
+    return 'Unknown question type';
   }
-  return 'Which option logically follows this sequence?';
+  return isSpanish ? '¿Que opción sigue esta secuencia?' : 'Which option logically follows this sequence?';
 };
 
 onMounted(() => {

@@ -1,4 +1,3 @@
-<!-- eslint-disable arrow-body-style -->
 <script setup>
 import { ref, onMounted } from 'vue';
 import TakeTest from './views/take_test/TakeTestHome.vue';
@@ -32,9 +31,10 @@ const setScreen = (newScreen) => {
   }
 };
 
-const selectRandom = (array, amount) => {
-  return array.sort(() => ((Math.random() > 0.5) ? -1 : 1)).slice(0, amount);
-};
+// eslint-disable-next-line arrow-body-style
+const selectRandom = (array, amount) => array.sort(() => {
+  return (Math.random() > 0.5 ? -1 : 1);
+}).slice(0, amount);
 
 const startTest = (type) => {
   switch (type) {
