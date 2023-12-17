@@ -81,7 +81,7 @@ const finishTest = (answers) => {
 <template>
     <TakeTest
     v-if="screen==='home'"
-    @testStarted="startTest()"
+    @testStarted="startTest('custom')"
     @standardTestStarted="startTest('standard')"
     :lastAnswers="lastAnswers"/>
     <FormUI

@@ -553,6 +553,7 @@ const questions = [
     explanation: 'Ω=5 ψ=5 Z=3, and the fish is worth 2.',
     explanation_ES: 'Ω=5 ψ=5 Z=3, y el pez vale 2.',
     answerShape: 'multiple_files',
+    format: 'svg',
   },
   {
     name: 'number_pyramid',

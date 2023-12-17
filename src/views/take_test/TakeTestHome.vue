@@ -12,12 +12,23 @@ const isSpanish = window.navigator.language.startsWith('es');
   <h1 v-if="props.lastAnswers!==undefined" id="test_result">
     {{ result }}
   </h1>
-  <button @click="emit('testStarted')" class="title" id="start_button">
-    {{  isSpanish ? 'Empezar prueba personalizada':'Start custom test' }}
-  </button>
-  <button  @click="emit('standardTestStarted')" class="title" id="standard_test_button">
-    {{  isSpanish ? 'Empezar simulacro':'Start standard test'}}
-  </button>
+  <div id="custom">
+    <button @click="emit('testStarted')" class="title" id="start_button">
+      {{  isSpanish ? 'Empezar prueba personalizada':'Start custom test' }}
+    </button>
+    <p class="description">
+      Take a test according to your level
+    </p>
+  </div>
+  <div id="standard">
+    <button  @click="emit('standardTestStarted')" class="title" id="standard_test_button">
+      {{  isSpanish ? 'Empezar simulacro':'Start standard test'}}
+    </button>
+    <p class="description">
+      Take a simulation of a real test, 50 questions with random questions from all levels,
+      and no feeedback on each question.
+    </p>
+  </div>
 
 </template>
 
@@ -37,20 +48,43 @@ button{
   font-size: 20vmin;
 }
 
-#start_button{
-  top: v-bind("lastAnswers===undefined ? '30%':'50%'");
-  width: 70%;
-  height: 20%;
+#custom{
+  text-align: center;
+  position: absolute;
+  top: v-bind("lastAnswers===undefined ? '20vh':'40vh'");
+  width: 70vw;
+  height: 30vh;
   left: 15%;
   font-size: 7vmin;
 }
 
-#standard_test_button{
-  width: 30%;
-  height: 8%;
-  top: v-bind("lastAnswers===undefined ? '60%':'80%'");
-  left: 35%;
+#start_button{
+  position: static;
+  width: 100%;
+  height: fit-content;
+  font-size: 100%;
+}
+
+#standard{
+  position: absolute;
+  width: 80vw;
+  height: v-bind("lastAnswers===undefined ? '40vh':'30vh'");
+  top: v-bind("lastAnswers===undefined ? '60vh':'70vh'");
+  left: 10vw;
   font-size: 5vmin;
+}
+
+#standard_test_button{
+  position: relative;
+  font-size: 100%;
+  left: 15%;
+  width: 70%;
+  height: 20%;
+}
+
+.description{
+  text-align: center;
+  font-size: 80%;
 }
 
 @media screen and (min-width:2000px) and (max-height:1080px){

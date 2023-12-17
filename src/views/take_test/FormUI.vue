@@ -141,7 +141,7 @@ const getQuestion = () => {
     }
     return 'Unknown question type';
   }
-  return isSpanish ? '¿Que opción sigue esta secuencia?' : 'Which option logically follows this sequence?';
+  return isSpanish ? '¿Que opción sigue en esta secuencia?' : 'Which option logically follows this sequence?';
 };
 
 onMounted(() => {
