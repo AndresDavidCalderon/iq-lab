@@ -17,7 +17,7 @@ const isSpanish = window.navigator.language.startsWith('es');
       {{  isSpanish ? 'Empezar prueba personalizada':'Start custom test' }}
     </button>
     <p class="description">
-      Take a test according to your level
+      {{isSpanish ? 'Toma una prueba acorde a tu nivel':'Take a test according to your level'}}
     </p>
   </div>
   <div id="standard">
@@ -25,8 +25,13 @@ const isSpanish = window.navigator.language.startsWith('es');
       {{  isSpanish ? 'Empezar simulacro':'Start standard test'}}
     </button>
     <p class="description">
-      Take a simulation of a real test, 50 questions with random questions from all levels,
-      and no feeedback on each question.
+      {{
+        isSpanish ?
+        `Toma una simulación de una prueba real, 50 preguntas de todos los niveles, sin decirte
+        las respuestas correctas e incorrectas.`:
+        `Take a simulation of a real test, 50 questions with random questions from all levels,
+        and no feeedback on each question.`
+      }}
     </p>
   </div>
 

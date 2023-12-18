@@ -95,7 +95,6 @@ const finishTest = (answers) => {
     <LevelIndicator
     v-if="screen==='home' || screen==='results'"
     :level-up="leveledUp"
-    :adwarded-exp="adwardedExp"
     :level="level"
     :exp="exp">
     </LevelIndicator>

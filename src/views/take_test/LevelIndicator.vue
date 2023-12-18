@@ -1,10 +1,11 @@
 <script setup>
 import { defineProps } from 'vue';
+import 'vue3-circle-progress/dist/circle-progress.css';
+import CircleProgress from 'vue3-circle-progress';
 
 const props = defineProps({
   level: Number,
   exp: Number,
-  adwardedExp: Number,
   levelUp: Boolean,
 });
 
@@ -12,14 +13,14 @@ const language = window.navigator.language.slice(0, 1);
 </script>
 
 <template>
-  <p>
-    level: {{props.level }}
-    exp:{{ props.exp }}/100
-    <br>
-    {{ language!=='es' ?
-    (adwardedExp===0 ? '':`You gained ${adwardedExp} experience`):
-    (adwardedExp===0 ? '':`Ganaste ${adwardedExp} de experiencia`)
-     }}
+  <div id="container">
+    <div id="basic_info">
+      <CircleProgress :percent=props.exp :fill-color="'#97DB45'" :size=70>
+      </CircleProgress>
+      <h2 id="level_number">
+        {{language!=='es '? 'Level':'Nivel' }} {{ props.level }}
+      </h2>
+    </div>
     <br>
     {{props.levelUp ?
     (language!=='es' ?
@@ -28,5 +29,27 @@ const language = window.navigator.language.slice(0, 1);
     ):
     ''
      }}
-  </p>
+  </div>
 </template>
+
+<style>
+#container{
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  bottom: 1vmin;
+  text-align: center;
+}
+
+#basic_info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#level_number{
+  font-size: 4vmin;
+  padding-left: 10px;
+}
+
+</style>
