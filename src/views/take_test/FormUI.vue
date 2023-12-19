@@ -4,9 +4,11 @@ import {
 } from 'vue';
 
 import FeedBack from './FeedBack.vue';
+import ProgressBar from './ProgressBar.vue';
 
 const props = defineProps({
   questions: Array,
+  testType: String,
 });
 
 const emit = defineEmits(['testFinished']);
@@ -58,13 +60,6 @@ const getAnswerSrc = (answer) => `${getQuestionDirectory(currentQuestion.value.n
 
 const getQuestionSrc = () => `${getQuestionDirectory(currentQuestion.value.name)}/question.${getQuestionFormat()}`;
 
-const submitAnswer = (answer) => {
-  if (!verificationModal.value) {
-    answerHistory.push(answer);
-    verificationModal.value = true;
-  }
-};
-
 const updateSVGData = async () => {
   const questionName = props.questions[currentQuestionIndex.value].name;
   SVGData.value = {
@@ -83,10 +78,7 @@ const getFileShape = () => {
   }
   return answerShape;
 };
-
-const closeModal = () => {
-  verificationModal.value = false;
-  showExplanation.value = false;
+const showNextQuestion = () => {
   if (currentQuestionIndex.value < props.questions.length - 1) {
     currentQuestionIndex.value += 1;
     answerOrder.value = ['a', 'b', 'c', 'd'].sort(() => ((Math.random() > 0.5) ? -1 : 1));
@@ -96,6 +88,21 @@ const closeModal = () => {
   } else {
     emit('testFinished', answerHistory);
   }
+};
+
+const submitAnswer = (answer) => {
+  answerHistory.push(answer);
+  if (props.testType === 'standard') {
+    showNextQuestion();
+  } else if (!verificationModal.value) {
+    verificationModal.value = true;
+  }
+};
+
+const closeModal = () => {
+  verificationModal.value = false;
+  showExplanation.value = false;
+  showNextQuestion();
 };
 
 const getExplanation = () => {
@@ -154,6 +161,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <ProgressBar :total="props.questions.length" :progress="answerHistory.length"></ProgressBar>
   <h1 class="title">{{ getQuestion() }}</h1>
   <div class="row">
     <p id='statement' v-if="currentQuestion.questionType==='text'">

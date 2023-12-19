@@ -18,12 +18,12 @@ const language = window.navigator.language.slice(0, 1);
       <CircleProgress :percent=props.exp :fill-color="'#97DB45'" :size=70>
       </CircleProgress>
       <h2 id="level_number">
-        {{language!=='es '? 'Level':'Nivel' }} {{ props.level }}
+        {{language==='es '? 'Level':'Nivel' }} {{ props.level }}/4
       </h2>
     </div>
     <br>
     {{props.levelUp ?
-    (language!=='es' ?
+    (language==='es' ?
      'You leveled up, now you will be getting more advanced questions.':
     'Subiste de nivel, recibirás preguntas mas dificiles.'
     ):
@@ -32,10 +32,9 @@ const language = window.navigator.language.slice(0, 1);
   </div>
 </template>
 
-<style>
+<style scoped>
 #container{
-  position: absolute;
-  width: 100vw;
+  width: 100%;
   left: 0;
   bottom: 1vmin;
   text-align: center;

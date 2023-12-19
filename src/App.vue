@@ -3,7 +3,6 @@ import { ref, onMounted } from 'vue';
 import TakeTest from './views/take_test/TakeTestHome.vue';
 import questions from './views/take_test/questions/question_data';
 import FormUI from './views/take_test/FormUI.vue';
-import TestResults from './views/take_test/TestResults.vue';
 import LevelIndicator from './views/take_test/LevelIndicator.vue';
 
 const level = ref(1);
@@ -79,23 +78,34 @@ const finishTest = (answers) => {
 
 </script>
 <template>
-    <TakeTest
-    v-if="screen==='home'"
-    @testStarted="startTest('custom')"
-    @standardTestStarted="startTest('standard')"
-    :lastAnswers="lastAnswers"/>
-    <FormUI
-      v-if="screen==='test'"
-      :questions="test"
-      @testFinished="finishTest"/>
-    <TestResults v-if="screen==='results'"
-      :answers="lastAnswers"
-      @test-again="startTest(testType)"/>
-
+  <FormUI
+    v-if="screen==='test'"
+    :questions="test"
+    :test-type="testType"
+    @testFinished="finishTest"/>
+  <div id="container">
     <LevelIndicator
     v-if="screen==='home' || screen==='results'"
     :level-up="leveledUp"
     :level="level"
     :exp="exp">
     </LevelIndicator>
+    <TakeTest
+    v-if="screen==='home'"
+    @testStarted="startTest('custom')"
+    @standardTestStarted="startTest('standard')"
+    :lastAnswers="lastAnswers"/>
+
+  </div>
 </template>
+
+<style scoped>
+
+#app_container{
+  position: relative;
+  left: 2.5vw;
+  display: flex;
+  flex-direction: column;
+  width: 95vw;
+}
+</style>

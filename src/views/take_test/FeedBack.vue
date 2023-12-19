@@ -80,7 +80,7 @@ const toggleExplanation = () => {
   background-color: inherit;
   white-space: pre-line;
   padding: 40px;
-  font-size: v-bind("`${Math.min(800/explanation.length,10)}vmin`");
+  font-size: v-bind("`${Math.max(Math.min(800/explanation.length,10),6)}vmin`");
   overflow: auto;
   text-align: center;
 }
@@ -132,7 +132,8 @@ const toggleExplanation = () => {
 #explanation_in_modal {
   display: block;
   white-space: pre-line;
-  font-size: v-bind("explanation.includes('\n') ? '1vmax':'2vmax'");
+  overflow: auto;
+  font-size: v-bind("explanation.includes('\n') ? '1.5vmax':'2vmax'");
 }
 }
 
