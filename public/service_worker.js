@@ -1,6 +1,8 @@
 /* eslint-disable no-restricted-globals */
 import questions from '../src/views/take_test/questions/question_data';
 
+let offline = false;
+
 self.addEventListener('install', () => {
   console.log('service worker installed');
 });
@@ -8,17 +10,34 @@ self.addEventListener('install', () => {
 
 self.addEventListener('activate', () => {
   console.log('service worker activated');
+  offline = false;
 });
+
+const checkConnectivity = () => {
+  fetch('.').then(() => {
+    offline = false;
+    console.log('reconnected!');
+  }).catch(() => {
+    setTimeout(checkConnectivity, 10);
+  });
+};
 
 self.addEventListener('fetch', (e) => {
   console.log('interfiering in fetch');
+
+  if (offline) {
+    console.log('assuming were offline, not trying fetch.');
+    e.respondWith(caches.match(e.request));
+    return;
+  }
+
   e.respondWith(fetch(e.request).then(async (response) => {
     console.log('Fetched succesfully!');
-    caches.open('backup').then((cache) => {
-      cache.put(e.request, response.clone());
-    });
+    const cache = await caches.open('backup');
+    cache.put(e.request, response.clone());
 
-    if (!caches.has('questions')) {
+    if (!await caches.has('questions')) {
+      console.log('creating question backup');
       const questionResources = [];
       const baseURL = './test_resources/';
       questions.forEach((question) => {
@@ -53,7 +72,9 @@ self.addEventListener('fetch', (e) => {
 
     return response.clone();
   }).catch(() => {
-    console.log('fetch failed, using backup');
+    console.log('using fallbacks from now on');
+    offline = true;
+    setTimeout(checkConnectivity, 10);
     return caches.match(e.request);
   }));
 });
