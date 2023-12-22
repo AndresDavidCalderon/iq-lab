@@ -38,7 +38,7 @@ const getQuestionFormat = () => {
   const declaredFormat = currentQuestion.value.format;
   return declaredFormat === undefined ? 'png' : declaredFormat;
 };
-const getQuestionDirectory = (questionName) => `/src/assets/test_resources/${questionName}`;
+const getQuestionDirectory = (questionName) => `/test_resources/${questionName}`;
 const getSVGGroupInDOM = (document, groupID, questionName) => {
   const group = document.querySelector(`#${groupID}`);
   if (group === null) {

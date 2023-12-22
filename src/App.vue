@@ -109,3 +109,4 @@ const finishTest = (answers) => {
   width: 95vw;
 }
 </style>
+../public/test_resources/question_data

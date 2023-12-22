@@ -1,9 +1,3 @@
-let testQuestions;
-if (typeof window === 'undefined') {
-  testQuestions = [];
-} else {
-  testQuestions = (await import('./question_test')).default;
-}
 const questions = [
 
   {
@@ -353,7 +347,7 @@ const questions = [
     explanation_ES: 'La estrella y el poligona hacen un movimiento en forma de triangulo, en el caso de la estrella, la punta esta en la parte de arriba.',
   },
   {
-    name: 'follow_logic',
+    name: 'follow',
     difficulty: 3,
     explanation: 'The star always takes the place the diagonal line leaves.',
     explanation_ES: 'La estrella siempre toma el espacio dejado por la linea diagonal.',
@@ -650,4 +644,4 @@ const questions = [
     format: 'svg',
   },
 ];
-export default testQuestions.length > 0 ? testQuestions : questions;
+export default questions;

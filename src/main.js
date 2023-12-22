@@ -6,6 +6,6 @@ app.mount('#app');
 
 window.addEventListener('load', () => {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../service_worker.js');
+    navigator.serviceWorker.register('/service_worker.js', { type: 'module' });
   }
 });
