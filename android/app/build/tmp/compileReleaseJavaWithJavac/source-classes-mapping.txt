@@ -1,0 +1,20 @@
+io/andresdavidcalderonjimenez/github/iq/LauncherActivity.java
+ io.andresdavidcalderonjimenez.github.iq.LauncherActivity
+io/andresdavidcalderonjimenez/github/iq/BuildConfig.java
+ io.andresdavidcalderonjimenez.github.iq.BuildConfig
+io/andresdavidcalderonjimenez/github/iq/DelegationService.java
+ io.andresdavidcalderonjimenez.github.iq.DelegationService
+io/github/andresdavidcalderon/iq/LauncherActivity.java
+ io.github.andresdavidcalderon.iq.LauncherActivity
+io/andresdavidcalderonjimenez/github/iq/Application.java
+ io.andresdavidcalderonjimenez.github.iq.Application
+io/andresdavidcalderon/github/iq/DelegationService.java
+ io.andresdavidcalderon.github.iq.DelegationService
+io/andresdavidcalderon/github/iq/LauncherActivity.java
+ io.andresdavidcalderon.github.iq.LauncherActivity
+io/github/andresdavidcalderon/iq/DelegationService.java
+ io.github.andresdavidcalderon.iq.DelegationService
+io/andresdavidcalderon/github/iq/Application.java
+ io.andresdavidcalderon.github.iq.Application
+io/github/andresdavidcalderon/iq/Application.java
+ io.github.andresdavidcalderon.iq.Application
