@@ -392,7 +392,7 @@ const questions = [
   },
   {
     name: 'color_filter',
-    questionType: 'logic',
+    questionType: 'follow_logic',
     difficulty: 2,
     explanation: 'Only the squares that are the same color as the arrow are kept.',
     explanation_ES: 'Solo los cuadrados que son de el mismo color de la flecha se quedan.',

@@ -10,7 +10,14 @@
   "start_url": "/",
   "theme_color": "#97db45",
   "categories": [],
-  "screenshots": [],
+  "screenshots": [{
+    "src":"/screenshots/wide_test.png",
+    "form_factor":"wide",
+    "sizes":"1920x996"
+  },
+{
+
+}],
   "icons": 
   [
     {
