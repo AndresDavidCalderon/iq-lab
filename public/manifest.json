@@ -9,9 +9,8 @@
   "short_name": "IQ lab",
   "start_url": "/",
   "theme_color": "#97db45",
-  "categories": [],
   "screenshots": [{
-    "src":"/screenshots/wide_test.png",
+    "src":"screenshots/wide_test.png",
     "form_factor":"wide",
     "sizes":"1920x996"
   },
@@ -45,6 +44,10 @@
       "purpose": "maskable"
     }
   ],
-  "shortcuts": [],
+  "categories":[
+    "education",
+    "productivity",
+    "learning"
+  ],
   "id": "IQ_lab"
 }
