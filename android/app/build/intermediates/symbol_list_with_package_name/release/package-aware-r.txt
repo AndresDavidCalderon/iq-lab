@@ -1,4 +1,4 @@
-io.andresdavidcalderonjimenez.github.iq
+io.andresdavidcalderon.github.iq
 attr alpha
 attr font
 attr fontProviderAuthority

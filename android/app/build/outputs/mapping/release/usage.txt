@@ -32,8 +32,8 @@ androidx.core.content.res.FontResourcesParserCompat$ProviderResourceEntry
 androidx.core.provider.FontsContractCompat$4$2
 androidx.browser.trusted.NotificationApiHelperForO:
     private void <init>()
+io.andresdavidcalderon.github.iq.R$raw
 androidx.annotation.IntRange
-io.andresdavidcalderonjimenez.github.iq.R$color
 androidx.browser.customtabs.CustomTabColorSchemeParams$Builder:
     public androidx.browser.customtabs.CustomTabColorSchemeParams$Builder setSecondaryToolbarColor(int)
 androidx.browser.customtabs.CustomTabsSessionToken
@@ -53,14 +53,12 @@ androidx.browser.customtabs.CustomTabsServiceConnection:
     android.content.Context getApplicationContext()
 androidx.core.view.AccessibilityDelegateCompat$AccessibilityDelegateAdapter
 androidx.core.text.BidiFormatter$DirectionalityEstimator
-io.andresdavidcalderonjimenez.github.iq.R$bool
 androidx.annotation.StringDef
 androidx.core.graphics.TypefaceCompatUtil
 androidx.browser.customtabs.CustomTabsSessionToken$MockCallback
 androidx.concurrent.futures.AbstractResolvableFuture$1
 androidx.versionedparcelable.ParcelUtils
 androidx.core.text.util.LinkifyCompat$LinkifyMask
-io.andresdavidcalderonjimenez.github.iq.R$raw
 androidx.core.view.accessibility.AccessibilityEventCompat
 androidx.core.accessibilityservice.AccessibilityServiceInfoCompat
 androidx.interpolator.view.animation.LookupTableInterpolator
@@ -114,11 +112,11 @@ androidx.core.util.ObjectsCompat
 android.support.v4.os.ResultReceiver$1
 androidx.annotation.WorkerThread
 androidx.core.graphics.TypefaceCompatBaseImpl$2
-io.andresdavidcalderonjimenez.github.iq.BuildConfig
+io.andresdavidcalderon.github.iq.R$xml
 androidx.core.view.accessibility.AccessibilityManagerCompat
 androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImplJellybeanMr2
-androidx.browser.customtabs.CustomTabsSession$MockSession
 androidx.core.content.PermissionChecker
+androidx.browser.customtabs.CustomTabsSession$MockSession
 com.google.androidbrowserhelper.R$attr
 android.support.customtabs.trusted.ITrustedWebActivityCallback$Stub:
     public void <init>()
@@ -135,6 +133,7 @@ androidx.core.view.DragStartHelper$OnDragStartListener
 androidx.core.view.NestedScrollingChild
 androidx.annotation.DrawableRes
 androidx.core.app.ServiceCompat$StopForegroundFlags
+io.andresdavidcalderon.github.iq.R$attr
 androidx.core.net.ConnectivityManagerCompat
 androidx.concurrent.futures.CallbackToFutureAdapter$FutureGarbageCollectedException
 androidx.core.view.ViewCompat$AccessibilityPaneVisibilityManager
@@ -179,8 +178,6 @@ androidx.core.widget.PopupMenuCompat
 androidx.lifecycle.FullLifecycleObserver
 androidx.lifecycle.R
 androidx.core.app.RemoteInput$Builder
-io.andresdavidcalderonjimenez.github.iq.R$id
-io.andresdavidcalderon.github.iq.Application
 androidx.collection.ArrayMap:
     public void <init>(int)
     public void <init>(androidx.collection.SimpleArrayMap)
@@ -219,7 +216,6 @@ com.google.androidbrowserhelper.trusted.TwaProviderPicker$LaunchMode
 androidx.core.database.CursorWindowCompat
 androidx.core.hardware.fingerprint.FingerprintManagerCompat
 androidx.annotation.LongDef
-io.andresdavidcalderonjimenez.github.iq.R$xml
 androidx.core.app.ActivityRecreator$2
 androidx.concurrent.futures.AbstractResolvableFuture$Failure$1
 androidx.annotation.InspectableProperty$FlagEntry
@@ -236,7 +232,6 @@ androidx.core.net.DatagramSocketWrapper
 androidx.concurrent.futures.AbstractResolvableFuture$Waiter
 androidx.browser.browseractions.BrowserActionItem
 androidx.arch.core.internal.SafeIterableMap$SupportRemove
-io.andresdavidcalderonjimenez.github.iq.R$mipmap
 androidx.core.content.FileProvider:
     private static final java.lang.String META_DATA_FILE_PROVIDER_PATHS
     private static final java.lang.String TAG_ROOT_PATH
@@ -278,7 +273,6 @@ androidx.core.widget.EdgeEffectCompat
 androidx.core.view.accessibility.AccessibilityViewCommand$SetSelectionArguments
 androidx.core.R$layout
 androidx.browser.R$id
-io.github.andresdavidcalderon.iq.Application
 androidx.lifecycle.ReflectiveGenericLifecycleObserver:
     void <init>(java.lang.Object)
     public void onStateChanged(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event)
@@ -300,6 +294,7 @@ androidx.core.app.BundleCompat$BundleCompatBaseImpl:
 androidx.core.os.EnvironmentCompat
 androidx.browser.trusted.NotificationApiHelperForM:
     private void <init>()
+io.andresdavidcalderon.github.iq.R$bool
 androidx.lifecycle.ReportFragment$ActivityInitializationListener
 androidx.core.app.NotificationCompat$Action$Builder
 com.google.androidbrowserhelper.trusted.FocusActivity:
@@ -329,7 +324,6 @@ androidx.annotation.NonNull
 androidx.core.app.SharedElementCallback$OnSharedElementsReadyListener
 androidx.core.view.MenuCompat
 androidx.core.R$string
-io.github.andresdavidcalderon.iq.LauncherActivity
 androidx.core.view.MenuItemCompat
 androidx.core.view.accessibility.AccessibilityManagerCompat$TouchExplorationStateChangeListener
 androidx.concurrent.futures.AbstractResolvableFuture
@@ -343,6 +337,7 @@ androidx.browser.trusted.TrustedWebActivityService:
     public static final java.lang.String KEY_SUCCESS
     public static final int SMALL_ICON_NOT_SET
 androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImplBase
+io.andresdavidcalderon.github.iq.R$dimen
 android.support.customtabs.IPostMessageService$Stub$Proxy
 androidx.collection.SparseArrayCompat
 androidx.core.widget.AutoSizeableTextView
@@ -369,10 +364,8 @@ com.google.androidbrowserhelper.trusted.NotificationUtils:
 com.google.androidbrowserhelper.R$integer
 androidx.collection.LongSparseArray
 androidx.core.view.NestedScrollingChild2
-io.andresdavidcalderonjimenez.github.iq.R$drawable
 androidx.annotation.InterpolatorRes
 androidx.core.app.RemoteInput
-io.andresdavidcalderonjimenez.github.iq.R$integer
 androidx.core.view.ActionProvider$SubUiVisibilityListener
 androidx.browser.trusted.PackageIdentityUtils:
     private void <init>()
@@ -409,7 +402,6 @@ androidx.core.view.WindowCompat
 androidx.core.util.Supplier
 androidx.concurrent.futures.AbstractResolvableFuture$SetFuture
 androidx.browser.customtabs.CustomTabsService$Result
-io.andresdavidcalderon.github.iq.LauncherActivity
 androidx.annotation.StringRes
 androidx.browser.customtabs.CustomTabsClient:
     public static java.lang.String getPackageName(android.content.Context,java.util.List)
@@ -451,14 +443,14 @@ androidx.browser.customtabs.CustomTabsSession$PendingSession
 androidx.core.view.accessibility.AccessibilityWindowInfoCompat
 androidx.core.location.LocationManagerCompat
 androidx.lifecycle.FullLifecycleObserverAdapter$1
+io.andresdavidcalderon.github.iq.R$styleable
 androidx.core.app.FrameMetricsAggregator$FrameMetricsApi24Impl
 androidx.core.util.Preconditions
 androidx.browser.browseractions.BrowserActionsFallbackMenuUi$3
 androidx.core.view.inputmethod.InputContentInfoCompat
-io.andresdavidcalderonjimenez.github.iq.R
 androidx.concurrent.futures.CallbackToFutureAdapter$Resolver
-androidx.core.provider.FontsContractCompat$FontFamilyResult
 androidx.core.app.NotificationCompat$BigPictureStyle
+androidx.core.provider.FontsContractCompat$FontFamilyResult
 androidx.core.widget.CompoundButtonCompat
 androidx.core.content.pm.ShortcutInfoCompatSaver$NoopImpl
 androidx.core.R$style
@@ -469,7 +461,6 @@ com.google.androidbrowserhelper.trusted.SharingUtils:
     private void <init>()
 androidx.browser.trusted.TokenContents:
     public int getFingerprintCount()
-io.andresdavidcalderonjimenez.github.iq.R$dimen
 androidx.annotation.RequiresApi
 androidx.concurrent.futures.AbstractResolvableFuture$AtomicHelper
 androidx.core.app.NotificationCompat$BigTextStyle
@@ -562,10 +553,12 @@ com.google.androidbrowserhelper.trusted.NotificationDelegationExtraCommandHandle
     private static final java.lang.String KEY_NOTIFICATION_CHANNEL_NAME
     private static final java.lang.String KEY_NOTIFICATION_PERMISSION_REQUEST_PENDING_INTENT
 androidx.browser.browseractions.BrowserActionsFallbackMenuUi$1
+io.andresdavidcalderon.github.iq.R$mipmap
 androidx.core.os.HandlerCompat
 androidx.core.provider.FontsContractCompat$4$4
 androidx.annotation.DimenRes
 androidx.arch.core.internal.SafeIterableMap$AscendingIterator
+io.andresdavidcalderon.github.iq.R$id
 androidx.core.app.NotificationCompat$MessagingStyle
 androidx.core.app.NotificationManagerCompat$SideChannelManager
 androidx.browser.customtabs.PostMessageServiceConnection
@@ -613,11 +606,11 @@ androidx.core.view.ViewPropertyAnimatorCompat
 androidx.core.content.res.ComplexColorCompat
 androidx.browser.browseractions.BrowserActionsIntent$Builder
 com.google.androidbrowserhelper.trusted.PermissionStatus
-io.andresdavidcalderonjimenez.github.iq.R$styleable
 androidx.core.view.accessibility.AccessibilityClickableSpanCompat
 android.support.customtabs.ICustomTabsCallback$Stub$Proxy
 androidx.core.view.ViewCompat$4
 androidx.arch.core.internal.FastSafeIterableMap
+io.andresdavidcalderon.github.iq.R$integer
 androidx.core.provider.FontsContractCompat$2
 androidx.core.content.pm.PackageInfoCompat
 androidx.annotation.CheckResult
@@ -689,6 +682,7 @@ androidx.versionedparcelable.VersionedParcel$1
 com.google.androidbrowserhelper.trusted.ChromeUpdatePrompt:
     private void <init>()
     private static final java.lang.String UPDATE_CHROME_MESSAGE_RESOURCE_ID
+io.andresdavidcalderon.github.iq.R$drawable
 androidx.core.app.ActivityOptionsCompat$ActivityOptionsCompatImpl
 androidx.browser.customtabs.CustomTabsClient$1
 androidx.core.app.ActivityRecreator
@@ -724,8 +718,8 @@ android.support.customtabs.trusted.ITrustedWebActivityService$Stub:
     static final int TRANSACTION_getSmallIconId
     static final int TRANSACTION_getSmallIconBitmap
     static final int TRANSACTION_extraCommand
-androidx.core.content.SharedPreferencesCompat$EditorCompat
 androidx.core.app.ShareCompat
+androidx.core.content.SharedPreferencesCompat$EditorCompat
 androidx.core.view.accessibility.AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi16
 androidx.core.view.NestedScrollingParent
 androidx.core.app.NotificationCompat$Extender
@@ -752,7 +746,6 @@ androidx.core.app.NotificationCompat$CarExtender$UnreadConversation$Builder
 androidx.core.app.ComponentActivity$ExtraData
 androidx.core.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListener
 androidx.annotation.BinderThread
-io.andresdavidcalderonjimenez.github.iq.R$layout
 androidx.core.content.res.GradientColorInflaterCompat$ColorStops
 com.google.androidbrowserhelper.BuildConfig
 androidx.core.app.ActivityRecreator$1
@@ -812,7 +805,6 @@ androidx.browser.customtabs.TrustedWebUtils:
     public static final java.lang.String EXTRA_LAUNCH_AS_TRUSTED_WEB_ACTIVITY
     public static final java.lang.String ACTION_MANAGE_TRUSTED_WEB_ACTIVITY_DATA
 com.google.androidbrowserhelper.R$styleable
-io.andresdavidcalderonjimenez.github.iq.R$attr
 androidx.core.internal.package-info
 androidx.concurrent.futures.AbstractResolvableFuture$Failure
 androidx.core.provider.FontsContractCompat
@@ -846,11 +838,11 @@ androidx.core.widget.TintableCompoundButton
 androidx.browser.trusted.TrustedWebActivityServiceConnection$NotificationsEnabledArgs:
     public android.os.Bundle toBundle()
 androidx.core.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListenerCompat
+io.andresdavidcalderon.github.iq.R$color
 androidx.core.app.NotificationCompat$MessagingStyle$Message
 androidx.core.R$color
 androidx.core.widget.TextViewCompat$AutoSizeTextType
 androidx.annotation.NavigationRes
-io.andresdavidcalderonjimenez.github.iq.R$string
 androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImplBase$GestureHandler
 androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 androidx.browser.trusted.sharing.ShareTarget:
@@ -873,12 +865,14 @@ androidx.browser.R$color
 androidx.core.view.WindowInsetsCompat
 androidx.core.view.LayoutInflaterFactory
 androidx.annotation.BoolRes
+io.andresdavidcalderon.github.iq.R$layout
 androidx.core.text.TextDirectionHeuristicsCompat$TextDirectionAlgorithm
 com.google.androidbrowserhelper.R$layout
 androidx.core.app.NotificationBuilderWithBuilderAccessor
 androidx.core.view.accessibility.AccessibilityNodeInfoCompat$CollectionInfoCompat
 androidx.core.app.FrameMetricsAggregator$FrameMetricsBaseImpl
 android.support.customtabs.IPostMessageService$Stub
+io.andresdavidcalderon.github.iq.R
 androidx.core.R$drawable
 androidx.core.text.BidiFormatter
 androidx.core.view.inputmethod.InputConnectionCompat$1
@@ -1099,7 +1093,6 @@ androidx.core.graphics.TypefaceCompatBaseImpl$StyleExtractor
 androidx.core.view.ViewCompat$UnhandledKeyEventManager
 androidx.core.database.DatabaseUtilsCompat
 androidx.core.internal.view.SupportMenuItem
-io.andresdavidcalderon.github.iq.DelegationService
 androidx.core.provider.FontsContractCompat$4$9
 androidx.interpolator.view.animation.FastOutLinearInInterpolator
 androidx.core.view.MenuItemCompat$OnActionExpandListener
@@ -1136,7 +1129,6 @@ com.google.androidbrowserhelper.trusted.Utils:
 com.google.androidbrowserhelper.R$id
 androidx.annotation.IntDef
 androidx.core.os.CancellationSignal$OnCancelListener
-io.andresdavidcalderonjimenez.github.iq.R$style
 androidx.browser.R$string
 androidx.versionedparcelable.VersionedParcel:
     private void writeCollection(java.util.Collection,int)
@@ -1250,6 +1242,7 @@ androidx.browser.trusted.TrustedWebActivityDisplayMode$ImmersiveMode:
     private static final int ID
     public static final java.lang.String KEY_STICKY
     public static final java.lang.String KEY_CUTOUT_MODE
+io.andresdavidcalderon.github.iq.R$string
 android.support.v4.os.IResultReceiver
 androidx.core.graphics.drawable.RoundedBitmapDrawable
 androidx.browser.trusted.FutureUtils
@@ -1342,6 +1335,7 @@ com.google.androidbrowserhelper.trusted.LauncherActivityMetadata:
     private static final int DEFAULT_DIVIDER_COLOR_ID
 androidx.browser.trusted.ConnectionHolder
 android.support.customtabs.IPostMessageService$Default
+io.andresdavidcalderon.github.iq.R$style
 com.google.androidbrowserhelper.trusted.ManageDataLauncherActivity:
     private static final java.lang.String TAG
     private static final java.lang.String METADATA_MANAGE_SPACE_DEFAULT_URL
@@ -1350,13 +1344,14 @@ com.google.androidbrowserhelper.trusted.ManageDataLauncherActivity:
     public static final java.lang.String CATEGORY_LAUNCH_SITE_SETTINGS
     public static final java.lang.String OVERRIDE_IC_SITE_SETTINGS_ID
 androidx.annotation.ColorLong
+io.andresdavidcalderon.github.iq.BuildConfig
 androidx.core.app.NotificationCompat$StreamType
 androidx.core.content.res.FontResourcesParserCompat$FontFamilyFilesResourceEntry
 androidx.versionedparcelable.VersionedParcelStream$1
 androidx.core.view.LayoutInflaterCompat
 com.google.androidbrowserhelper.R$xml
-androidx.browser.customtabs.CustomTabsService$1
 androidx.core.os.LocaleListCompatWrapper
+androidx.browser.customtabs.CustomTabsService$1
 androidx.core.view.MotionEventCompat
 androidx.core.view.NestedScrollingChildHelper
 androidx.core.content.pm.ShortcutInfoCompat$Builder
@@ -1367,7 +1362,6 @@ androidx.core.view.DragAndDropPermissionsCompat
 androidx.core.provider.FontsContractCompat$Columns
 androidx.core.view.AccessibilityDelegateCompat
 androidx.core.os.MessageCompat
-io.github.andresdavidcalderon.iq.DelegationService
 androidx.browser.customtabs.PostMessageService$1
 androidx.core.widget.ListPopupWindowCompat
 androidx.core.app.AlarmManagerCompat

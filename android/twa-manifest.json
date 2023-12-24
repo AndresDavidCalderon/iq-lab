@@ -1,5 +1,5 @@
 {
-  "packageId": "io.andresdavidcalderonjimenez.github.iq",
+  "packageId": "io.andresdavidcalderon.github.iq",
   "host": "andresdavidcalderon.github.io",
   "name": "IQ Lab",
   "launcherName": "IQ lab",
@@ -12,7 +12,7 @@
   "navigationDividerColorDark": "#000000",
   "backgroundColor": "#FFFFFF",
   "enableNotifications": true,
-  "startUrl": "/web_apps/iq_lab",
+  "startUrl": "/web_apps/iq_lab/",
   "iconUrl": "https://andresdavidcalderon.github.io/web_apps/iq_lab/icons/manifest-icon-512.maskable.png",
   "maskableIconUrl": "https://andresdavidcalderon.github.io/web_apps/iq_lab/icons/manifest-icon-512.maskable.png",
   "splashScreenFadeOutDuration": 300,
@@ -20,8 +20,8 @@
     "path": "/mnt/d/proyectos/abstract-reasoning-lab/android/android.keystore",
     "alias": "android"
   },
-  "appVersionName": "1",
-  "appVersionCode": 1,
+  "appVersionName": "2",
+  "appVersionCode": 2,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://andresdavidcalderon.github.io/web_apps/iq_lab/manifest.json",
@@ -39,5 +39,5 @@
   "fingerprints": [],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "1"
+  "appVersion": "2"
 }

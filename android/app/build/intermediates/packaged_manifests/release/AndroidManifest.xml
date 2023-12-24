@@ -22,9 +22,9 @@
      the abbreviated format.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.andresdavidcalderonjimenez.github.iq"
-    android:versionCode="1"
-    android:versionName="1" >
+    package="io.andresdavidcalderon.github.iq"
+    android:versionCode="2"
+    android:versionName="2" >
 
     <uses-sdk
         android:minSdkVersion="19"
@@ -43,7 +43,7 @@
     </queries>
 
     <application
-        android:name="io.andresdavidcalderonjimenez.github.iq.Application"
+        android:name="io.andresdavidcalderon.github.iq.Application"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
@@ -67,7 +67,7 @@
                 android:value="@string/launchUrl" />
         </activity>
         <activity
-            android:name="io.andresdavidcalderonjimenez.github.iq.LauncherActivity"
+            android:name="io.andresdavidcalderon.github.iq.LauncherActivity"
             android:alwaysRetainTaskState="true"
             android:exported="true"
             android:label="@string/launcherName" >
@@ -146,7 +146,7 @@
         </provider>
 
         <service
-            android:name="io.andresdavidcalderonjimenez.github.iq.DelegationService"
+            android:name="io.andresdavidcalderon.github.iq.DelegationService"
             android:enabled="@bool/enableNotification"
             android:exported="@bool/enableNotification" >
             <meta-data
