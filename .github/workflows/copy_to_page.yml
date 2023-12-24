@@ -30,7 +30,7 @@ jobs:
       - name: build
         run: | 
           cd source
-          npm run build'
+          npm run build
 
       - name: move built files
         run: mv -v ./source/dist/* ./page/web_apps/iq_lab/
@@ -40,4 +40,4 @@ jobs:
           git config --global user.name "github actions bot"
           git config --global user.email "actions@beepboop.com"
           git commit -m "update iq lab"
-          git push'
+          git push
