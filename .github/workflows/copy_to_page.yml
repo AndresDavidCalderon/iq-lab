@@ -1,5 +1,5 @@
 
-name: vitest
+name: publish
 run-name: publishing iq lab
 on: 
   push:
@@ -25,7 +25,7 @@ jobs:
           cache-dependency-path: 'source/package-lock.json'
       - name: add dependancies  
         working-directory: './source'
-        run: npm ci
+        run: npm --prefix ./source ci ./source
       - name: build
         run: npm run build
       - name: move built files
