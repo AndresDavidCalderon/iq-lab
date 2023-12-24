@@ -24,7 +24,8 @@ jobs:
           cache: npm
           cache-dependency-path: 'source/package-lock.json'
       - name: add dependancies  
-        run: 'cd source
+        run: |
+          cd source
           npm ci'
       - name: build
         run: | 
