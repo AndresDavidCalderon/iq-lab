@@ -42,5 +42,6 @@ jobs:
           cd page
           git config --global user.name "github actions bot"
           git config --global user.email "actions@beepboop.com"
+          git add *
           git commit -m "update iq lab"
           git push
