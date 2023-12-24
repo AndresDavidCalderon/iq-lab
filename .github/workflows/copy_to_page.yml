@@ -1,6 +1,6 @@
 
 name: vitest
-run-name: running vitest tests
+run-name: publishing iq lab
 on: 
   push:
     branches:
@@ -22,6 +22,7 @@ jobs:
         with:
           node-version: '18.x'
           cache: npm
+          cache-dependency-path: 'source/package-lock.json'
       - name: add dependancies  
         working-directory: 'source'
         run: npm ci
