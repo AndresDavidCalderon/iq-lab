@@ -24,15 +24,16 @@ jobs:
           cache: npm
           cache-dependency-path: 'source/package-lock.json'
       - name: add dependancies  
-        working-directory: './source'
-        run: npm --prefix ./source ci ./source
+        run: 'cd source
+          npm ci'
       - name: build
-        run: npm run build
+        run: 'cd source
+          npm run build'
       - name: move built files
         run: mv -v ./source/dist/* ./page/web_apps/iq_lab/
       - name: push
-        working-directory: './source'
-        run: 'git config --global user.name "github actions bot"
+        run: 'cd page
+              git config --global user.name "github actions bot"
               git config --global user.email "actions@beepboop.com"
               git commit -m "update iq lab"
               git push'
