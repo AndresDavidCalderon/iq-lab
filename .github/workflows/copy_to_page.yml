@@ -1,0 +1,37 @@
+
+name: vitest
+run-name: running vitest tests
+on: 
+  push:
+    branches:
+      production
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: production
+          path: source
+      - uses: actions/checkout@v3
+        with:
+          repository: AndresDavidCalderon/AndresDavidCalderon.github.io
+          path: page
+      
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          cache: npm
+      - name: add dependancies  
+        working-directory: 'source'
+        run: npm ci
+      - name: build
+        run: npm run build
+      - name: move built files
+        run: mv -v ./source/dist/* ./page/web_apps/iq_lab/
+      - name: push
+        working-directory: './source'
+        run: 'git config --global user.name "github actions bot"
+              git config --global user.email "actions@beepboop.com"
+              git commit -m "update iq lab"
+              git push'
