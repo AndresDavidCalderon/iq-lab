@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ACCESTOKEN: ${{secrets.ACCESSTOKEN}}
+      GH_PROMPT_DISABLED: 1
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -42,7 +44,7 @@ jobs:
       - name: push
         run: |
           cd page
-          gh auth login --with-token $ACCESSTOKEN
+          gh auth login --with-token ${{secrets.ACCESSTOKEN}}
           git config --global user.name "github actions bot"
           git config --global user.email "actions@beepboop.com"
           git add *
