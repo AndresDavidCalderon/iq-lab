@@ -9,9 +9,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     env:
-      ACCESTOKEN: ${{secrets.ACCESSTOKEN}}
       GH_PROMPT_DISABLED: 1
-      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -22,6 +20,7 @@ jobs:
         with:
           repository: AndresDavidCalderon/AndresDavidCalderon.github.io
           path: page
+          token: ${{secrets.ACCESSTOKEN}}
       
       - uses: actions/setup-node@v3
         with:
