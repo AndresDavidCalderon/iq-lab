@@ -8,6 +8,8 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{secrets.ACCESSTOKEN}}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -40,6 +42,7 @@ jobs:
       - name: push
         run: |
           cd page
+          gh auth --with-token $ACCESSTOKEN
           git config --global user.name "github actions bot"
           git config --global user.email "actions@beepboop.com"
           git add *
