@@ -9,7 +9,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     env:
-      GITHUB_TOKEN: ${{secrets.ACCESSTOKEN}}
+      ACCESTOKEN: ${{secrets.ACCESSTOKEN}}
     steps:
       - uses: actions/checkout@v3
         with:
