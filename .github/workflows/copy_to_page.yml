@@ -1,5 +1,5 @@
 
-name: publish
+name: publish on web page
 run-name: publishing iq lab
 on: 
   push:
