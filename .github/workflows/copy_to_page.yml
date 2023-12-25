@@ -44,6 +44,7 @@ jobs:
       - name: push
         run: |
           cd page
+          unset GH_TOKEN
           echo ${{secrets.ACCESSTOKEN}} > token.txt
           gh auth login --with-token < token.txt
           git config --global user.name "github actions bot"
