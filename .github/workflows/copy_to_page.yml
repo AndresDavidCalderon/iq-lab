@@ -42,7 +42,7 @@ jobs:
       - name: push
         run: |
           cd page
-          gh auth --with-token $ACCESSTOKEN
+          gh auth login --with-token $ACCESSTOKEN
           git config --global user.name "github actions bot"
           git config --global user.email "actions@beepboop.com"
           git add *
