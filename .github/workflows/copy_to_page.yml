@@ -17,6 +17,7 @@ jobs:
         with:
           ref: production
           path: source
+          token: ${{secrets.ACCESSTOKEN}}
       - uses: actions/checkout@v3
         with:
           repository: AndresDavidCalderon/AndresDavidCalderon.github.io
@@ -44,9 +45,6 @@ jobs:
       - name: push
         run: |
           cd page
-          unset GH_TOKEN
-          echo ${{secrets.ACCESSTOKEN}} > token.txt
-          gh auth login --with-token < token.txt
           git config --global user.name "github actions bot"
           git config --global user.email "actions@beepboop.com"
           git add *
