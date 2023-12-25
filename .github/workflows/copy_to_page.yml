@@ -44,7 +44,8 @@ jobs:
       - name: push
         run: |
           cd page
-          gh auth login --with-token ${{secrets.ACCESSTOKEN}}
+          echo ${{secrets.ACCESSTOKEN}} > token.txt
+          gh auth login --with-token < token.txt
           git config --global user.name "github actions bot"
           git config --global user.email "actions@beepboop.com"
           git add *
