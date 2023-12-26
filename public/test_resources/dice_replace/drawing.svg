@@ -24,10 +24,10 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="0.99999998"
-     inkscape:cx="652.00001"
-     inkscape:cy="298.5"
-     inkscape:current-layer="question"
+     inkscape:zoom="1.4142135"
+     inkscape:cx="255.26555"
+     inkscape:cy="461.38718"
+     inkscape:current-layer="a"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="1912"
@@ -1766,50 +1766,14 @@
          height="198.38451"
          x="0.80774492"
          y="280.80783" />
-      <circle
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
-         id="circle174"
-         cx="159.52478"
-         cy="411.96832"
-         r="7.5" />
-      <circle
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
-         id="circle175"
-         cx="158.85022"
-         cy="387.69772"
-         r="7.5" />
-      <circle
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
-         id="circle176"
-         cx="157.73938"
-         cy="358.57639"
-         r="7.5" />
-      <circle
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
-         id="circle177"
-         cx="118.55554"
-         cy="412.66144"
-         r="7.5" />
-      <circle
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
-         id="circle178"
-         cx="118.10327"
-         cy="436.65967"
-         r="7.5" />
-      <circle
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
-         id="circle179"
-         cx="119.62158"
-         cy="383.25067"
-         r="7.5" />
       <g
          id="g173"
-         transform="matrix(0.82834929,0,0,0.82834929,-158.56994,280.09408)">
+         transform="matrix(0.82834929,0,0,0.82834929,-156.56994,287.84408)">
         <g
            id="g169"
-           inkscape:path-effect="#path-effect174"
            transform="matrix(2.4841977,0,0,2.4841977,-80.06885,-65.677093)"
-           style="fill:#ffffff">
+           style="fill:#ffffff"
+           inkscape:path-effect="#path-effect174">
           <path
              style="fill:#ffffff;stroke:#4a4a4a;stroke-width:2.049"
              d="m 157.53854,74.40864 -33.79293,-21.148286 -0.38169,39.300734 34.17462,21.829362 V 74.40864 m 0.33951,0.0031 34.17926,-20.518049 -0.34711,39.301054 -34.57351,21.191927 0.74136,-39.974932"
@@ -1871,6 +1835,46 @@
            inkscape:transform-center-y="-2.9674441"
            transform="matrix(1.1844417,0,0,1.1844417,148.31795,51.95028)" />
       </g>
+      <g
+         id="g12"
+         transform="translate(-152,-50.500001)">
+        <circle
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
+           id="circle174"
+           cx="309.89221"
+           cy="470.9866"
+           r="7.5" />
+        <circle
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
+           id="circle175"
+           cx="309.21765"
+           cy="446.716"
+           r="7.5" />
+        <circle
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
+           id="circle176"
+           cx="308.10681"
+           cy="417.59467"
+           r="7.5" />
+        <circle
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
+           id="circle177"
+           cx="268.92297"
+           cy="471.67972"
+           r="7.5" />
+        <circle
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
+           id="circle178"
+           cx="268.4707"
+           cy="495.67795"
+           r="7.5" />
+        <circle
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.6"
+           id="circle179"
+           cx="269.98901"
+           cy="442.26895"
+           r="7.5" />
+      </g>
     </g>
   </g>
   <g
@@ -1888,7 +1892,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,194.93522,128.81533)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan5">A</tspan></text>
+         id="tspan1">A</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9"
@@ -1896,7 +1900,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,376.60114,119.28881)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan6">B</tspan></text>
+         id="tspan2">B</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9-0"
@@ -1904,7 +1908,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,563.8414,120.85032)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan7">C</tspan></text>
+         id="tspan3">C</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9-0-8"
@@ -1912,6 +1916,6 @@
        transform="matrix(0.42714826,0,0,0.42714826,748.91481,121.55502)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan8">D</tspan></text>
+         id="tspan4">D</tspan></text>
   </g>
 </svg>
