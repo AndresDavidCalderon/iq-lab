@@ -1,22 +1,27 @@
 
-name: publish
+name: publish on web page
 run-name: publishing iq lab
 on: 
   push:
     branches:
       production
+  workflow_dispatch:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      GH_PROMPT_DISABLED: 1
     steps:
       - uses: actions/checkout@v3
         with:
           ref: production
           path: source
+          token: ${{secrets.ACCESSTOKEN}}
       - uses: actions/checkout@v3
         with:
           repository: AndresDavidCalderon/AndresDavidCalderon.github.io
           path: page
+          token: ${{secrets.ACCESSTOKEN}}
       
       - uses: actions/setup-node@v3
         with:
@@ -24,13 +29,17 @@ jobs:
           cache: npm
           cache-dependency-path: 'source/package-lock.json'
       - name: add dependancies  
-        run: 'cd source
-          npm ci'
+        run: |
+          cd source
+          npm ci
       - name: build
         run: | 
           cd source
-          npm run build'
+          npm run build
 
+      - name: remove old built file
+        run: rm -r ./page/web_apps/iq_lab/*
+      
       - name: move built files
         run: mv -v ./source/dist/* ./page/web_apps/iq_lab/
       - name: push
@@ -38,5 +47,6 @@ jobs:
           cd page
           git config --global user.name "github actions bot"
           git config --global user.email "actions@beepboop.com"
+          git add *
           git commit -m "update iq lab"
-          git push'
+          git push
