@@ -9,7 +9,6 @@ const result = computed(() => (props.lastAnswers === undefined ? 0 : Math.round(
 const isSpanish = window.navigator.language.startsWith('es');
 </script>
 <template>
-  <h1>New version!</h1>
   <div id="main_menu_container">
     <h1 v-if="props.lastAnswers!==undefined" id="test_result">
       {{ result }}%
