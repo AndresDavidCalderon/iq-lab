@@ -12,7 +12,7 @@ const isSpanish = window.navigator.language.startsWith('es');
 <template>
   <div id="main_menu_container">
     <h1 v-if="props.lastAnswers!==undefined" id="test_result">
-      <h2 id="result_title">Tu resultado fue:</h2>
+      <h2 id="result_title">{{isSpanish ? 'Tu resultado fue:' : 'Your result is:'}}</h2>
       {{ result }}%
     </h1>
 
