@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import TakeTest from './views/take_test/TakeTestHome.vue';
+import TakeTestHome from './views/take_test/TakeTestHome.vue';
 import questions from './views/take_test/questions/question_data';
 import FormUI from './views/take_test/FormUI.vue';
 import LevelIndicator from './views/take_test/LevelIndicator.vue';
@@ -9,6 +9,7 @@ const level = ref(1);
 const exp = ref(0);
 const leveledUp = ref(false);
 const adwardedExp = ref(0);
+const themeColor = '#97DB45';
 
 const test = ref([]);
 const testType = ref('');
@@ -81,21 +82,23 @@ const finishTest = (answers) => {
   <FormUI
     v-if="screen==='test'"
     :questions="test"
-    :test-type="testType"
+    :testType="testType"
+    :themeColor="themeColor"
     @testFinished="finishTest"/>
   <div id="container">
     <LevelIndicator
     v-if="screen==='home' || screen==='results'"
-    :level-up="leveledUp"
+    :levelUp="leveledUp"
     :level="level"
-    :exp="exp">
+    :exp="exp"
+    :theme-color="themeColor">
     </LevelIndicator>
-    <TakeTest
+    <TakeTestHome
     v-if="screen==='home'"
     @testStarted="startTest('custom')"
     @standardTestStarted="startTest('standard')"
-    :lastAnswers="lastAnswers"/>
-
+    :lastAnswers="lastAnswers"
+    :themeColor="themeColor"/>
   </div>
 </template>
 

@@ -5,6 +5,7 @@ const emit = defineEmits(['closed']);
 const props = defineProps({
   lastAnswer: String,
   explanation: String,
+  themeColor: String,
 });
 
 const showExplanation = ref(false);
@@ -57,7 +58,7 @@ const toggleExplanation = () => {
   bottom: 0px;
   width: 100vw;
   height: 20vh;
-  background-color: v-bind("props.lastAnswer==='d' ? 'green':'red'");
+  background-color: v-bind("props.lastAnswer==='d' ? themeColor:'red'");
   color: white;
   padding: 10px;
   font-size: 3vmin;
@@ -86,8 +87,9 @@ const toggleExplanation = () => {
 }
 
 #verification_title {
-  height: 30%;
+  height: 20%;
   font-size: 5vmin;
+  color: black;
 }
 
 #close_verification_modal {
@@ -95,13 +97,16 @@ const toggleExplanation = () => {
   height: 20%;
   width: 90%;
   left: 5%;
+  box-shadow: 5px 5px 5px #1C1D1D;
 }
 
 #toggle_explanation {
   position: relative;
   left:10%;
   height: 20%;
+  top: 15%;
   width:80%;
+  box-shadow: 5px 5px 5px #1C1D1D;
 }
 
 @media (min-aspect-ratio:10/9){

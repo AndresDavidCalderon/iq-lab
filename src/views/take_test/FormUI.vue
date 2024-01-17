@@ -9,6 +9,7 @@ import ProgressBar from './ProgressBar.vue';
 const props = defineProps({
   questions: Array,
   testType: String,
+  themeColor: String,
 });
 
 const emit = defineEmits(['testFinished']);
@@ -163,7 +164,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <ProgressBar :total="props.questions.length" :progress="answerHistory.length"></ProgressBar>
+  <ProgressBar
+    :total="props.questions.length"
+    :progress="answerHistory.length"
+    :themeColor="themeColor">
+  </ProgressBar>
   <h1 class="title">{{ getQuestion() }}</h1>
   <div class="row">
     <p id='statement' v-if="currentQuestion.questionType==='text'">
@@ -202,6 +207,7 @@ onMounted(() => {
      @closed="closeModal"
      :last-answer="answerHistory[currentQuestionIndex]"
      :explanation="getExplanation()"
+     :themeColor="themeColor"
      ></FeedBack>
   </div>
 
@@ -266,6 +272,11 @@ onMounted(() => {
 @media(min-aspect-ratio:12/16){
 .answer_image {
   width: v-bind("verificationModal ? '8vw' : '15vw'");
+}
+}
+@media(max-aspect-ratio:9/16){
+.answer_image {
+  width: 30vw;
 }
 }
 </style>

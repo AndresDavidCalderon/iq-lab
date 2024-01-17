@@ -2,6 +2,7 @@
 const props = defineProps({
   total: Number,
   progress: Number,
+  themeColor: String,
 });
 </script>
 
@@ -27,7 +28,7 @@ const props = defineProps({
 #progress{
   width: v-bind('`${(props.progress/props.total)*100}%`');
   height: 100%;
-  background-color: #97DB45;
+  background-color: v-bind(themeColor);
 }
 #progress_in_text{
   position: absolute;

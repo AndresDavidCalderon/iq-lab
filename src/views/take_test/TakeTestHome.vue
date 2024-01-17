@@ -4,6 +4,7 @@ import { computed } from 'vue';
 const emit = defineEmits(['testStarted', 'standardTestStarted']);
 const props = defineProps({
   lastAnswers: Array,
+  themeColor: String,
 });
 const result = computed(() => (props.lastAnswers === undefined ? 0 : Math.round((props.lastAnswers.filter((answer) => answer === 'd').length / props.lastAnswers.length) * 100)));
 const isSpanish = window.navigator.language.startsWith('es');
@@ -11,21 +12,19 @@ const isSpanish = window.navigator.language.startsWith('es');
 <template>
   <div id="main_menu_container">
     <h1 v-if="props.lastAnswers!==undefined" id="test_result">
+      <h2 id="result_title">Tu resultado fue:</h2>
       {{ result }}%
     </h1>
 
     <div id="custom">
-      <button @click="emit('testStarted')" class="title" id="start_button">
-        {{  isSpanish ? 'Empezar prueba personalizada':'Start custom test' }}
-      </button>
       <p class="description">
         {{isSpanish ? 'Toma una prueba acorde a tu nivel':'Take a test according to your level'}}
       </p>
+      <button @click="emit('testStarted')" class="title start_button" id="start_button">
+        {{  isSpanish ? 'Empezar prueba personalizada':'Start custom test' }}
+      </button>
     </div>
     <div id="standard">
-      <button  @click="emit('standardTestStarted')" class="title" id="standard_test_button">
-        {{  isSpanish ? 'Empezar simulacro':'Start standard test'}}
-      </button>
       <p class="description">
         {{
           isSpanish ?
@@ -35,6 +34,11 @@ const isSpanish = window.navigator.language.startsWith('es');
           and no feeedback on each question.`
         }}
       </p>
+      <button  @click="emit('standardTestStarted')"
+      class="title start_button"
+      id="standard_test_button">
+        {{  isSpanish ? 'Empezar simulacro':'Start standard test'}}
+      </button>
     </div>
   </div>
 
@@ -49,11 +53,15 @@ const isSpanish = window.navigator.language.startsWith('es');
   flex-direction: column;
 }
 
+#result_title{
+  font-size: 5vmin;
+}
+
 #test_result{
   text-align: center;
   width: 100%;
-  left: 35%;
   font-size: 20vmin;
+  margin: 5px;
 }
 
 #custom{
@@ -71,6 +79,11 @@ const isSpanish = window.navigator.language.startsWith('es');
   position: relative;
   width: 100%;
   font-size: 5vmin;
+}
+
+.start_button{
+  background-color: v-bind("themeColor");
+  box-shadow: 5px 5px 5px gray;
 }
 
 #standard_test_button{
