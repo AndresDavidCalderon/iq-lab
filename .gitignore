@@ -67,3 +67,9 @@ google-services.json
 
 # Android Profiling
 *.hprof
+android/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+android/.gradle/6.5/javaCompile/javaCompile.lock
+android/.gradle/6.5/fileHashes/fileHashes.lock
+android/.gradle/6.5/fileHashes/fileHashes.bin
+android/.gradle/6.5/executionHistory/executionHistory.lock
+android/.gradle/6.5/executionHistory/executionHistory.bin
