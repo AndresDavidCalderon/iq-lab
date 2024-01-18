@@ -10,7 +10,7 @@ const props = defineProps({
   themeColor: String,
 });
 
-const language = window.navigator.language.slice(0, 1);
+const isSpanish = window.navigator.language.startsWith('es');
 </script>
 
 <template>
@@ -19,14 +19,14 @@ const language = window.navigator.language.slice(0, 1);
       <CircleProgress :percent=props.exp :fill-color="themeColor" :size=70>
       </CircleProgress>
       <h2 id="level_number">
-        {{language==='es '? 'Nivel':'Level' }} {{ props.level }}/4
+        {{ isSpanish ? 'Nivel':'Level' }} {{ props.level }}/4
       </h2>
     </div>
     <br>
     {{props.levelUp ?
-    (language==='es' ?
-     'You leveled up, now you will be getting more advanced questions.':
-    'Subiste de nivel, recibirás preguntas mas dificiles.'
+    (isSpanish ?
+      'Subiste de nivel, recibirás preguntas mas dificiles.':
+     'You leveled up, now you will be getting more advanced questions.'
     ):
     ''
      }}
