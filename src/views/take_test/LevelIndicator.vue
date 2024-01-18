@@ -19,7 +19,7 @@ const language = window.navigator.language.slice(0, 1);
       <CircleProgress :percent=props.exp :fill-color="themeColor" :size=70>
       </CircleProgress>
       <h2 id="level_number">
-        {{language==='es '? 'Level':'Nivel' }} {{ props.level }}/4
+        {{language==='es '? 'Nivel':'Level' }} {{ props.level }}/4
       </h2>
     </div>
     <br>
