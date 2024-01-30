@@ -96,7 +96,7 @@ const goBack = () => {
     is the one managing the store front. As such, if you want to manage it,
     you will have to use google's tools.
     This data is collected to allow the developer to improve the app and fix errors within it.
-    <h2>Data collected by the app</h2>
+    <h2>Data stored by the app</h2>
     <p>
       The app stores 2 types of data:
     <ul>
