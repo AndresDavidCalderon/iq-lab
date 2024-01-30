@@ -10,6 +10,7 @@ const exp = ref(0);
 const leveledUp = ref(false);
 const adwardedExp = ref(0);
 const themeColor = '#97DB45';
+const darkerTheme = '#87C73A';
 
 const test = ref([]);
 const testType = ref('');
@@ -98,7 +99,8 @@ const finishTest = (answers) => {
     @testStarted="startTest('custom')"
     @standardTestStarted="startTest('standard')"
     :lastAnswers="lastAnswers"
-    :themeColor="themeColor"/>
+    :themeColor="themeColor"
+    :selectedColor="darkerTheme"/>
   </div>
 </template>
 
