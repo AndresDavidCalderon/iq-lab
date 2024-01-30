@@ -42,7 +42,7 @@ const isSpanish = window.navigator.language.startsWith('es');
       </button>
     </div>
     <button class="styled_button" id="info_button" @click="emit('aboutSelected')">
-      About IQ lab
+      {{isSpanish ? 'Acerca de IQ lab':'About IQ lab'}}
     </button>
   </div>
 
