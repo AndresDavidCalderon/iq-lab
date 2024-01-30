@@ -1,10 +1,11 @@
 <script setup>
 import { computed } from 'vue';
 
-const emit = defineEmits(['testStarted', 'standardTestStarted']);
+const emit = defineEmits(['testStarted', 'standardTestStarted', 'aboutSelected']);
 const props = defineProps({
   lastAnswers: Array,
   themeColor: String,
+  selectedColor: String,
 });
 const result = computed(() => (props.lastAnswers === undefined ? 0 : Math.round((props.lastAnswers.filter((answer) => answer === 'd').length / props.lastAnswers.length) * 100)));
 const isSpanish = window.navigator.language.startsWith('es');
@@ -20,7 +21,7 @@ const isSpanish = window.navigator.language.startsWith('es');
       <p class="description">
         {{isSpanish ? 'Toma una prueba acorde a tu nivel':'Take a test according to your level'}}
       </p>
-      <button @click="emit('testStarted')" class="title start_button" id="start_button">
+      <button @click="emit('testStarted')" class="title styled_button" id="start_custom_button">
         {{  isSpanish ? 'Empezar prueba personalizada':'Start custom test' }}
       </button>
     </div>
@@ -35,11 +36,14 @@ const isSpanish = window.navigator.language.startsWith('es');
         }}
       </p>
       <button  @click="emit('standardTestStarted')"
-      class="title start_button"
+      class="title styled_button"
       id="standard_test_button">
         {{  isSpanish ? 'Empezar simulacro':'Start standard test'}}
       </button>
     </div>
+    <button class="styled_button" id="info_button" @click="emit('aboutSelected')">
+      About IQ lab
+    </button>
   </div>
 
 </template>
@@ -69,7 +73,7 @@ const isSpanish = window.navigator.language.startsWith('es');
   font-size: 7vmin;
 }
 
-#start_button{
+#start_custom_button{
   width: 80%;
   height: fit-content;
   font-size: 100%;
@@ -79,11 +83,6 @@ const isSpanish = window.navigator.language.startsWith('es');
   position: relative;
   width: 100%;
   font-size: 5vmin;
-}
-
-.start_button{
-  background-color: v-bind("themeColor");
-  box-shadow: 5px 5px 5px gray;
 }
 
 #standard_test_button{
@@ -98,6 +97,12 @@ const isSpanish = window.navigator.language.startsWith('es');
 .description{
   text-align: center;
   font-size: 1em;
+}
+
+#info_button{
+  position: absolute;
+  right: 2%;
+  bottom:2%;
 }
 
 </style>

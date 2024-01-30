@@ -12,7 +12,7 @@ const props = defineProps({
   themeColor: String,
 });
 
-const emit = defineEmits(['testFinished']);
+const emit = defineEmits(['testFinished', 'testCanceled']);
 const currentQuestionIndex = ref(0);
 const answerHistory = reactive([]);
 const verificationModal = ref(false);
@@ -210,7 +210,6 @@ onMounted(() => {
      :themeColor="themeColor"
      ></FeedBack>
   </div>
-
 </template>
 
 <style src="./responsive.css"></style>

@@ -4,12 +4,14 @@ import TakeTestHome from './views/take_test/TakeTestHome.vue';
 import questions from './views/take_test/questions/question_data';
 import FormUI from './views/take_test/FormUI.vue';
 import LevelIndicator from './views/take_test/LevelIndicator.vue';
+import AboutAndPrivacy from './views/AboutAndPrivacy.vue';
 
 const level = ref(1);
 const exp = ref(0);
 const leveledUp = ref(false);
 const adwardedExp = ref(0);
 const themeColor = '#97DB45';
+const darkerTheme = '#87C73A';
 
 const test = ref([]);
 const testType = ref('');
@@ -77,6 +79,10 @@ const finishTest = (answers) => {
   }
 };
 
+const cancelTest = () => {
+  screen.value = 'home';
+};
+
 </script>
 <template>
   <FormUI
@@ -84,7 +90,9 @@ const finishTest = (answers) => {
     :questions="test"
     :testType="testType"
     :themeColor="themeColor"
-    @testFinished="finishTest"/>
+    @testFinished="finishTest"
+    @testCanceled="cancelTest"
+    />
   <div id="container">
     <LevelIndicator
     v-if="screen==='home' || screen==='results'"
@@ -97,8 +105,14 @@ const finishTest = (answers) => {
     v-if="screen==='home'"
     @testStarted="startTest('custom')"
     @standardTestStarted="startTest('standard')"
+    @aboutSelected="setScreen('about')"
     :lastAnswers="lastAnswers"
-    :themeColor="themeColor"/>
+    :themeColor="themeColor"
+    :selectedColor="darkerTheme"/>
+    <AboutAndPrivacy
+    v-if="screen=='about'"
+    @backPressed="setScreen('home')"
+    />
   </div>
 </template>
 
