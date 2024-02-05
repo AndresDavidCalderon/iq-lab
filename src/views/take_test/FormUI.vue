@@ -288,6 +288,9 @@ onMounted(() => {
 .answer_image {
   width: v-bind("verificationModal ? '8vw' : '15vw'");
 }
+#cancel_test_button{
+  font-size: 2vw;
+}
 }
 @media(max-aspect-ratio:9/16){
 .answer_image {
