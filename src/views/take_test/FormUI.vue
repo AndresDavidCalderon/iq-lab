@@ -35,6 +35,8 @@ const currentQuestion = computed(() => {
 });
 const fontSize = computed(() => (currentQuestion.value.statement !== undefined ? `${Math.max(Math.min(1300 / currentQuestion.value.statement.length, 10), 2)}vmin` : 0));
 
+const isSpanish = window.navigator.language.startsWith('es');
+
 const getQuestionFormat = () => {
   const declaredFormat = currentQuestion.value.format;
   return declaredFormat === undefined ? 'png' : declaredFormat;
@@ -143,7 +145,6 @@ const getQuestion = () => {
   if (questionText !== undefined) {
     return questionText;
   }
-  const isSpanish = window.navigator.language.startsWith('es');
   if (currentQuestion.value.questionType !== undefined) {
     const diccionary = isSpanish ? questionTypesES : questionTypes;
     if (diccionary[currentQuestion.value.questionType] !== undefined) {
@@ -164,6 +165,12 @@ onMounted(() => {
 </script>
 
 <template>
+  <button @click="emit('testCanceled')" id="cancel_test_button" class="styled_button">
+    {{isSpanish ?
+    'Inicio':
+    'Home'
+    }}
+  </button>
   <ProgressBar
     :total="props.questions.length"
     :progress="answerHistory.length"
@@ -217,7 +224,16 @@ onMounted(() => {
 *{
   font-size: 20px;
 }
+
+#cancel_test_button{
+  position: absolute;
+  top: 1vmin;
+  left: 1vmin;
+  font-size: 5vw;
+}
+
 .title {
+  margin-top: 5vh;
   text-align: center;
   font-size: 4vmax;
 }

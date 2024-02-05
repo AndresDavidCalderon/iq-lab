@@ -5,7 +5,7 @@ import questions from './views/take_test/questions/question_data';
 import FormUI from './views/take_test/FormUI.vue';
 import LevelIndicator from './views/take_test/LevelIndicator.vue';
 import AboutAndPrivacy from './views/AboutAndPrivacy.vue';
-import Intro from './views/Intro.vue';
+import Intro from './views/IntroScreen.vue';
 
 const level = ref(1);
 const exp = ref(0);
