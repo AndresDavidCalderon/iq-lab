@@ -20,8 +20,8 @@ const props = defineProps({
 #bar{
   position: absolute;
   top: 1vmin;
-  width: 80vw;
-  left: 5vw;
+  width: 60vw;
+  left: 25vw;
   height: 3vmin;
   background-color: gray;
 }
