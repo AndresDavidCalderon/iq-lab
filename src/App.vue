@@ -5,6 +5,7 @@ import questions from './views/take_test/questions/question_data';
 import FormUI from './views/take_test/FormUI.vue';
 import LevelIndicator from './views/take_test/LevelIndicator.vue';
 import AboutAndPrivacy from './views/AboutAndPrivacy.vue';
+import Intro from './views/Intro.vue';
 
 const level = ref(1);
 const exp = ref(0);
@@ -16,7 +17,7 @@ const darkerTheme = '#87C73A';
 const test = ref([]);
 const testType = ref('');
 const lastAnswers = ref(undefined);
-const screen = ref('home');
+const screen = ref(localStorage.getItem('intro') === null ? 'intro' : 'home');
 
 onMounted(() => {
   if (localStorage.getItem('level') !== null) {
@@ -83,6 +84,11 @@ const cancelTest = () => {
   screen.value = 'home';
 };
 
+const exitIntro = () => {
+  localStorage.setItem('intro', 'done');
+  setScreen('home');
+};
+
 </script>
 <template>
   <FormUI
@@ -95,12 +101,16 @@ const cancelTest = () => {
     />
   <div id="container">
     <LevelIndicator
-    v-if="screen==='home' || screen==='results'"
+    v-if="screen==='home' || screen==='intro'"
     :levelUp="leveledUp"
     :level="level"
     :exp="exp"
     :theme-color="themeColor">
     </LevelIndicator>
+    <Intro
+      v-if="screen==='intro'"
+      @exitIntro="exitIntro('home')"
+    ></Intro>
     <TakeTestHome
     v-if="screen==='home'"
     @testStarted="startTest('custom')"
@@ -126,4 +136,3 @@ const cancelTest = () => {
   width: 95vw;
 }
 </style>
-../public/test_resources/question_data
