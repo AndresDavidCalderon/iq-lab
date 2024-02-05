@@ -80,9 +80,12 @@ const isSpanish = window.navigator.language.startsWith('es');
 }
 
 #standard{
+  margin-top: 40px;
   position: relative;
   width: 100%;
   font-size: 5vmin;
+  padding-bottom: 20px;
+  background-color: lightgray;
 }
 
 #standard_test_button{
