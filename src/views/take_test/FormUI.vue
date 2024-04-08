@@ -235,7 +235,7 @@ onMounted(() => {
 .title {
   margin-top: 5vh;
   text-align: center;
-  font-size: 4vmax;
+  font-size: 3.8vmax;
 }
 
 #statement{
