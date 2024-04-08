@@ -29,10 +29,10 @@ const goBack = () => {
   <div v-if="!showingPolicy" id="about_buttons">
     <h2>
       {{ isSpanish ?
-        `IQ lab fue hecho con amor por Andres David Calderon, y posible gracias a
-      proyectos de codigo abirto como vue.js` :
+        `IQ lab fue hecho con amor por Andres Dev, y posible gracias a
+      proyectos de codigo abierto como vue.js` :
         `
-      IQ lab was made with love by Andres David Calderon,
+      IQ lab was made with love by Andres Dev,
       and made possible thanks to open source projects like vue.js.
 
       It's provided for free, and without any warranty.
