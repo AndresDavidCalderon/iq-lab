@@ -75,7 +75,7 @@ const toggleExplanation = () => {
 #explanation {
   position: fixed;
   left: 0px;
-  top: 25vh;
+  top: 20vh;
   height: 50vh;
   width: 100vw;
   background-color: inherit;
@@ -112,22 +112,21 @@ const toggleExplanation = () => {
 @media (min-aspect-ratio:10/9){
 
 #verification_title{
+  height: auto;
   margin: 4px;
 }
 
 #verification_modal {
-  display: block;
-  height: 35vh;
-  top: 65vh;
+  display: flex;
+  bottom:0;
   text-align: justify;
+  height: auto;
 }
 
 #close_verification_modal {
-  position: absolute;
+  display: block;
   width: 100px;
   height: 50px;
-  bottom: 30px;
-  right: 10px;
 }
 
 #toggle_explanation {
@@ -137,7 +136,8 @@ const toggleExplanation = () => {
 #explanation_in_modal {
   display: block;
   white-space: pre-line;
-  overflow: auto;
+  overflow: v-bind("explanation.length>200 ? 'auto' : 'visible'");
+  height: v-bind("explanation.length>200 ? 'auto':'40%'");
   font-size: v-bind("explanation.includes('\n') ? '1.5vmax':'2vmax'");
 }
 }

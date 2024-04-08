@@ -134,10 +134,10 @@ const questionTypes = {
 };
 const questionTypesES = {
   replace: '¿Que opción reemplaza mejor el signo de interrogación?',
-  follow_logic: '¿Cual de las opciones siguie la misma logica?',
+  follow_logic: '¿Cual de las opciones sigue la misma logica?',
   image_piece: 'A la siguiente imagen se le sacó un pedazo, ¿Que opción lo reemplaza?',
   text: 'Lea el siguiente enunciado y seleccione una opción.',
-  cube: 'Que opción representa un posible resultado de doblar la siguiente figura para formar un cubo? Toma en cuenta que puede ser rotado.',
+  cube: '¿Que opción representa un posible resultado de doblar la siguiente figura para formar un cubo? Toma en cuenta que puede ser rotado.',
 };
 
 const getQuestion = () => {
@@ -235,7 +235,7 @@ onMounted(() => {
 .title {
   margin-top: 5vh;
   text-align: center;
-  font-size: 4vmax;
+  font-size: 3.8vmax;
 }
 
 #statement{

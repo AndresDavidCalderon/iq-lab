@@ -24,10 +24,10 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="673"
-     inkscape:cy="264.5"
-     inkscape:current-layer="layer1"
+     inkscape:zoom="8"
+     inkscape:cx="518"
+     inkscape:cy="19.8125"
+     inkscape:current-layer="question"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="1912"
@@ -912,7 +912,7 @@
          transform="matrix(3.7685191,0,0,3.7685191,-988.36125,-615.36539)"><tspan
            x="390.35742"
            y="221.81507"
-           id="tspan1">?</tspan></text>
+           id="tspan6">?</tspan></text>
       <path
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.29654;stroke-opacity:0.843787"
          d="m 259.07352,20.181249 v -9.415788 h 9.41578 9.4158 v 9.415788 9.415789 h -9.4158 -9.41578 z"
@@ -943,7 +943,7 @@
          id="path9" />
       <path
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.29654;stroke-opacity:0.843787"
-         d="m 488.7269,20.181249 v -9.415788 h 9.41578 9.41579 v 9.415788 9.415789 h -9.41579 -9.41578 z"
+         d="m 509.3519,20.181249 v -9.415788 h 9.41578 9.41579 v 9.415788 9.415789 h -9.41579 -9.41578 z"
          id="path10" />
     </g>
     <g
@@ -1062,7 +1062,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,194.93522,128.81533)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan2">A</tspan></text>
+         id="tspan7">A</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9"
@@ -1070,7 +1070,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,413.37069,114.41414)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan3">B</tspan></text>
+         id="tspan8">B</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9-0"
@@ -1078,7 +1078,7 @@
        transform="matrix(0.42714826,0,0,0.42714826,600.61095,115.97565)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan4">C</tspan></text>
+         id="tspan9">C</tspan></text>
     <text
        xml:space="preserve"
        id="text6624-9-0-8"
@@ -1086,6 +1086,6 @@
        transform="matrix(0.42714826,0,0,0.42714826,748.91481,121.55502)"><tspan
          x="-401.99023"
          y="367.03098"
-         id="tspan5">D</tspan></text>
+         id="tspan10">D</tspan></text>
   </g>
 </svg>

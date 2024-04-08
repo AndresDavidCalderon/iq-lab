@@ -103,7 +103,7 @@ const isSpanish = window.navigator.language.startsWith('es');
 }
 
 #info_button{
-  position: absolute;
+  position: fixed;
   right: 2%;
   bottom:2%;
 }
