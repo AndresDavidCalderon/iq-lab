@@ -344,7 +344,7 @@ const questions = [
     name: 'triangular_translation',
     difficulty: 2,
     explanation: 'The star and polygon make a movement with the shape of a triangle, in the case of the star, the tip is at the top.',
-    explanation_ES: 'La estrella y el poligona hacen un movimiento en forma de triangulo, en el caso de la estrella, la punta esta en la parte de arriba.',
+    explanation_ES: 'La estrella y el poligono hacen un movimiento en forma de triangulo, en el caso de la estrella, la punta esta en la parte de arriba.',
   },
   {
     name: 'follow',
