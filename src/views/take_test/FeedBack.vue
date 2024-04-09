@@ -18,16 +18,18 @@ const toggleExplanation = () => {
 
 <template>
   <div id="verification_modal">
-    <h1 id="verification_title">
-      {{
-      lastAnswer === "d" ?
-      (isSpanish ? "Correcto" : "Right"):
-      (isSpanish ? "Incorrecto" : "Wrong")
-      }}
-    </h1>
-    <p v-if="props.explanation!==''" id="explanation_in_modal">
-      {{ props.explanation }}
-    </p>
+    <div id="verification_column_container">
+      <h1 id="verification_title">
+        {{
+          lastAnswer === "d" ?
+          (isSpanish ? "Correcto" : "Right"):
+          (isSpanish ? "Incorrecto" : "Wrong")
+        }}
+      </h1>
+      <p v-if="props.explanation!==''" id="explanation_in_modal">
+        {{ props.explanation }}
+      </p>
+    </div>
     <button @click="emit('closed')" id="close_verification_modal">
       {{isSpanish ? 'Siguiente':'Next'}}
     </button>
@@ -57,12 +59,12 @@ const toggleExplanation = () => {
   position: fixed;
   bottom: 0px;
   width: 100vw;
-  height: 20vh;
   background-color: v-bind("props.lastAnswer==='d' ? themeColor:'red'");
   color: white;
   padding: 10px;
   font-size: 3vmin;
   text-align: center;
+  gap: 1vh;
 }
 
 #modal_explanation {
@@ -87,14 +89,14 @@ const toggleExplanation = () => {
 }
 
 #verification_title {
-  height: 20%;
+  height: 3vh;
   font-size: 5vmin;
   color: black;
 }
 
 #close_verification_modal {
   position: relative;
-  height: 20%;
+  height: 4vh;
   width: 90%;
   left: 5%;
   box-shadow: 5px 5px 5px #1C1D1D;
@@ -103,8 +105,7 @@ const toggleExplanation = () => {
 #toggle_explanation {
   position: relative;
   left:10%;
-  height: 20%;
-  top: 15%;
+  height: 3vh;
   width:80%;
   box-shadow: 5px 5px 5px #1C1D1D;
 }
@@ -116,17 +117,26 @@ const toggleExplanation = () => {
   margin: 4px;
 }
 
+#verification_column_container{
+  display: flex;
+  flex-direction: column;
+}
+
 #verification_modal {
   display: flex;
+  flex-direction: row;
   bottom:0;
   text-align: justify;
   height: auto;
+  justify-content: space-between;
+  align-items: end;
 }
 
 #close_verification_modal {
   display: block;
   width: 100px;
   height: 50px;
+  left: 0;
 }
 
 #toggle_explanation {
