@@ -17,11 +17,11 @@
   "maskableIconUrl": "https://andresdavidcalderon.github.io/web_apps/iq_lab/icons/manifest-icon-512.maskable.png",
   "splashScreenFadeOutDuration": 300,
   "signingKey": {
-    "path": "/mnt/d/proyectos/abstract-reasoning-lab/android/android.keystore",
+    "path": "./android.keystore",
     "alias": "android"
   },
-  "appVersionName": "2",
-  "appVersionCode": 2,
+  "appVersionName": "4",
+  "appVersionCode": 4,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://andresdavidcalderon.github.io/web_apps/iq_lab/manifest.json",
@@ -39,5 +39,5 @@
   "fingerprints": [],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "2"
+  "appVersion": "4"
 }
