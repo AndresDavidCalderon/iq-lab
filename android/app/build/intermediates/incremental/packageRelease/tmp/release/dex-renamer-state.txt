@@ -1,4 +1,4 @@
-#Wed Jul 17 16:56:47 COT 2024
+#Fri Jul 19 08:43:37 COT 2024
 base.0=D\:\\proyectos\\abstract-reasoning-lab\\android\\app\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
